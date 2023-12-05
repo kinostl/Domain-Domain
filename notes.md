@@ -30,3 +30,7 @@ I'm curious if anyone has any other ideas I should consider. I can't do bouncing
 ---
 
 Consider reworking the interface to not use numbers. Theres enough space to fit 8 marbles in a row. First to 5 wins, so entering the enemy territory to win would feel good.
+
+---
+
+Need a $Rainbow Count variable for detecting winning horizontally. Also add +1/-1 logic to the score increment/decrement code.

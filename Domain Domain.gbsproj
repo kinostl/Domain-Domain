@@ -2009,7 +2009,7 @@
                             "type": "number",
                             "value": 1
                         },
-                        "__collapse": false,
+                        "__collapse": true,
                         "__label": "Make Hands"
                     },
                     "children": {
@@ -2082,7 +2082,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Draw Player Areas",
-                        "__collapse": false,
+                        "__collapse": true,
                         "__comment": false
                     },
                     "children": {
@@ -2121,7 +2121,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Draw Opponent Areas",
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
@@ -2158,7 +2158,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Prepare Player",
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
@@ -2219,15 +2219,11 @@
             "triggers": [],
             "script": [
                 {
-                    "command": "EVENT_SET_VALUE",
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
                     "args": {
-                        "variable": "28",
-                        "value": {
-                            "type": "number",
-                            "value": 0
-                        }
+                        "customEventId": "c4eeb2a5-1175-40f7-8754-ec8e4715edaf"
                     },
-                    "id": "cde391fd-93c5-4f7e-a400-382e67ae8ca9"
+                    "id": "6914a10d-bb69-43d8-9a5f-bc53749fe554"
                 }
             ],
             "playerHit1Script": [],
@@ -2998,7 +2994,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "solids.png"
+            "filename": "solids.png",
+            "tileColors": []
         }
     ],
     "spriteSheets": [
@@ -6938,7 +6935,7 @@
                         ],
                         "override": true,
                         "__scriptTabs": "press",
-                        "__collapse": true,
+                        "__collapse": false,
                         "__label": "Remove Player Control"
                     },
                     "children": {
@@ -6950,7 +6947,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Take Control",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -6972,33 +6969,16 @@
                                     "actorId": "$self$",
                                     "x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 18
                                     },
                                     "y": {
                                         "type": "number",
                                         "value": 9
                                     },
-                                    "moveType": "vertical",
+                                    "moveType": "diagonal",
                                     "useCollisions": false
                                 },
-                                "id": "c7180be9-6945-49c1-ace2-3f1ba6b9dc89"
-                            },
-                            {
-                                "command": "EVENT_ACTOR_MOVE_TO",
-                                "args": {
-                                    "actorId": "$self$",
-                                    "x": {
-                                        "type": "number",
-                                        "value": 16
-                                    },
-                                    "y": {
-                                        "type": "number",
-                                        "value": 9
-                                    },
-                                    "moveType": "horizontal",
-                                    "useCollisions": false
-                                },
-                                "id": "dee0bfca-bcae-48f9-943a-e7161c26f03e"
+                                "id": "613aa384-44cf-44a6-8fcb-e14f5a630605"
                             }
                         ]
                     },
@@ -7053,7 +7033,7 @@
                                         {
                                             "command": "EVENT_VARIABLE_MATH_EVALUATE",
                                             "args": {
-                                                "variable": "24",
+                                                "variable": "12",
                                                 "expression": "($22$ * 2) + 3",
                                                 "__comment": false,
                                                 "__collapse": true
@@ -7066,11 +7046,11 @@
                                                 "actorId": "$self$",
                                                 "x": {
                                                     "type": "number",
-                                                    "value": 16
+                                                    "value": 18
                                                 },
                                                 "y": {
                                                     "type": "variable",
-                                                    "value": "24"
+                                                    "value": "12"
                                                 },
                                                 "moveType": "vertical",
                                                 "useCollisions": false,
@@ -7350,27 +7330,220 @@
                 {
                     "command": "EVENT_GROUP",
                     "args": {
-                        "__label": "Return Player Piece",
-                        "__collapse": true
+                        "__label": "Handle Choice"
                     },
                     "children": {
                         "true": [
                             {
-                                "command": "EVENT_ACTOR_MOVE_TO",
+                                "command": "EVENT_SWITCH",
                                 "args": {
-                                    "actorId": "$self$",
-                                    "x": {
-                                        "type": "number",
-                                        "value": 16
-                                    },
-                                    "y": {
-                                        "type": "number",
-                                        "value": 9
-                                    },
-                                    "moveType": "vertical",
-                                    "useCollisions": false
+                                    "variable": "22",
+                                    "choices": 5,
+                                    "__collapseCase0": false,
+                                    "value0": 1,
+                                    "__collapseCase1": false,
+                                    "value1": 2,
+                                    "__collapseCase2": false,
+                                    "value2": 3,
+                                    "__collapseCase3": false,
+                                    "value3": 4,
+                                    "__collapseCase4": false,
+                                    "value4": 5,
+                                    "__collapseCase5": false,
+                                    "value5": 6,
+                                    "__collapseCase6": false,
+                                    "value6": 7,
+                                    "__collapseCase7": false,
+                                    "value7": 8,
+                                    "__collapseCase8": false,
+                                    "value8": 9,
+                                    "__collapseCase9": false,
+                                    "value9": 10,
+                                    "__collapseCase10": false,
+                                    "value10": 11,
+                                    "__collapseCase11": false,
+                                    "value11": 12,
+                                    "__collapseCase12": false,
+                                    "value12": 13,
+                                    "__collapseCase13": false,
+                                    "value13": 14,
+                                    "__collapseCase14": false,
+                                    "value14": 15,
+                                    "__collapseCase15": false,
+                                    "value15": 16,
+                                    "__collapseElse": false,
+                                    "__collapse": false
                                 },
-                                "id": "8312993e-cdb5-449c-a013-c8da54d010f0"
+                                "children": {
+                                    "true0": [
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "d42f871c-58fa-4268-8a3b-e1b912b3562c"
+                                            },
+                                            "id": "5c69812c-d45e-4cc2-937e-a2aa7fcb7f69"
+                                        }
+                                    ],
+                                    "true1": [
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "d42f871c-58fa-4268-8a3b-e1b912b3562c"
+                                            },
+                                            "id": "e8259e84-c0b7-4188-94b0-2a1410966e90"
+                                        }
+                                    ],
+                                    "true2": [
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "d42f871c-58fa-4268-8a3b-e1b912b3562c"
+                                            },
+                                            "id": "40b7fda6-549a-4aa1-8cc9-78d114f38598"
+                                        }
+                                    ],
+                                    "true3": [
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "d42f871c-58fa-4268-8a3b-e1b912b3562c"
+                                            },
+                                            "id": "8e6097b7-2657-4009-bd9b-f6f3fb7dc6bb"
+                                        }
+                                    ],
+                                    "true4": [
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "d42f871c-58fa-4268-8a3b-e1b912b3562c"
+                                            },
+                                            "id": "6463e4cf-b22b-4731-9e97-dcbdf1feb227"
+                                        }
+                                    ],
+                                    "true5": [],
+                                    "true6": [],
+                                    "true7": [],
+                                    "true8": [],
+                                    "true9": [],
+                                    "true10": [],
+                                    "true11": [],
+                                    "true12": [],
+                                    "true13": [],
+                                    "true14": [],
+                                    "true15": [],
+                                    "false": []
+                                },
+                                "id": "8ccbc996-1ef7-4641-b6d0-50aa775dc032"
+                            }
+                        ]
+                    },
+                    "id": "fe2535e2-de13-4a2f-8d30-8194e95f9566"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "End Opponent Turn",
+                        "__collapse": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_TEXT",
+                                "args": {
+                                    "text": [
+                                        "Call Put Card in Play"
+                                    ],
+                                    "avatarId": ""
+                                },
+                                "id": "99760844-e51f-4533-827b-839ad72f6d9e"
+                            },
+                            {
+                                "command": "EVENT_GROUP",
+                                "args": {},
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_TEXT",
+                                            "args": {
+                                                "text": [
+                                                    "Display Text"
+                                                ],
+                                                "avatarId": ""
+                                            },
+                                            "id": "635ed1ed-7ebe-46ea-9d36-0350e461e826"
+                                        },
+                                        {
+                                            "command": "EVENT_SET_VALUE",
+                                            "args": {
+                                                "variable": "28",
+                                                "value": {
+                                                    "type": "variable",
+                                                    "value": "22"
+                                                }
+                                            },
+                                            "id": "983c378a-06e6-4157-b0b4-8b4ec5a3acd5"
+                                        },
+                                        {
+                                            "command": "EVENT_TEXT",
+                                            "args": {
+                                                "text": [
+                                                    "Target: $28$\nScore : $48$\nHand: $41$"
+                                                ],
+                                                "avatarId": ""
+                                            },
+                                            "id": "88567a62-e542-48cf-a412-5fd85949c09f"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "ace5a682-821d-44da-b215-d8a329789a7b"
+                                            },
+                                            "id": "0ad5916c-93a9-459b-b3c8-d0d893d72b94"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "f00d5edc-a4fb-46f1-8530-5cdbebf99889"
+                                            },
+                                            "id": "b11772e9-9f06-4f78-a042-d8d1dd6f94cc"
+                                        },
+                                        {
+                                            "command": "EVENT_TEXT",
+                                            "args": {
+                                                "text": [
+                                                    "Target: $28$\nScore : $48$\nHand: $41$"
+                                                ],
+                                                "avatarId": ""
+                                            },
+                                            "id": "9d233168-610c-4aa2-a085-1358e06dde98"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323"
+                                            },
+                                            "id": "729e2808-970a-4a4f-b981-5fff4e4fe522"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "10293224-690f-47d7-91f4-613210336605"
+                                            },
+                                            "id": "623b0f0c-6439-4118-b10a-70661e9df0d6"
+                                        }
+                                    ]
+                                },
+                                "id": "3e441a2b-4d97-4ad8-9af4-c63002d29cc2"
+                            },
+                            {
+                                "command": "EVENT_TEXT",
+                                "args": {
+                                    "text": [
+                                        "Movement"
+                                    ],
+                                    "avatarId": ""
+                                },
+                                "id": "f53bd649-a207-4111-8164-ab476b283b4f"
                             },
                             {
                                 "command": "EVENT_ACTOR_MOVE_TO",
@@ -7384,10 +7557,10 @@
                                         "type": "number",
                                         "value": 9
                                     },
-                                    "moveType": "horizontal",
+                                    "moveType": "diagonal",
                                     "useCollisions": false
                                 },
-                                "id": "82157d01-995e-47c3-b145-c394b7642913"
+                                "id": "bc4daaf6-8be0-418f-8c97-3dc5a305f4eb"
                             },
                             {
                                 "command": "EVENT_ACTOR_SET_FRAME",
@@ -7398,35 +7571,7 @@
                                         "value": 0
                                     }
                                 },
-                                "id": "806320b9-d378-4537-ba79-4820f681c25a"
-                            }
-                        ]
-                    },
-                    "id": "fbbec63f-0d84-4e4b-9a2a-d70a4b30fc9c"
-                },
-                {
-                    "command": "EVENT_GROUP",
-                    "args": {
-                        "__label": "Return Player Control",
-                        "__collapse": true
-                    },
-                    "children": {
-                        "true": [
-                            {
-                                "command": "EVENT_ACTOR_SET_POSITION",
-                                "args": {
-                                    "actorId": "$self$",
-                                    "x": {
-                                        "type": "number",
-                                        "value": 2
-                                    },
-                                    "y": {
-                                        "type": "number",
-                                        "value": 9
-                                    },
-                                    "__collapse": true
-                                },
-                                "id": "45294a60-1794-4d2d-8c11-acc774b64369"
+                                "id": "e7fb339b-4c91-4721-babd-df7ae1e521fa"
                             },
                             {
                                 "command": "EVENT_REMOVE_INPUT_SCRIPT",
@@ -7439,11 +7584,28 @@
                                     ],
                                     "__collapse": true
                                 },
-                                "id": "9eaa2103-03dd-4370-9c71-471c2be1b76d"
+                                "id": "6d871b24-408a-474d-9cd1-da885316a8a5"
+                            },
+                            {
+                                "command": "EVENT_ACTOR_MOVE_TO",
+                                "args": {
+                                    "actorId": "$self$",
+                                    "x": {
+                                        "type": "number",
+                                        "value": 0
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
+                                    "moveType": "horizontal",
+                                    "useCollisions": false
+                                },
+                                "id": "c7ebd6ed-8393-435b-b7db-c23a886475b5"
                             }
                         ]
                     },
-                    "id": "626744b0-c479-4791-84ac-60048f9ff064"
+                    "id": "55c21bd2-d96c-463a-bb46-56b1691c88d5"
                 }
             ]
         },
@@ -12298,6 +12460,29 @@
                         "true": []
                     },
                     "id": "a37c3eec-e70d-465e-872e-ea99f9dc20c6"
+                },
+                {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "start"
+                        ],
+                        "override": true,
+                        "__scriptTabs": "press",
+                        "__collapse": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "10293224-690f-47d7-91f4-613210336605"
+                                },
+                                "id": "9f322c72-2540-4aee-ac25-ac13f9de85fe"
+                            }
+                        ]
+                    },
+                    "id": "c6602fec-6372-4fa2-8dd1-e3f50b86b551"
                 }
             ]
         },
@@ -16454,7 +16639,7 @@
         },
         {
             "id": "53e1413a-0e68-406b-b886-60977fb5d01b",
-            "name": "Island - Handle",
+            "name": "Island - Handle Player",
             "description": "",
             "variables": {},
             "actors": {},
@@ -16524,7 +16709,8 @@
                         "y": {
                             "type": "number",
                             "value": 9
-                        }
+                        },
+                        "__comment": true
                     },
                     "id": "e76c89f9-56fa-4fac-bf40-484dd77c0d7a"
                 },
@@ -16536,14 +16722,11 @@
                     "id": "8e947c0a-e356-47bd-9c08-9f4e4a5339f7"
                 },
                 {
-                    "command": "EVENT_TEXT",
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
                     "args": {
-                        "text": [
-                            "Turn has ended"
-                        ],
-                        "avatarId": ""
+                        "customEventId": "5fb2beec-792e-4901-9c4b-e98395a71da3"
                     },
-                    "id": "c5a84fb7-4444-4a6c-a31f-de7209480e25"
+                    "id": "2a941226-8107-49c5-bbdc-1b7245334a80"
                 }
             ]
         },
@@ -16597,6 +16780,57 @@
                         "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866"
                     },
                     "id": "ec3e70f7-8e68-495e-969d-530c1f148816"
+                }
+            ]
+        },
+        {
+            "id": "d42f871c-58fa-4268-8a3b-e1b912b3562c",
+            "name": "Island - Handle Opponent",
+            "description": "",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_31",
+            "script": [
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Draw Card",
+                        "__collapse": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "5e22d41d-c0bc-4121-af7d-846c4311459d",
+                                    "$variable[V0]$": {
+                                        "type": "variable",
+                                        "value": "T0"
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "48152703-208b-41de-8ccc-ff1156e207ea"
+                            },
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "34d252b1-e163-4621-a41a-dfefa051f552"
+                                },
+                                "id": "66ee3ada-1772-440c-bd58-8c214feeffe7"
+                            },
+                            {
+                                "command": "EVENT_TEXT",
+                                "args": {
+                                    "text": [
+                                        "Chose $22$\nDrew $28$"
+                                    ],
+                                    "avatarId": ""
+                                },
+                                "id": "328d3a3d-3ca7-4b71-8689-ce30519cdc2c"
+                            }
+                        ]
+                    },
+                    "id": "ef196c1e-0f77-4bc7-a4a6-78e071b22f2a"
                 }
             ]
         }
@@ -16732,6 +16966,66 @@
             "symbol": "var_player_forests_hand"
         },
         {
+            "id": "5",
+            "name": "Opponent Forests Graveyard",
+            "symbol": "var_opponent_forests_gravey"
+        },
+        {
+            "id": "6",
+            "name": "Opponent Islands Graveyard",
+            "symbol": "var_opponent_islands_gravey"
+        },
+        {
+            "id": "7",
+            "name": "Opponent Mountains Graveyard",
+            "symbol": "var_opponent_mountains_grav"
+        },
+        {
+            "id": "8",
+            "name": "Opponent Swamps Graveyard",
+            "symbol": "var_opponent_swamps_graveya"
+        },
+        {
+            "id": "9",
+            "name": "Player Side",
+            "symbol": "var_player_side"
+        },
+        {
+            "id": "10",
+            "name": "Player Shields",
+            "symbol": "var_player_shields"
+        },
+        {
+            "id": "11",
+            "name": "Opponent Shields",
+            "symbol": "var_opponent_shields"
+        },
+        {
+            "id": "12",
+            "name": "G_X",
+            "symbol": "var_g_x"
+        },
+        {
+            "id": "13",
+            "name": "Opponent Plains Revealed",
+            "symbol": "var_opponent_plains_reveale"
+        },
+        {
+            "id": "14",
+            "name": "Opponent Swamps Revealed",
+            "symbol": "var_opponent_swamps_reveale"
+        },
+        {
+            "id": "15",
+            "name": "Opponent Islands Revealed",
+            "symbol": "var_opponent_islands_reveal"
+        },
+        {
+            "id": "16",
+            "name": "Opponent Mountains Revealed",
+            "symbol": "var_opponent_mountains_reve"
+        },
+        {
             "id": "17",
             "name": "Player Plains Score",
             "symbol": "var_player_plains_score"
@@ -16767,9 +17061,19 @@
             "symbol": "var_opponent_choice_count"
         },
         {
+            "id": "24",
+            "name": "Opponent Forests Revealed",
+            "symbol": "var_opponent_forests_reveal"
+        },
+        {
             "id": "25",
             "name": "Opponent Mood",
             "symbol": "var_opponent_mood"
+        },
+        {
+            "id": "26",
+            "name": "Opponent X - Hand",
+            "symbol": "var_opponent_x_hand"
         },
         {
             "id": "27",
@@ -16785,6 +17089,16 @@
             "id": "29",
             "name": "Opponent Plains Graveyard",
             "symbol": "var_opponent_plains_graveya"
+        },
+        {
+            "id": "30",
+            "name": "Shields Backup",
+            "symbol": "var_shields_backup"
+        },
+        {
+            "id": "31",
+            "name": "Player Last Choice",
+            "symbol": "var_player_last_choice"
         },
         {
             "id": "34",
@@ -16920,86 +17234,6 @@
             "id": "ca3b793a-cc02-419e-93b6-b340db72161b__L1",
             "name": "Player Y",
             "symbol": "var_player_y_5"
-        },
-        {
-            "id": "5",
-            "name": "Opponent Forests Graveyard",
-            "symbol": "var_opponent_forests_gravey"
-        },
-        {
-            "id": "6",
-            "name": "Opponent Islands Graveyard",
-            "symbol": "var_opponent_islands_gravey"
-        },
-        {
-            "id": "7",
-            "name": "Opponent Mountains Graveyard",
-            "symbol": "var_opponent_mountains_grav"
-        },
-        {
-            "id": "8",
-            "name": "Opponent Swamps Graveyard",
-            "symbol": "var_opponent_swamps_graveya"
-        },
-        {
-            "id": "9",
-            "name": "Player Side",
-            "symbol": "var_player_side"
-        },
-        {
-            "id": "10",
-            "name": "Player Shields",
-            "symbol": "var_player_shields"
-        },
-        {
-            "id": "11",
-            "name": "Opponent Shields",
-            "symbol": "var_opponent_shields"
-        },
-        {
-            "id": "12",
-            "name": "G_X",
-            "symbol": "var_g_x"
-        },
-        {
-            "id": "13",
-            "name": "Opponent Plains Revealed",
-            "symbol": "var_opponent_plains_reveale_0"
-        },
-        {
-            "id": "14",
-            "name": "Opponent Swamps Revealed",
-            "symbol": "var_opponent_swamps_reveale_0"
-        },
-        {
-            "id": "15",
-            "name": "Opponent Islands Revealed",
-            "symbol": "var_opponent_islands_reveal"
-        },
-        {
-            "id": "16",
-            "name": "Opponent Mountains Revealed",
-            "symbol": "var_opponent_mountains_reve"
-        },
-        {
-            "id": "24",
-            "name": "Opponent Forests Revealed",
-            "symbol": "var_opponent_forests_reveal"
-        },
-        {
-            "id": "26",
-            "name": "Opponent X - Hand",
-            "symbol": "var_opponent_x_hand"
-        },
-        {
-            "id": "30",
-            "name": "Shields Backup",
-            "symbol": "var_shields_backup"
-        },
-        {
-            "id": "31",
-            "name": "Player Last Choice",
-            "symbol": "var_player_last_choice"
         }
     ],
     "engineFieldValues": [
@@ -17021,7 +17255,7 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 1620,
+        "worldScrollX": 1682,
         "worldScrollY": 954,
         "zoom": 400,
         "customColorsEnabled": true,
@@ -17051,8 +17285,8 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            198,
-            453,
+            197,
+            454,
             279
         ],
         "showNavigator": true,
