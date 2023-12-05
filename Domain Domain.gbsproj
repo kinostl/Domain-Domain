@@ -1639,6 +1639,35 @@
                         }
                     ],
                     "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "936e278a-ebf1-4043-889c-90d79241b78d",
+                    "x": 18,
+                    "y": 4,
+                    "symbol": "trigger_1",
+                    "width": 2,
+                    "height": 10,
+                    "script": [
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Doing Opponent Turn"
+                                ],
+                                "avatarId": ""
+                            },
+                            "id": "e2b316e0-1717-49b2-ac9a-b1bc14007080"
+                        },
+                        {
+                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                            "args": {
+                                "customEventId": "5fb2beec-792e-4901-9c4b-e98395a71da3"
+                            },
+                            "id": "7c3cdebe-5a02-4d0f-8ad2-591890d9ee5d"
+                        }
+                    ],
+                    "leaveScript": []
                 }
             ],
             "script": [
@@ -6925,66 +6954,6 @@
             "symbol": "script_8",
             "script": [
                 {
-                    "command": "EVENT_SET_INPUT_SCRIPT",
-                    "args": {
-                        "input": [
-                            "left",
-                            "up",
-                            "down",
-                            "right"
-                        ],
-                        "override": true,
-                        "__scriptTabs": "press",
-                        "__collapse": false,
-                        "__label": "Remove Player Control"
-                    },
-                    "children": {
-                        "true": []
-                    },
-                    "id": "4d940882-ab0e-41f4-b1b7-ee7897fc9848"
-                },
-                {
-                    "command": "EVENT_GROUP",
-                    "args": {
-                        "__label": "Take Control",
-                        "__collapse": false
-                    },
-                    "children": {
-                        "true": [
-                            {
-                                "command": "EVENT_ACTOR_SET_FRAME",
-                                "args": {
-                                    "actorId": "$self$",
-                                    "frame": {
-                                        "type": "number",
-                                        "value": 1
-                                    },
-                                    "__collapse": true
-                                },
-                                "id": "6d80b0a0-7193-4dc5-b75e-ec35f643fb8d"
-                            },
-                            {
-                                "command": "EVENT_ACTOR_MOVE_TO",
-                                "args": {
-                                    "actorId": "$self$",
-                                    "x": {
-                                        "type": "number",
-                                        "value": 18
-                                    },
-                                    "y": {
-                                        "type": "number",
-                                        "value": 9
-                                    },
-                                    "moveType": "diagonal",
-                                    "useCollisions": false
-                                },
-                                "id": "613aa384-44cf-44a6-8fcb-e14f5a630605"
-                            }
-                        ]
-                    },
-                    "id": "470d83c2-4147-4db2-a7db-4cbaa01d8d57"
-                },
-                {
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Make Card Choice",
@@ -7074,7 +7043,7 @@
                                                 "operator": "<",
                                                 "comparator": 3,
                                                 "__collapseElse": false,
-                                                "__collapse": true
+                                                "__collapse": false
                                             },
                                             "children": {
                                                 "true": [
@@ -7089,14 +7058,16 @@
                                                             "minValue": 1,
                                                             "maxValue": 5,
                                                             "clamp": false,
-                                                            "__collapse": false
+                                                            "__collapse": true
                                                         },
                                                         "id": "0477192d-7836-46d3-bc21-636e1bda60f7"
-                                                    },
+                                                    }
+                                                ],
+                                                "false": [
                                                     {
                                                         "command": "EVENT_SWITCH",
                                                         "args": {
-                                                            "variable": "25",
+                                                            "variable": "22",
                                                             "choices": 5,
                                                             "__collapseCase0": false,
                                                             "value0": 1,
@@ -7132,174 +7103,60 @@
                                                             "value15": 16,
                                                             "__collapseElse": false,
                                                             "__disableElse": true,
-                                                            "__collapse": false
+                                                            "__collapse": true,
+                                                            "__label": "Check Opponent Has Card"
                                                         },
                                                         "children": {
                                                             "true0": [
                                                                 {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
+                                                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
                                                                     "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "9df5f63f-ea47-447e-9b14-cb2dbafb697d"
+                                                                        "variable": "12",
+                                                                        "expression": "$39$ > 0"
                                                                     },
-                                                                    "id": "9f2829a4-b35b-475e-842a-95a0d04b2b79"
+                                                                    "id": "9b42fe47-e661-4629-b0df-97ee4a4a1118"
                                                                 }
                                                             ],
                                                             "true1": [
                                                                 {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
+                                                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
                                                                     "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "d508e529-57eb-458b-9782-66f318243c32"
+                                                                        "variable": "12",
+                                                                        "expression": "$40$ > 0"
                                                                     },
-                                                                    "id": "71b25ebb-61c6-46fd-b3b9-6fe8141ae108"
+                                                                    "id": "268b4054-4cd6-4142-9c58-bd3ba96eb8a2"
                                                                 }
                                                             ],
                                                             "true2": [
                                                                 {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
+                                                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
                                                                     "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "70a4ce25-1fe4-4ab1-aee9-21255e70fb76"
+                                                                        "variable": "12",
+                                                                        "expression": "$41$ > 0"
                                                                     },
-                                                                    "id": "b6283a9b-c265-46b2-b566-daf7e29198f3"
+                                                                    "id": "85d40ef6-d2ca-42a5-8a62-7d09f3000431"
                                                                 }
                                                             ],
                                                             "true3": [
                                                                 {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
+                                                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
                                                                     "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "3c769dca-51f3-426c-942f-71c4d3af6202"
+                                                                        "variable": "12",
+                                                                        "expression": "$42$ > 0"
                                                                     },
-                                                                    "id": "c461238d-c01d-4bb7-a898-4b664d4ce6bd"
+                                                                    "id": "e5bec0eb-99a7-4ad8-85f6-0804c32c59f8"
                                                                 }
                                                             ],
                                                             "true4": [
                                                                 {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
+                                                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
                                                                     "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "2d4b251d-0241-40eb-98e1-e396b236772c"
+                                                                        "variable": "12",
+                                                                        "expression": "$43$ > 0"
                                                                     },
-                                                                    "id": "4c9e5a8d-e758-4a94-92b1-06e452bd6835"
+                                                                    "id": "959cc13b-46d5-4c2b-9856-d01b3c390cca"
                                                                 }
                                                             ],
-                                                            "true5": [],
-                                                            "true6": [],
-                                                            "true7": [],
-                                                            "true8": [],
-                                                            "true9": [],
-                                                            "true10": [],
-                                                            "true11": [],
-                                                            "true12": [],
-                                                            "true13": [],
-                                                            "true14": [],
-                                                            "true15": [],
-                                                            "false": [
-                                                                {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
-                                                                    "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "70a4ce25-1fe4-4ab1-aee9-21255e70fb76"
-                                                                    },
-                                                                    "id": "3b30e7a6-b8a2-406f-80f8-af2f55203f25"
-                                                                }
-                                                            ]
-                                                        },
-                                                        "id": "2c3314d1-bdbf-41f6-933a-32a1ab9ed93f"
-                                                    }
-                                                ],
-                                                "false": [
-                                                    {
-                                                        "command": "EVENT_VARIABLE_MATH",
-                                                        "args": {
-                                                            "vectorX": "25",
-                                                            "operation": "set",
-                                                            "other": "rnd",
-                                                            "vectorY": "V0",
-                                                            "value": "0",
-                                                            "minValue": 1,
-                                                            "maxValue": 3,
-                                                            "clamp": false,
-                                                            "__collapse": false
-                                                        },
-                                                        "id": "89d4d84e-eeb8-4e87-bac7-a58eef71757f"
-                                                    },
-                                                    {
-                                                        "command": "EVENT_SWITCH",
-                                                        "args": {
-                                                            "variable": "25",
-                                                            "choices": 3,
-                                                            "__collapseCase0": false,
-                                                            "value0": 1,
-                                                            "__collapseCase1": false,
-                                                            "value1": 2,
-                                                            "__collapseCase2": false,
-                                                            "value2": 3,
-                                                            "__collapseCase3": false,
-                                                            "value3": 4,
-                                                            "__collapseCase4": false,
-                                                            "value4": 5,
-                                                            "__collapseCase5": false,
-                                                            "value5": 6,
-                                                            "__collapseCase6": false,
-                                                            "value6": 7,
-                                                            "__collapseCase7": false,
-                                                            "value7": 8,
-                                                            "__collapseCase8": false,
-                                                            "value8": 9,
-                                                            "__collapseCase9": false,
-                                                            "value9": 10,
-                                                            "__collapseCase10": false,
-                                                            "value10": 11,
-                                                            "__collapseCase11": false,
-                                                            "value11": 12,
-                                                            "__collapseCase12": false,
-                                                            "value12": 13,
-                                                            "__collapseCase13": false,
-                                                            "value13": 14,
-                                                            "__collapseCase14": false,
-                                                            "value14": 15,
-                                                            "__collapseCase15": false,
-                                                            "value15": 16,
-                                                            "__collapseElse": false,
-                                                            "__disableElse": true,
-                                                            "__collapse": false
-                                                        },
-                                                        "children": {
-                                                            "true0": [
-                                                                {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
-                                                                    "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "56423c9c-dca0-4f5b-ad92-28e9660d50f1"
-                                                                    },
-                                                                    "id": "2a283386-43ea-47f1-b8d2-78e5c03b606b"
-                                                                }
-                                                            ],
-                                                            "true1": [
-                                                                {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
-                                                                    "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "f1be2ac3-04ab-482a-8b83-99ffba1a89cd"
-                                                                    },
-                                                                    "id": "932d3e87-96d5-4f3d-8c04-12bc836782f6"
-                                                                }
-                                                            ],
-                                                            "true2": [
-                                                                {
-                                                                    "command": "EVENT_ACTOR_EMOTE",
-                                                                    "args": {
-                                                                        "actorId": "$self$",
-                                                                        "emoteId": "edf96d29-9a08-4813-b2d3-46e0996f89f2"
-                                                                    },
-                                                                    "id": "ada5a92e-8c79-4cb9-a673-bb49cc048fec"
-                                                                }
-                                                            ],
-                                                            "true3": [],
-                                                            "true4": [],
                                                             "true5": [],
                                                             "true6": [],
                                                             "true7": [],
@@ -7313,11 +7170,211 @@
                                                             "true15": [],
                                                             "false": []
                                                         },
-                                                        "id": "a2d8e627-f258-4250-9ad8-a28b3a166a46"
+                                                        "id": "c55330b5-2f49-46d0-867e-58958ed69f6b"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_IF_TRUE",
+                                                        "args": {
+                                                            "variable": "12",
+                                                            "__collapseElse": false,
+                                                            "__label": "If Opponent Has Card"
+                                                        },
+                                                        "children": {
+                                                            "true": [
+                                                                {
+                                                                    "command": "EVENT_VARIABLE_MATH",
+                                                                    "args": {
+                                                                        "vectorX": "25",
+                                                                        "operation": "set",
+                                                                        "other": "rnd",
+                                                                        "vectorY": "V0",
+                                                                        "value": "0",
+                                                                        "minValue": 6,
+                                                                        "maxValue": 8,
+                                                                        "clamp": false,
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "89d4d84e-eeb8-4e87-bac7-a58eef71757f"
+                                                                }
+                                                            ],
+                                                            "false": [
+                                                                {
+                                                                    "command": "EVENT_DEC_VALUE",
+                                                                    "args": {
+                                                                        "variable": "23",
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "e41520c8-79cb-4994-92e9-2f99f4c80c6e"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_VARIABLE_MATH",
+                                                                    "args": {
+                                                                        "vectorX": "25",
+                                                                        "operation": "set",
+                                                                        "other": "rnd",
+                                                                        "vectorY": "V0",
+                                                                        "value": "0",
+                                                                        "minValue": 1,
+                                                                        "maxValue": 5,
+                                                                        "clamp": false,
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "f1182423-b428-42d0-9000-d1dadb0087c2"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "id": "51879e5e-7bcc-4eba-b3eb-0f7c2a1af77a"
                                                     }
                                                 ]
                                             },
                                             "id": "eb47132f-6d37-4e77-8870-80d15c8d42ad"
+                                        },
+                                        {
+                                            "command": "EVENT_SWITCH",
+                                            "args": {
+                                                "variable": "25",
+                                                "choices": 8,
+                                                "__collapseCase0": true,
+                                                "value0": 1,
+                                                "__collapseCase1": true,
+                                                "value1": 2,
+                                                "__collapseCase2": true,
+                                                "value2": 3,
+                                                "__collapseCase3": true,
+                                                "value3": 4,
+                                                "__collapseCase4": true,
+                                                "value4": 5,
+                                                "__collapseCase5": true,
+                                                "value5": 6,
+                                                "__collapseCase6": true,
+                                                "value6": 7,
+                                                "__collapseCase7": true,
+                                                "value7": 8,
+                                                "__collapseCase8": false,
+                                                "value8": 9,
+                                                "__collapseCase9": false,
+                                                "value9": 10,
+                                                "__collapseCase10": false,
+                                                "value10": 11,
+                                                "__collapseCase11": false,
+                                                "value11": 12,
+                                                "__collapseCase12": false,
+                                                "value12": 13,
+                                                "__collapseCase13": false,
+                                                "value13": 14,
+                                                "__collapseCase14": false,
+                                                "value14": 15,
+                                                "__collapseCase15": false,
+                                                "value15": 16,
+                                                "__collapseElse": false,
+                                                "__disableElse": true,
+                                                "__collapse": false,
+                                                "__label": "Display Emotion"
+                                            },
+                                            "children": {
+                                                "true0": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "9df5f63f-ea47-447e-9b14-cb2dbafb697d"
+                                                        },
+                                                        "id": "9f2829a4-b35b-475e-842a-95a0d04b2b79"
+                                                    }
+                                                ],
+                                                "true1": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "d508e529-57eb-458b-9782-66f318243c32"
+                                                        },
+                                                        "id": "71b25ebb-61c6-46fd-b3b9-6fe8141ae108"
+                                                    }
+                                                ],
+                                                "true2": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "70a4ce25-1fe4-4ab1-aee9-21255e70fb76"
+                                                        },
+                                                        "id": "b6283a9b-c265-46b2-b566-daf7e29198f3"
+                                                    }
+                                                ],
+                                                "true3": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "3c769dca-51f3-426c-942f-71c4d3af6202"
+                                                        },
+                                                        "id": "c461238d-c01d-4bb7-a898-4b664d4ce6bd"
+                                                    }
+                                                ],
+                                                "true4": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "2d4b251d-0241-40eb-98e1-e396b236772c"
+                                                        },
+                                                        "id": "4c9e5a8d-e758-4a94-92b1-06e452bd6835"
+                                                    }
+                                                ],
+                                                "true5": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "56423c9c-dca0-4f5b-ad92-28e9660d50f1",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "2a283386-43ea-47f1-b8d2-78e5c03b606b"
+                                                    }
+                                                ],
+                                                "true6": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "f1be2ac3-04ab-482a-8b83-99ffba1a89cd",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "932d3e87-96d5-4f3d-8c04-12bc836782f6"
+                                                    }
+                                                ],
+                                                "true7": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "edf96d29-9a08-4813-b2d3-46e0996f89f2",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "ada5a92e-8c79-4cb9-a673-bb49cc048fec"
+                                                    }
+                                                ],
+                                                "true8": [],
+                                                "true9": [],
+                                                "true10": [],
+                                                "true11": [],
+                                                "true12": [],
+                                                "true13": [],
+                                                "true14": [],
+                                                "true15": [],
+                                                "false": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                        "args": {
+                                                            "actorId": "$self$",
+                                                            "emoteId": "70a4ce25-1fe4-4ab1-aee9-21255e70fb76"
+                                                        },
+                                                        "id": "3b30e7a6-b8a2-406f-80f8-af2f55203f25"
+                                                    }
+                                                ]
+                                            },
+                                            "id": "2c3314d1-bdbf-41f6-933a-32a1ab9ed93f"
                                         }
                                     ]
                                 },
@@ -7330,7 +7387,8 @@
                 {
                     "command": "EVENT_GROUP",
                     "args": {
-                        "__label": "Handle Choice"
+                        "__label": "Handle Choice",
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -7442,109 +7500,62 @@
                 {
                     "command": "EVENT_GROUP",
                     "args": {
-                        "__label": "End Opponent Turn",
-                        "__collapse": false
+                        "__label": "Put Card In Play",
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
                             {
-                                "command": "EVENT_TEXT",
+                                "command": "EVENT_SET_VALUE",
                                 "args": {
-                                    "text": [
-                                        "Call Put Card in Play"
-                                    ],
-                                    "avatarId": ""
+                                    "variable": "28",
+                                    "value": {
+                                        "type": "variable",
+                                        "value": "22"
+                                    }
                                 },
-                                "id": "99760844-e51f-4533-827b-839ad72f6d9e"
+                                "id": "983c378a-06e6-4157-b0b4-8b4ec5a3acd5"
                             },
                             {
-                                "command": "EVENT_GROUP",
-                                "args": {},
-                                "children": {
-                                    "true": [
-                                        {
-                                            "command": "EVENT_TEXT",
-                                            "args": {
-                                                "text": [
-                                                    "Display Text"
-                                                ],
-                                                "avatarId": ""
-                                            },
-                                            "id": "635ed1ed-7ebe-46ea-9d36-0350e461e826"
-                                        },
-                                        {
-                                            "command": "EVENT_SET_VALUE",
-                                            "args": {
-                                                "variable": "28",
-                                                "value": {
-                                                    "type": "variable",
-                                                    "value": "22"
-                                                }
-                                            },
-                                            "id": "983c378a-06e6-4157-b0b4-8b4ec5a3acd5"
-                                        },
-                                        {
-                                            "command": "EVENT_TEXT",
-                                            "args": {
-                                                "text": [
-                                                    "Target: $28$\nScore : $48$\nHand: $41$"
-                                                ],
-                                                "avatarId": ""
-                                            },
-                                            "id": "88567a62-e542-48cf-a412-5fd85949c09f"
-                                        },
-                                        {
-                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                            "args": {
-                                                "customEventId": "ace5a682-821d-44da-b215-d8a329789a7b"
-                                            },
-                                            "id": "0ad5916c-93a9-459b-b3c8-d0d893d72b94"
-                                        },
-                                        {
-                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                            "args": {
-                                                "customEventId": "f00d5edc-a4fb-46f1-8530-5cdbebf99889"
-                                            },
-                                            "id": "b11772e9-9f06-4f78-a042-d8d1dd6f94cc"
-                                        },
-                                        {
-                                            "command": "EVENT_TEXT",
-                                            "args": {
-                                                "text": [
-                                                    "Target: $28$\nScore : $48$\nHand: $41$"
-                                                ],
-                                                "avatarId": ""
-                                            },
-                                            "id": "9d233168-610c-4aa2-a085-1358e06dde98"
-                                        },
-                                        {
-                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                            "args": {
-                                                "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323"
-                                            },
-                                            "id": "729e2808-970a-4a4f-b981-5fff4e4fe522"
-                                        },
-                                        {
-                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                            "args": {
-                                                "customEventId": "10293224-690f-47d7-91f4-613210336605"
-                                            },
-                                            "id": "623b0f0c-6439-4118-b10a-70661e9df0d6"
-                                        }
-                                    ]
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "ace5a682-821d-44da-b215-d8a329789a7b"
                                 },
-                                "id": "3e441a2b-4d97-4ad8-9af4-c63002d29cc2"
+                                "id": "0ad5916c-93a9-459b-b3c8-d0d893d72b94"
                             },
                             {
-                                "command": "EVENT_TEXT",
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
                                 "args": {
-                                    "text": [
-                                        "Movement"
-                                    ],
-                                    "avatarId": ""
+                                    "customEventId": "f00d5edc-a4fb-46f1-8530-5cdbebf99889"
                                 },
-                                "id": "f53bd649-a207-4111-8164-ab476b283b4f"
+                                "id": "b11772e9-9f06-4f78-a042-d8d1dd6f94cc"
                             },
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323"
+                                },
+                                "id": "729e2808-970a-4a4f-b981-5fff4e4fe522"
+                            },
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "10293224-690f-47d7-91f4-613210336605"
+                                },
+                                "id": "623b0f0c-6439-4118-b10a-70661e9df0d6"
+                            }
+                        ]
+                    },
+                    "id": "3e441a2b-4d97-4ad8-9af4-c63002d29cc2"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "End Opponent Turn",
+                        "__collapse": true
+                    },
+                    "children": {
+                        "true": [
                             {
                                 "command": "EVENT_ACTOR_MOVE_TO",
                                 "args": {
@@ -7558,7 +7569,8 @@
                                         "value": 9
                                     },
                                     "moveType": "diagonal",
-                                    "useCollisions": false
+                                    "useCollisions": false,
+                                    "__collapse": true
                                 },
                                 "id": "bc4daaf6-8be0-418f-8c97-3dc5a305f4eb"
                             },
@@ -7569,7 +7581,8 @@
                                     "frame": {
                                         "type": "number",
                                         "value": 0
-                                    }
+                                    },
+                                    "__collapse": true
                                 },
                                 "id": "e7fb339b-4c91-4721-babd-df7ae1e521fa"
                             },
@@ -7599,7 +7612,8 @@
                                         "value": 9
                                     },
                                     "moveType": "horizontal",
-                                    "useCollisions": false
+                                    "useCollisions": false,
+                                    "__collapse": true
                                 },
                                 "id": "c7ebd6ed-8393-435b-b7db-c23a886475b5"
                             }
@@ -16724,9 +16738,88 @@
                 {
                     "command": "EVENT_CALL_CUSTOM_EVENT",
                     "args": {
-                        "customEventId": "5fb2beec-792e-4901-9c4b-e98395a71da3"
+                        "customEventId": "5fb2beec-792e-4901-9c4b-e98395a71da3",
+                        "__comment": true
                     },
                     "id": "2a941226-8107-49c5-bbdc-1b7245334a80"
+                },
+                {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "left",
+                            "up",
+                            "down",
+                            "right"
+                        ],
+                        "override": true,
+                        "__scriptTabs": "press",
+                        "__collapse": true,
+                        "__label": "Remove Player Control"
+                    },
+                    "children": {
+                        "true": []
+                    },
+                    "id": "493c1b30-65b1-4df2-aa79-4eb1f9df19f2"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Change Player to Opponent",
+                        "__collapse": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_ACTOR_SET_FRAME",
+                                "args": {
+                                    "actorId": "$self$",
+                                    "frame": {
+                                        "type": "number",
+                                        "value": 1
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "bddbdb3f-8714-4c84-80ae-9a679fad2e0d"
+                            },
+                            {
+                                "command": "EVENT_ACTOR_MOVE_TO",
+                                "args": {
+                                    "actorId": "$self$",
+                                    "x": {
+                                        "type": "number",
+                                        "value": 18
+                                    },
+                                    "y": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
+                                    "moveType": "diagonal",
+                                    "useCollisions": false
+                                },
+                                "id": "9d597f01-b3df-4fde-9efc-57e0d49dfb96"
+                            }
+                        ]
+                    },
+                    "id": "b7dd1c15-806f-44e1-b7ba-b9da315058be"
+                },
+                {
+                    "command": "EVENT_ACTOR_MOVE_TO",
+                    "args": {
+                        "actorId": "$self$",
+                        "x": {
+                            "type": "number",
+                            "value": 18
+                        },
+                        "y": {
+                            "type": "number",
+                            "value": 9
+                        },
+                        "moveType": "diagonal",
+                        "useCollisions": false,
+                        "__collapse": true
+                    },
+                    "id": "afeabebf-9680-44e4-82f9-3ad4de454440"
                 }
             ]
         },
@@ -17255,7 +17348,7 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 1682,
+        "worldScrollX": 1577,
         "worldScrollY": 954,
         "zoom": 400,
         "customColorsEnabled": true,
@@ -17285,8 +17378,8 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            197,
-            454,
+            196,
+            456,
             279
         ],
         "showNavigator": true,
