@@ -17344,9 +17344,23 @@
                                                     {
                                                         "command": "EVENT_CALL_CUSTOM_EVENT",
                                                         "args": {
+                                                            "customEventId": "3debc8b9-e4e8-4075-bf23-52c76f988bb1"
+                                                        },
+                                                        "id": "d46fe21e-e998-4444-860b-fc197f987b4d"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                        "args": {
                                                             "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866"
                                                         },
                                                         "id": "f49596fb-0d31-4988-af89-228e866a2450"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                        "args": {
+                                                            "customEventId": "c917a83a-f9d8-474f-bd95-879b484ade98"
+                                                        },
+                                                        "id": "c9208af2-0647-4ede-b0b0-bc2d5cdc95f1"
                                                     }
                                                 ],
                                                 "false": [
@@ -17558,6 +17572,13 @@
                                                             "customEventId": "34d252b1-e163-4621-a41a-dfefa051f552"
                                                         },
                                                         "id": "812b0f30-7ac9-4167-96d8-02e371709f83"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                        "args": {
+                                                            "customEventId": "3e9afae1-1f62-40f0-8077-eeb26d277bc0"
+                                                        },
+                                                        "id": "3c4251dc-d99c-4df6-bfad-194fe9a24fa8"
                                                     }
                                                 ],
                                                 "false": [
@@ -18136,7 +18157,7 @@
         "showCollisions": true,
         "showConnections": true,
         "worldScrollX": 1577,
-        "worldScrollY": 954,
+        "worldScrollY": 1007,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -18165,8 +18186,8 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            182,
-            470,
+            179,
+            473,
             279
         ],
         "showNavigator": true,
