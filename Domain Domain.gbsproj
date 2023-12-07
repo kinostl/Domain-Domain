@@ -16888,7 +16888,394 @@
             "variables": {},
             "actors": {},
             "symbol": "script_8",
-            "script": []
+            "script": [
+                {
+                    "command": "EVENT_SET_FLAGS",
+                    "args": {
+                        "variable": "30",
+                        "flag1": true,
+                        "flag2": true,
+                        "flag3": true,
+                        "flag4": true,
+                        "flag5": true,
+                        "flag6": true,
+                        "flag7": true,
+                        "flag8": true,
+                        "flag9": true,
+                        "flag10": true,
+                        "flag11": false,
+                        "flag12": false,
+                        "flag13": false,
+                        "flag14": false,
+                        "flag15": false,
+                        "flag16": false
+                    },
+                    "id": "5c8bbd70-540f-473e-8bb7-dcbd54119658"
+                },
+                {
+                    "command": "EVENT_IF_EXPRESSION",
+                    "args": {
+                        "expression": "$30$ != $11$",
+                        "__collapseElse": true,
+                        "__disableElse": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "30",
+                                    "value": {
+                                        "type": "variable",
+                                        "value": "11"
+                                    }
+                                },
+                                "id": "37e7d4a0-44eb-487e-8706-6bae0cc91ffa"
+                            },
+                            {
+                                "command": "EVENT_LOOP_WHILE",
+                                "args": {
+                                    "expression": "$30$ == $11$"
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH",
+                                            "args": {
+                                                "vectorX": "28",
+                                                "operation": "set",
+                                                "other": "rnd",
+                                                "vectorY": "V0",
+                                                "value": "0",
+                                                "minValue": 1,
+                                                "maxValue": 10,
+                                                "clamp": false,
+                                                "__collapse": true
+                                            },
+                                            "id": "0da0704c-4c6f-4f34-b329-f02fac0b30b0"
+                                        },
+                                        {
+                                            "command": "EVENT_SWITCH",
+                                            "args": {
+                                                "variable": "28",
+                                                "choices": 10,
+                                                "__collapseCase0": false,
+                                                "value0": 1,
+                                                "__collapseCase1": false,
+                                                "value1": 2,
+                                                "__collapseCase2": false,
+                                                "value2": 3,
+                                                "__collapseCase3": false,
+                                                "value3": 4,
+                                                "__collapseCase4": false,
+                                                "value4": 5,
+                                                "__collapseCase5": false,
+                                                "value5": 6,
+                                                "__collapseCase6": false,
+                                                "value6": 7,
+                                                "__collapseCase7": false,
+                                                "value7": 8,
+                                                "__collapseCase8": false,
+                                                "value8": 9,
+                                                "__collapseCase9": false,
+                                                "value9": 10,
+                                                "__collapseCase10": false,
+                                                "value10": 11,
+                                                "__collapseCase11": false,
+                                                "value11": 12,
+                                                "__collapseCase12": false,
+                                                "value12": 13,
+                                                "__collapseCase13": false,
+                                                "value13": 14,
+                                                "__collapseCase14": false,
+                                                "value14": 15,
+                                                "__collapseCase15": false,
+                                                "value15": 16,
+                                                "__collapseElse": false,
+                                                "__disableElse": true,
+                                                "__collapse": true
+                                            },
+                                            "children": {
+                                                "true0": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": true,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "72471222-9b2c-467c-be6d-46548fda2f7d"
+                                                    }
+                                                ],
+                                                "true1": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": true,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "e25ddcd7-f9ad-481b-95ea-c0fe74216a90"
+                                                    }
+                                                ],
+                                                "true2": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": true,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "e3fa1214-2a27-4268-b600-343eae65d229"
+                                                    }
+                                                ],
+                                                "true3": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": true,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "903abe3c-1bd6-4d04-aa61-2af935b70be1"
+                                                    }
+                                                ],
+                                                "true4": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": true,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "b6163fa6-862a-4854-9635-dc72a0617079"
+                                                    }
+                                                ],
+                                                "true5": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": true,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "ff480a62-ee6d-4b7d-a0cf-4661e42eb95c"
+                                                    }
+                                                ],
+                                                "true6": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": true,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "2dc01c25-cca1-4637-841c-0512adcaea93"
+                                                    }
+                                                ],
+                                                "true7": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": true,
+                                                            "flag9": false,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "9cb1ccc6-2e59-4cba-b589-9449b023b61f"
+                                                    }
+                                                ],
+                                                "true8": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": true,
+                                                            "flag10": false,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "8564ea4f-8567-44cb-947d-70b267f83671"
+                                                    }
+                                                ],
+                                                "true9": [
+                                                    {
+                                                        "command": "EVENT_ADD_FLAGS",
+                                                        "args": {
+                                                            "variable": "11",
+                                                            "flag1": false,
+                                                            "flag2": false,
+                                                            "flag3": false,
+                                                            "flag4": false,
+                                                            "flag5": false,
+                                                            "flag6": false,
+                                                            "flag7": false,
+                                                            "flag8": false,
+                                                            "flag9": false,
+                                                            "flag10": true,
+                                                            "flag11": false,
+                                                            "flag12": false,
+                                                            "flag13": false,
+                                                            "flag14": false,
+                                                            "flag15": false,
+                                                            "flag16": false,
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "238affd6-cde4-412a-a2aa-b271d0f15f98"
+                                                    }
+                                                ],
+                                                "true10": [],
+                                                "true11": [],
+                                                "true12": [],
+                                                "true13": [],
+                                                "true14": [],
+                                                "true15": [],
+                                                "false": []
+                                            },
+                                            "id": "26e3bc24-ff65-4a27-a3c6-4fe1ddf53ada"
+                                        }
+                                    ]
+                                },
+                                "id": "73027d71-1a17-4979-9a5c-15a1a4c62dd3"
+                            }
+                        ],
+                        "false": []
+                    },
+                    "id": "46b21eab-5d51-4c2c-b785-926201c5f759"
+                }
+            ]
         },
         {
             "id": "a8e1a44c-4fcc-495c-a22a-6eeda7fa4201",
