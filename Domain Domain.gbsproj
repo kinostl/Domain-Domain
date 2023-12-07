@@ -1653,8 +1653,39 @@
                         {
                             "command": "EVENT_GROUP",
                             "args": {
+                                "__label": "Draw Card",
+                                "__collapse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "5e22d41d-c0bc-4121-af7d-846c4311459d",
+                                            "$variable[V0]$": {
+                                                "type": "variable",
+                                                "value": "T0"
+                                            },
+                                            "__collapse": true
+                                        },
+                                        "id": "d9f13d76-5152-4183-9e88-0ca906ca931d"
+                                    },
+                                    {
+                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                        "args": {
+                                            "customEventId": "34d252b1-e163-4621-a41a-dfefa051f552"
+                                        },
+                                        "id": "091a6de1-b934-4a77-aa18-b13d3c6bb37a"
+                                    }
+                                ]
+                            },
+                            "id": "2c1fbe1a-3a99-4432-b697-8015ccacf298"
+                        },
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
                                 "__label": "Make Play Choice",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "children": {
                                 "true": [
@@ -2238,7 +2269,7 @@
                             "command": "EVENT_GROUP",
                             "args": {
                                 "__label": "End Opponent Turn",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "children": {
                                 "true": [
@@ -2271,6 +2302,50 @@
                                             "__collapse": true
                                         },
                                         "id": "882aaabe-0960-4ab3-bf17-2014ffb8607a"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__label": "Draw Card",
+                                            "__collapse": false
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                    "args": {
+                                                        "customEventId": "5e22d41d-c0bc-4121-af7d-846c4311459d",
+                                                        "$variable[V0]$": {
+                                                            "type": "variable",
+                                                            "value": "T0"
+                                                        },
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "c7ca338b-7821-452a-a378-f3b480f1a2dc"
+                                                },
+                                                {
+                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                    "args": {
+                                                        "customEventId": "41c9277c-5ada-4e70-8706-f11663c5b1f9",
+                                                        "$variable[V0]$": {
+                                                            "type": "variable",
+                                                            "value": "27"
+                                                        },
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "712d4fba-cb8b-4e82-9516-c45020c71b97"
+                                                },
+                                                {
+                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                    "args": {
+                                                        "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "40aa7caa-0492-4ac0-91a1-6ef05a405481"
+                                                }
+                                            ]
+                                        },
+                                        "id": "de3785c0-d402-4a8a-80d5-0c49f98404fc"
                                     },
                                     {
                                         "command": "EVENT_REMOVE_INPUT_SCRIPT",
