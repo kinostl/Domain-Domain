@@ -59,7 +59,7 @@ void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
 void incrementIndex(){
     if((*currentIndex + 1) % tileLength == 0){
-        say += 2;
+        say += 1;
         *currentIndex = (say * tileLength);
     }else{
         *currentIndex += 1;

@@ -5624,7 +5624,7 @@
                                 "command": "FO_EVENT_BULK_SWAP_TILES",
                                 "args": {
                                     "tileAmount": "four",
-                                    "tileMode": "block",
+                                    "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "variable",
                                         "value": "12"
