@@ -3548,6 +3548,27 @@
             "playerSpriteSheetId": "df0d5733-54ee-4d81-a690-202edf78ed85",
             "autoFadeEventCollapse": true,
             "labelColor": ""
+        },
+        {
+            "name": "Scene 2",
+            "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
+            "width": 20,
+            "height": 18,
+            "type": "TOPDOWN",
+            "paletteIds": [],
+            "spritePaletteIds": [],
+            "collisions": [],
+            "autoFadeSpeed": 1,
+            "id": "5f2eb1a2-d485-4389-8bca-3137d0f040d7",
+            "symbol": "scene_2",
+            "x": 271.203125,
+            "y": 161.75,
+            "actors": [],
+            "triggers": [],
+            "script": [],
+            "playerHit1Script": [],
+            "playerHit2Script": [],
+            "playerHit3Script": []
         }
     ],
     "backgrounds": [
@@ -21606,7 +21627,7 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 1880,
+        "worldScrollX": 1032,
         "worldScrollY": 1060,
         "zoom": 400,
         "customColorsEnabled": true,
@@ -21636,8 +21657,8 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            170,
-            482,
+            169,
+            483,
             279
         ],
         "showNavigator": true,

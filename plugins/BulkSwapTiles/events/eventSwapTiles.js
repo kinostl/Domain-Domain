@@ -229,21 +229,21 @@ const fields = [].concat(
 
 const compile = (input, helpers) => {
     const {
-        appendRaw,
         wait,
         warnings,
         _callNative,
         _setConst,
         _setToVariable,
+        _getInd,
         _stackPop,
         _stackPushConst,
-        _reserve,
         backgrounds
     } = helpers;
 
     const loopAmount =  input.tileAmount === "single" ? 1 : 4;
     const iterAmount =  input.tileAmount === "single" ? 1 : 2;
-    const isBlockMode = input.tileMode === "block";
+    const isBlockMode = input.tileAmount === "four" && input.tileMode === "block";
+    const isConsecutiveMode = input.tileAmount === "four" && input.tileMode === "consecutive";
     const hasWait = input.waitFrames != 0
     const items = input.items;
     const skipAmount = isBlockMode ? 2 : loopAmount;
@@ -253,26 +253,35 @@ const compile = (input, helpers) => {
     const bgInfo = backgrounds.find((b) => b.id === input.backgroundId)
     const tileLength = bgInfo.width
     const bgSymbol = bgInfo.symbol
+    const stackSize = 3
 
-    for(let i=0;i<5;i++){_stackPushConst(0)}
+    for(let i=0;i<stackSize;i++){_stackPushConst(0)}
 
     if(swapX.type == "number"){
-      _setConst(".ARG2", swapX.value) //swapX
+      _setConst(".ARG0", swapX.value) //swapX
     }
 
     if(swapX.type == "variable"){
-      _setToVariable(".ARG2", swapX.value) //swapX
+      _setToVariable(".ARG0", swapX.value) //swapX
     }
 
     if(swapY.type == "number"){
-      _setConst(".ARG3", swapY.value) //swapY
+      _setConst(".ARG1", swapY.value) //swapY
     }
 
     if(swapY.type == "variable"){
-      _setToVariable(".ARG3", swapY.value) //swapY
+      _setToVariable(".ARG1", swapY.value) //swapY
     }
 
-    _setConst(".ARG4", tileLength) //tileLength
+    _setConst(".ARG2", tileLength) //tileLength
+    _callNative("setupTileSwap")
+
+    _setConst(".ARG0", `___bank_${bgSymbol}_tileset`)
+    _setConst(".ARG1", `_${bgSymbol}_tileset`)
+
+    _callNative("setupTileMap")
+    _callNative("setupIndex")
+
     for(let j = 1; j <= items; j++){
 
       const x_start = input[`tile${j}_x_start`];
@@ -282,25 +291,22 @@ const compile = (input, helpers) => {
 
       for(let y = y_start ; y <= y_end; y+=iterAmount){
         for(let x = x_start; x <= x_end; x+=iterAmount){
-          _setConst(".ARG1", 0) //skipRows
-          _callNative("putCurrentIndexOnStack")
-          const currentX = [x, x + 1, x,     x + 1];
-          const currentY = [y, y    , y + 1, y + 1];
-          for(let k = 0; k < loopAmount; k++) {
-            appendRaw(`VM_REPLACE_TILE_XY ${currentX[k]}, ${currentY[k]}, ___bank_${bgSymbol}_tileset, _${bgSymbol}_tileset, .ARG0`);
-              if(isBlockMode && k==1){
-                _callNative("handleBlockModeForCurrentIndex")
-              }else if(isBlockMode && k == 3){
-                _callNative("handleTileEdge")
-              }else{
-                _callNative("incrementCurrentIndex")
-              }
+          _setConst(".ARG0", x)
+          _setConst(".ARG1", y)
+          _callNative("setupTarget")
+          if(isBlockMode){
+            _callNative("drawForBlockMode")
+          }else if(isConsecutiveMode){
+            _callNative("drawForConsecutiveMode")
+          }else{
+            _callNative("drawForSingleMode")
           }
         }
       }
       if(hasWait) wait(input.waitFrames)
     }
-    _stackPop(5)
+
+    _stackPop(stackSize)
 };
 
 module.exports = {
