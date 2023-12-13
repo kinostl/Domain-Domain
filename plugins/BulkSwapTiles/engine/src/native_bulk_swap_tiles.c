@@ -33,7 +33,16 @@ void setupTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
     targetY = *(uint8_t*)VM_REF_TO_PTR(FN_ARG1);
 }
 
-void handleBlockDraw(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    sax = swapX;
+    say = swapY;
+    sbx = swapX + 1;
+    sby = swapY + 1;
+
+    tax = targetX;
+    tay = targetY;
+    tbx = targetX + 1;
+    tby = targetY + 1;
 
     *currentIndex = (say * tileLength) + sax;
     vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
@@ -46,36 +55,37 @@ void handleBlockDraw(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     *currentIndex = (sby * tileLength) + sbx;
     vm_replace_tile_xy(THIS, tbx, tby, tileset_bank, tileset, FN_ARG2);
-
 }
 
-void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    THIS;
-    sax = swapX;
-    say = swapY;
-    sbx = swapX + 1;
-    sby = swapY + 1;
-
-    tax = targetX;
-    tay = targetY;
-    tbx = targetX + 1;
-    tby = targetY + 1;
-
-    handleBlockDraw(THIS);
+void incrementIndex(){
+    if((*currentIndex + 1) % tileLength == 0){
+        say += 2;
+        *currentIndex = (say * tileLength);
+    }else{
+        *currentIndex += 1;
+    }
 }
 
 void drawForConsecutiveMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
     sax = swapX;
-    say = swapX + 1;
-    sbx = swapX + 2;
-    sby = swapX + 3;
+    say = swapY;
 
     tax = targetX;
     tay = targetY;
     tbx = targetX + 1;
     tby = targetY + 1;
 
-    handleBlockDraw(THIS);
+    *currentIndex = (say * tileLength) + sax;
+    vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
+
+    incrementIndex();
+    vm_replace_tile_xy(THIS, tbx, tay, tileset_bank, tileset, FN_ARG2);
+
+    incrementIndex();
+    vm_replace_tile_xy(THIS, tax, tby, tileset_bank, tileset, FN_ARG2);
+
+    incrementIndex();
+    vm_replace_tile_xy(THIS, tbx, tby, tileset_bank, tileset, FN_ARG2);
 }
 
 void drawForSingleMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
