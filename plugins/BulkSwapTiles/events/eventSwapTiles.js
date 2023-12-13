@@ -93,21 +93,12 @@ const fields = [].concat(
       defaultValue: 0,
     },
     {
-      key: "tilemapName",
-      label: "Tilemap Name",
-      description: "The tilemap name is the name of the file of the files you want to swap in lowercase without file extensions.",
-      type: "text",
+      key: "backgroundId",
+      label: "Tilemap",
+      description: "The tilemap is the background image with the tiles you want to swap in.",
+      type: "background",
       defaultValue: "",
       flexBasis: "100%",
-    },
-    {
-      key: "tileLength",
-      label: "Length Of Tilemap",
-      description: "How many tiles your tilemap has in the X axis",
-      type: "number",
-      min: 0,
-      width: "50%",
-      defaultValue: 20,
     },
 
     {
@@ -236,8 +227,6 @@ const fields = [].concat(
   ]
 );
 
-let hasLoaded = false
-
 const compile = (input, helpers) => {
     const {
         appendRaw,
@@ -248,7 +237,8 @@ const compile = (input, helpers) => {
         _setToVariable,
         _stackPop,
         _stackPushConst,
-        _reserve
+        _reserve,
+        backgrounds
     } = helpers;
 
     const loopAmount =  input.tileAmount === "single" ? 1 : 4;
@@ -256,12 +246,13 @@ const compile = (input, helpers) => {
     const isBlockMode = input.tileMode === "block";
     const hasWait = input.waitFrames != 0
     const items = input.items;
-    const tilemap = input.tilemapName.toLowerCase();
     const skipAmount = isBlockMode ? 2 : loopAmount;
-    const tileLength = input.tileLength;
 
     const swapX = input[`swap_x`];
     const swapY = input[`swap_y`];
+    const bgInfo = backgrounds.find((b) => b.id === input.backgroundId)
+    const tileLength = bgInfo.width
+    const bgSymbol = bgInfo.symbol
 
     for(let i=0;i<5;i++){_stackPushConst(0)}
 
@@ -296,7 +287,7 @@ const compile = (input, helpers) => {
           const currentX = [x, x + 1, x,     x + 1];
           const currentY = [y, y    , y + 1, y + 1];
           for(let k = 0; k < loopAmount; k++) {
-            appendRaw(`VM_REPLACE_TILE_XY ${currentX[k]}, ${currentY[k]}, ___bank_bg_${tilemap}_tileset, _bg_${tilemap}_tileset, .ARG0`);
+            appendRaw(`VM_REPLACE_TILE_XY ${currentX[k]}, ${currentY[k]}, ___bank_${bgSymbol}_tileset, _${bgSymbol}_tileset, .ARG0`);
               if(isBlockMode && k==1){
                 _callNative("handleBlockModeForCurrentIndex")
               }else if(isBlockMode && k == 3){
