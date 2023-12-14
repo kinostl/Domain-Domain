@@ -302,6 +302,16 @@ const compile = (input, helpers) => {
     _callNative("setupTileMap")
     _callNative("setupIndex")
 
+    let handleDraw
+
+    if(isBlockMode){
+      handleDraw = () => { _callNative("drawForBlockMode") }
+    }else if(isConsecutiveMode){
+      handleDraw = ()=>{ _callNative("drawForConsecutiveMode") }
+    }else{
+      handleDraw = ()=>{ _callNative("drawForSingleMode") }
+    }
+
     for(let j = 1; j <= items; j++){
 
       const x_start = input[`tile${j}_x_start`];
@@ -344,13 +354,7 @@ const compile = (input, helpers) => {
 
       _callNative("setupIterationStop")
 
-      if(isBlockMode){
-        _callNative("drawForBlockMode")
-      }else if(isConsecutiveMode){
-        _callNative("drawForConsecutiveMode")
-      }else{
-        _callNative("drawForSingleMode")
-      }
+      handleDraw()
 
       if(hasWait) wait(input.waitFrames)
     }

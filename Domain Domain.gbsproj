@@ -3560,6 +3560,27 @@
             "playerSpriteSheetId": "df0d5733-54ee-4d81-a690-202edf78ed85",
             "autoFadeEventCollapse": true,
             "labelColor": ""
+        },
+        {
+            "name": "Scene 2",
+            "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
+            "width": 20,
+            "height": 18,
+            "type": "TOPDOWN",
+            "paletteIds": [],
+            "spritePaletteIds": [],
+            "collisions": [],
+            "autoFadeSpeed": 1,
+            "id": "64446b14-9e60-4428-b7fa-344180661b7d",
+            "symbol": "scene_2",
+            "x": 291.453125,
+            "y": 148.75,
+            "actors": [],
+            "triggers": [],
+            "script": [],
+            "playerHit1Script": [],
+            "playerHit2Script": [],
+            "playerHit3Script": []
         }
     ],
     "backgrounds": [
@@ -3757,22 +3778,22 @@
                 0,
                 1,
                 1,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
                 1,
                 1,
                 0,
@@ -3797,22 +3818,22 @@
                 0,
                 1,
                 1,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
                 1,
                 1,
                 0,
@@ -3835,40 +3856,26 @@
                 4,
                 0,
                 0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                5,
-                5,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
                 0,
                 0,
                 5,
@@ -3885,56 +3892,30 @@
                 0,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                3,
-                3,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                3,
-                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
                 0,
                 0,
                 0,
@@ -3957,6 +3938,24 @@
                 0,
                 3,
                 3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
                 0,
                 0,
                 0,
@@ -3973,6 +3972,28 @@
                 0,
                 0,
                 0,
+                0,
+                0,
+                0,
+                0,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
                 3,
                 3,
                 0,
@@ -3997,22 +4018,22 @@
                 0,
                 4,
                 4,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
                 4,
                 4,
                 0,
@@ -4037,22 +4058,22 @@
                 0,
                 4,
                 4,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
                 4,
                 4,
                 0,
@@ -4077,22 +4098,22 @@
                 0,
                 5,
                 5,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
                 5,
                 5,
                 0,
@@ -4117,22 +4138,22 @@
                 0,
                 5,
                 5,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
                 5,
                 5,
                 0,
@@ -5350,9 +5371,9 @@
             "name": "Default BG 3",
             "colors": [
                 "E8A8F8",
-                "E0A878",
+                "78C838",
                 "488818",
-                "002030"
+                "081800"
             ],
             "defaultName": "Default BG 3",
             "defaultColors": [
@@ -5367,9 +5388,9 @@
             "name": "Default BG 4",
             "colors": [
                 "6068D0",
-                "D880D8",
+                "78C838",
                 "488818",
-                "380000"
+                "081800"
             ],
             "defaultName": "Default BG 4",
             "defaultColors": [
@@ -5384,9 +5405,9 @@
             "name": "Default BG 5",
             "colors": [
                 "F85050",
-                "90C8C8",
+                "78C838",
                 "488818",
-                "082048"
+                "081800"
             ],
             "defaultName": "Default BG 5",
             "defaultColors": [
@@ -5401,9 +5422,9 @@
             "name": "Default BG 6",
             "colors": [
                 "80F880",
-                "78C078",
+                "78C838",
                 "488818",
-                "583820"
+                "081800"
             ],
             "defaultName": "Default BG 6",
             "defaultColors": [
@@ -5627,22 +5648,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 2
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 3
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 2
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 3
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -5880,22 +5901,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 2
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 3
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 2
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 3
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -6133,22 +6154,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 2
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 3
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 2
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 3
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -6386,22 +6407,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 2
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 3
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 2
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 3
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -6638,22 +6659,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 2
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 3
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 2
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 3
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -7125,22 +7146,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 4
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -7378,22 +7399,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 6
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -7631,22 +7652,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 8
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -7884,22 +7905,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 10
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -8136,22 +8157,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 12
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -8540,22 +8561,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 13
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -8793,22 +8814,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 13
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -9046,22 +9067,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 13
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -9299,22 +9320,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 13
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -9551,22 +9572,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 13
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -9963,22 +9984,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -10216,22 +10237,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -10469,22 +10490,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -10722,22 +10743,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -10975,22 +10996,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -12065,22 +12086,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -12323,22 +12344,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -12581,22 +12602,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -12839,22 +12860,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -13097,22 +13118,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -13521,22 +13542,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -13779,22 +13800,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -14037,22 +14058,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -14295,22 +14316,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -14553,22 +14574,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -15133,22 +15154,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 16
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 17
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 16
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 17
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -15386,22 +15407,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 16
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 17
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 16
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 17
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -15639,22 +15660,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 16
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 17
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 16
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 17
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -15892,22 +15913,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 16
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 17
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 16
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 17
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -16144,22 +16165,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 16
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 17
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 16
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 17
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -16519,22 +16540,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 14
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 15
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 14
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 15
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -16772,22 +16793,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 14
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 15
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 14
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 15
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -17025,22 +17046,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 14
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 15
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 14
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 15
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -17278,22 +17299,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 14
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 15
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 14
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 15
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -17530,22 +17551,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 14
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 15
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 14
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 15
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -19227,7 +19248,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -19236,22 +19257,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -19485,7 +19506,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -19494,22 +19515,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -19743,7 +19764,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -19752,22 +19773,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -20001,7 +20022,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -20010,22 +20031,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -20259,7 +20280,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -20268,22 +20289,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -20480,7 +20501,7 @@
                                     "tile50_y_start": 0,
                                     "tile50_x_end": 0,
                                     "tile50_y_end": 0,
-                                    "__collapse": true
+                                    "__collapse": false
                                 },
                                 "id": "1eed52ff-d5b0-462b-9858-ca29453eec18"
                             }
@@ -20517,7 +20538,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -20526,22 +20547,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 4
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 5
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 4
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 5
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -20775,7 +20796,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -20784,22 +20805,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 6
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 7
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 6
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 7
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -21033,7 +21054,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -21042,22 +21063,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 8
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 9
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 8
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 9
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -21291,7 +21312,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -21300,22 +21321,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 10
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 11
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 10
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -21549,7 +21570,7 @@
                                     "tileMode": "consecutive",
                                     "swap_x": {
                                         "type": "number",
-                                        "value": 2
+                                        "value": 4
                                     },
                                     "swap_y": {
                                         "type": "number",
@@ -21558,22 +21579,22 @@
                                     "items": 1,
                                     "waitFrames": 0,
                                     "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-				    "tile1_x_start": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_start": {
-					    "type": "number",
-					    "value": 12
-				    },
-				    "tile1_x_end": {
-					    "type": "number",
-					    "value": 11
-				    },
-				    "tile1_y_end": {
-					    "type": "number",
-					    "value": 13
-				    },
+                                    "tile1_x_start": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_start": {
+                                        "type": "number",
+                                        "value": 12
+                                    },
+                                    "tile1_x_end": {
+                                        "type": "number",
+                                        "value": 11
+                                    },
+                                    "tile1_y_end": {
+                                        "type": "number",
+                                        "value": 13
+                                    },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
                                     "tile2_x_end": 0,
@@ -22218,8 +22239,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 1456,
-        "worldScrollY": 901,
+        "worldScrollX": 1032,
+        "worldScrollY": 583,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
