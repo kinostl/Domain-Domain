@@ -124,8 +124,13 @@ const fields = [].concat(
           {
             key: `tile${index}_x_start`,
             label: `Unique Tile ${index}'s First X`,
-            type: "number",
-            defaultValue: 0,
+            type: "union",
+            types: ["number", "variable"],
+            defaultType: "number",
+            defaultValue: {
+              number: 0,
+              variable: "LAST_VARIABLE",
+            },
             width: "50%",
             conditions: [
               {
@@ -141,8 +146,13 @@ const fields = [].concat(
           {
             key: `tile${index}_y_start`,
             label: `Unique Tile ${index}'s First Y`,
-            type: "number",
-            defaultValue: 0,
+            type: "union",
+            types: ["number", "variable"],
+            defaultType: "number",
+            defaultValue: {
+              number: 0,
+              variable: "LAST_VARIABLE",
+            },
             width: "50%",
             conditions: [
               {
@@ -174,8 +184,13 @@ const fields = [].concat(
           {
             key: `tile${index}_x_end`,
             label: `Unique Tile ${index}'s Last X`,
-            type: "number",
-            defaultValue: 0,
+            type: "union",
+            types: ["number", "variable"],
+            defaultType: "number",
+            defaultValue: {
+              number: 0,
+              variable: "LAST_VARIABLE",
+            },
             width: "50%",
             conditions: [
               {
@@ -192,8 +207,13 @@ const fields = [].concat(
           {
             key: `tile${index}_y_end`,
             label: `Unique Tile ${index}'s Last Y`,
-            type: "number",
-            defaultValue: 0,
+            type: "union",
+            types: ["number", "variable"],
+            defaultType: "number",
+            defaultValue: {
+              number: 0,
+              variable: "LAST_VARIABLE",
+            },
             width: "50%",
             conditions: [
               {
@@ -285,24 +305,53 @@ const compile = (input, helpers) => {
     for(let j = 1; j <= items; j++){
 
       const x_start = input[`tile${j}_x_start`];
-      const y_start = input[`tile${j}_y_start`];
-      const x_end = input[`tile${j}_x_end`];
-      const y_end = input[`tile${j}_y_end`];
-
-      for(let y = y_start ; y <= y_end; y+=iterAmount){
-        for(let x = x_start; x <= x_end; x+=iterAmount){
-          _setConst(".ARG0", x)
-          _setConst(".ARG1", y)
-          _callNative("setupTarget")
-          if(isBlockMode){
-            _callNative("drawForBlockMode")
-          }else if(isConsecutiveMode){
-            _callNative("drawForConsecutiveMode")
-          }else{
-            _callNative("drawForSingleMode")
-          }
-        }
+      if(x_start.type == "number"){
+        _setConst(".ARG0", x_start.value) //swapX
       }
+
+      if(x_start.type == "variable"){
+        _setToVariable(".ARG0", x_start.value) //swapX
+      }
+
+      const y_start = input[`tile${j}_y_start`];
+      if(y_start.type == "number"){
+        _setConst(".ARG1", y_start.value) //swapX
+      }
+
+      if(y_start.type == "variable"){
+        _setToVariable(".ARG1", y_start.value) //swapX
+      }
+
+      _callNative("setupIterationStart")
+
+      const x_stop = input[`tile${j}_x_end`];
+      if(x_stop.type == "number"){
+        _setConst(".ARG0", x_stop.value) //swapX
+      }
+
+      if(x_stop.type == "variable"){
+        _setToVariable(".ARG0", x_stop.value) //swapX
+      }
+
+      const y_stop = input[`tile${j}_y_end`];
+      if(y_stop.type == "number"){
+        _setConst(".ARG1", y_stop.value) //swapX
+      }
+
+      if(y_stop.type == "variable"){
+        _setToVariable(".ARG1", y_stop.value) //swapX
+      }
+
+      _callNative("setupIterationStop")
+
+      if(isBlockMode){
+        _callNative("drawForBlockMode")
+      }else if(isConsecutiveMode){
+        _callNative("drawForConsecutiveMode")
+      }else{
+        _callNative("drawForSingleMode")
+      }
+
       if(hasWait) wait(input.waitFrames)
     }
 

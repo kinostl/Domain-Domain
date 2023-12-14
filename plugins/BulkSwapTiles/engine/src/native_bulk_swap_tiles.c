@@ -6,9 +6,10 @@
 
 int16_t *currentIndex;
 
-uint8_t swapX, swapY, targetX, targetY, tileLength;
+uint8_t swapX, swapY, tileLength;
 uint8_t sax, say, sbx, sby;
 uint8_t tax, tay, tbx, tby;
+uint8_t iax, iay, ibx, iby;
 
 uint8_t tileset_bank;
 const tileset_t * tileset;
@@ -28,9 +29,14 @@ void setupIndex(SCRIPT_CTX * THIS) OLDCALL BANKED {
     currentIndex = (int16_t*)VM_REF_TO_PTR(FN_ARG2);
 }
 
-void setupTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    targetX = *(uint8_t*)VM_REF_TO_PTR(FN_ARG0);
-    targetY = *(uint8_t*)VM_REF_TO_PTR(FN_ARG1);
+void setupIterationStart(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    iax = *(uint8_t*)VM_REF_TO_PTR(FN_ARG0);
+    iay = *(uint8_t*)VM_REF_TO_PTR(FN_ARG1);
+}
+
+void setupIterationStop(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    ibx = *(uint8_t*)VM_REF_TO_PTR(FN_ARG0);
+    iby = *(uint8_t*)VM_REF_TO_PTR(FN_ARG1);
 }
 
 void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
@@ -39,22 +45,24 @@ void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
     sbx = swapX + 1;
     sby = swapY + 1;
 
-    tax = targetX;
-    tay = targetY;
-    tbx = targetX + 1;
-    tby = targetY + 1;
+    for(tax = iax; tax <= ibx; tax+=2){
+        tbx = tax + 1;
+        for(tay = iay; tay <= iby; tay+=2){
+            tby = tay + 1;
 
-    *currentIndex = (say * tileLength) + sax;
-    vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
+            *currentIndex = (say * tileLength) + sax;
+            vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
 
-    *currentIndex = (say * tileLength) + sbx;
-    vm_replace_tile_xy(THIS, tbx, tay, tileset_bank, tileset, FN_ARG2);
+            *currentIndex = (say * tileLength) + sbx;
+            vm_replace_tile_xy(THIS, tbx, tay, tileset_bank, tileset, FN_ARG2);
 
-    *currentIndex = (sby * tileLength) + sax;
-    vm_replace_tile_xy(THIS, tax, tby, tileset_bank, tileset, FN_ARG2);
+            *currentIndex = (sby * tileLength) + sax;
+            vm_replace_tile_xy(THIS, tax, tby, tileset_bank, tileset, FN_ARG2);
 
-    *currentIndex = (sby * tileLength) + sbx;
-    vm_replace_tile_xy(THIS, tbx, tby, tileset_bank, tileset, FN_ARG2);
+            *currentIndex = (sby * tileLength) + sbx;
+            vm_replace_tile_xy(THIS, tbx, tby, tileset_bank, tileset, FN_ARG2);
+        }
+    }
 }
 
 void incrementIndex(){
@@ -70,31 +78,36 @@ void drawForConsecutiveMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
     sax = swapX;
     say = swapY;
 
-    tax = targetX;
-    tay = targetY;
-    tbx = targetX + 1;
-    tby = targetY + 1;
+    for(tax = iax; tax <= ibx; tax+=2){
+        tbx = tax + 1;
+        for(tay = iay; tay <= iby; tay+=2){
+            tby = tay + 1;
 
-    *currentIndex = (say * tileLength) + sax;
-    vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
+            *currentIndex = (say * tileLength) + sax;
+            vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
 
-    incrementIndex();
-    vm_replace_tile_xy(THIS, tbx, tay, tileset_bank, tileset, FN_ARG2);
+            incrementIndex();
+            vm_replace_tile_xy(THIS, tbx, tay, tileset_bank, tileset, FN_ARG2);
 
-    incrementIndex();
-    vm_replace_tile_xy(THIS, tax, tby, tileset_bank, tileset, FN_ARG2);
+            incrementIndex();
+            vm_replace_tile_xy(THIS, tax, tby, tileset_bank, tileset, FN_ARG2);
 
-    incrementIndex();
-    vm_replace_tile_xy(THIS, tbx, tby, tileset_bank, tileset, FN_ARG2);
+            incrementIndex();
+            vm_replace_tile_xy(THIS, tbx, tby, tileset_bank, tileset, FN_ARG2);
+        }
+    }
+
 }
 
 void drawForSingleMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
     sax = swapX;
     say = swapY;
 
-    tax = targetX;
-    tay = targetY;
-
     *currentIndex = (say * tileLength) + sax;
-    vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
+
+    for(tax = iax; tax <= ibx; tax+=1){
+        for(tay = iay; tay <= iby; tay+=1){
+            vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
+        }
+    }
 }
