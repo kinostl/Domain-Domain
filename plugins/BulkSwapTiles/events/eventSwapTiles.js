@@ -300,7 +300,6 @@ const compile = (input, helpers) => {
     _setConst(".ARG1", `_${bgSymbol}_tileset`)
 
     _callNative("setupTileMap")
-    _callNative("setupIndex")
 
     let handleDraw
 

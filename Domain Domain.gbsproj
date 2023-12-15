@@ -3050,6 +3050,14 @@
                     "id": "e4e9b49e-1e95-4e98-b367-d2fd8a8ec235"
                 },
                 {
+                    "command": "EVENT_FADE_IN",
+                    "args": {
+                        "speed": "2",
+                        "__collapse": true
+                    },
+                    "id": "2d207858-04bc-4252-ab38-1012de3c4440"
+                },
+                {
                     "command": "FO_EVENT_BULK_SWAP_TILES",
                     "args": {
                         "tileAmount": "single",
@@ -3557,13 +3565,6 @@
                         ]
                     },
                     "id": "4d348814-b34d-402c-8e38-10195e78ae8e"
-                },
-                {
-                    "command": "EVENT_FADE_IN",
-                    "args": {
-                        "speed": "2"
-                    },
-                    "id": "2d207858-04bc-4252-ab38-1012de3c4440"
                 }
             ],
             "playerHit1Script": [],
@@ -3572,27 +3573,6 @@
             "playerSpriteSheetId": "df0d5733-54ee-4d81-a690-202edf78ed85",
             "autoFadeEventCollapse": true,
             "labelColor": ""
-        },
-        {
-            "name": "Scene 2",
-            "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
-            "width": 20,
-            "height": 18,
-            "type": "TOPDOWN",
-            "paletteIds": [],
-            "spritePaletteIds": [],
-            "collisions": [],
-            "autoFadeSpeed": 1,
-            "id": "64446b14-9e60-4428-b7fa-344180661b7d",
-            "symbol": "scene_2",
-            "x": 291.453125,
-            "y": 148.75,
-            "actors": [],
-            "triggers": [],
-            "script": [],
-            "playerHit1Script": [],
-            "playerHit2Script": [],
-            "playerHit3Script": []
         }
     ],
     "backgrounds": [
@@ -7168,11 +7148,11 @@
                                     },
                                     "tile1_x_end": {
                                         "type": "number",
-                                        "value": 6
+                                        "value": 7
                                     },
                                     "tile1_y_end": {
                                         "type": "number",
-                                        "value": 4
+                                        "value": 5
                                     },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
@@ -7421,11 +7401,11 @@
                                     },
                                     "tile1_x_end": {
                                         "type": "number",
-                                        "value": 6
+                                        "value": 7
                                     },
                                     "tile1_y_end": {
                                         "type": "number",
-                                        "value": 6
+                                        "value": 7
                                     },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
@@ -7674,11 +7654,11 @@
                                     },
                                     "tile1_x_end": {
                                         "type": "number",
-                                        "value": 6
+                                        "value": 7
                                     },
                                     "tile1_y_end": {
                                         "type": "number",
-                                        "value": 8
+                                        "value": 9
                                     },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
@@ -7927,11 +7907,11 @@
                                     },
                                     "tile1_x_end": {
                                         "type": "number",
-                                        "value": 6
+                                        "value": 7
                                     },
                                     "tile1_y_end": {
                                         "type": "number",
-                                        "value": 10
+                                        "value": 11
                                     },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
@@ -8179,11 +8159,11 @@
                                     },
                                     "tile1_x_end": {
                                         "type": "number",
-                                        "value": 6
+                                        "value": 7
                                     },
                                     "tile1_y_end": {
                                         "type": "number",
-                                        "value": 12
+                                        "value": 13
                                     },
                                     "tile2_x_start": 0,
                                     "tile2_y_start": 0,
