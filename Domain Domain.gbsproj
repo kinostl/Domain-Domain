@@ -2739,7 +2739,7 @@
                                                             {
                                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                 "args": {
-                                                                    "customEventId": "10293224-690f-47d7-91f4-613210336605"
+                                                                    "customEventId": "784a18f2-e78d-44fc-8984-07ab4c023cc2"
                                                                 },
                                                                 "id": "6f312a5b-dbf4-4e1a-b5ed-805de30aad5a"
                                                             }
@@ -2802,7 +2802,7 @@
                                 "comparator": 0,
                                 "__collapseElse": true,
                                 "__disableElse": true,
-                                "__collapse": true,
+                                "__collapse": false,
                                 "__label": "Handle No Winner"
                             },
                             "children": {
@@ -2811,7 +2811,7 @@
                                         "command": "EVENT_GROUP",
                                         "args": {
                                             "__label": "End Opponent Turn",
-                                            "__collapse": true
+                                            "__collapse": false
                                         },
                                         "children": {
                                             "true": [
@@ -3062,7 +3062,7 @@
                             "type": "number",
                             "value": 2
                         },
-                        "items": 1,
+                        "items": 2,
                         "waitFrames": 0,
                         "tilemapName": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
                         "tile1_x_start": {
@@ -3075,16 +3075,28 @@
                         },
                         "tile1_x_end": {
                             "type": "number",
-                            "value": 11
+                            "value": 8
                         },
                         "tile1_y_end": {
                             "type": "number",
                             "value": 13
                         },
-                        "tile2_x_start": 0,
-                        "tile2_y_start": 0,
-                        "tile2_x_end": 0,
-                        "tile2_y_end": 0,
+                        "tile2_x_start": {
+                            "type": "number",
+                            "value": 11
+                        },
+                        "tile2_y_start": {
+                            "type": "number",
+                            "value": 4
+                        },
+                        "tile2_x_end": {
+                            "type": "number",
+                            "value": 11
+                        },
+                        "tile2_y_end": {
+                            "type": "number",
+                            "value": 13
+                        },
                         "tile3_x_start": 0,
                         "tile3_y_start": 0,
                         "tile3_x_end": 0,
@@ -22239,8 +22251,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 1032,
-        "worldScrollY": 583,
+        "worldScrollX": 1721,
+        "worldScrollY": 901,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -22269,8 +22281,8 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            167,
-            485,
+            157,
+            495,
             279
         ],
         "showNavigator": true,

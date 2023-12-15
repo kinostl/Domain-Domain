@@ -100,14 +100,21 @@ void drawForConsecutiveMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 void drawForSingleMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    uint16_t * target_col = (uint16_t *) VM_REF_TO_PTR(FN_ARG0);
+    uint16_t * target_row = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
+
     sax = swapX;
     say = swapY;
 
     *currentIndex = (say * tileLength) + sax;
 
-    for(tax = iax; tax <= ibx; tax+=1){
-        for(tay = iay; tay <= iby; tay+=1){
-            vm_replace_tile_xy(THIS, tax, tay, tileset_bank, tileset, FN_ARG2);
+    for(tay = iay; tay <= iby; tay+=1){
+        *target_col = iax;
+        *target_row = tay;
+        vm_get_tile_xy(THIS, FN_ARG0, FN_ARG0, FN_ARG1);
+        for(tax = iax; tax <= ibx; tax+=1){
+            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
+            *target_col += 1;
         }
     }
 }
