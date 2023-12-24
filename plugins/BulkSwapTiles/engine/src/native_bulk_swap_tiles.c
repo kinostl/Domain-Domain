@@ -43,9 +43,7 @@ void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
     const uint8_t sby = swapY + 1;
 
     const uint8_t top_left     = (say * tileLength) + sax;
-    const uint8_t top_right    = (say * tileLength) + sbx;
     const uint8_t bottom_left  = (sby * tileLength) + sax;
-    const uint8_t bottom_right = (sby * tileLength) + sbx;
 
     uint8_t tay;
     bool top = true;
@@ -56,30 +54,12 @@ void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
         vm_get_tile_xy(THIS, FN_ARG0, FN_ARG0, FN_ARG1);
         if(top){
             *current_index = top_left;
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
-
-            *current_index = top_right;
-            *target_col += 1;
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
             top = !!!top;
         }else{
             *current_index = bottom_left;
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
-
-            *current_index = bottom_right;
-            *target_col += 1;
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
             top = !!!top;
         }
-    }
-}
-
-void incrementIndex(uint8_t *say, uint16_t *current_index){
-    if((*current_index + 1) % tileLength == 0){
-        *say += 1;
-        *current_index = (*say * tileLength);
-    }else{
-        *current_index += 1;
+        vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 2);
     }
 }
 
@@ -99,22 +79,12 @@ void drawForConsecutiveMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
         vm_get_tile_xy(THIS, FN_ARG0, FN_ARG0, FN_ARG1);
         if(top){
             *current_index = origin;
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
-
-            *target_col += 1;
-            incrementIndex(&say, current_index);
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
             top = !!!top;
         }else{
             *current_index = origin+2;
-            incrementIndex(&say, current_index);
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
-
-            *target_col += 1;
-            incrementIndex(&say, current_index);
-            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 1);
             top = !!!top;
         }
+        vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 2);
     }
 
 }
