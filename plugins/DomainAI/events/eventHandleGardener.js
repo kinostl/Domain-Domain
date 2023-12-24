@@ -25,18 +25,17 @@ const compile = (input, helpers) => {
         _setVariable,
         _setToVariable,
         _stackPop,
-        _stackPushConst
+        _reserve
     } = helpers;
 
 
     const stackSize = 2;
-
-    for(let i=0;i<stackSize;i++){_stackPushConst(0)}
+    _reserve(stackSize);
     _setToVariable(".ARG0", input.validChoices);
     _setToVariable(".ARG1", input.targetCard);
     _callNative("handleCirno");
     _setVariable(input.targetCard, ".ARG1");
-    _stackPop(stackSize);
+    _reserve(stackSize * -1);
 };
 
 
