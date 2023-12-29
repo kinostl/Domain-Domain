@@ -87,7 +87,7 @@ uint16_t get_random_card(uint16_t cards_in_hand){
 
 void handleCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
     /*
-     * Blue AI - Garden
+     * Blue AI - Garden or Flower
      * Action Priority:
      *  1. Play Blue
      *  2. Play Randomly
@@ -102,3 +102,47 @@ void handleCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
         *card_choice = get_random_card(cards_in_hand);
     }
 }
+
+/*
+```
+Green AI - Bloom Green and Garden Balance
+Action Priority:
+1. Play Green
+2. Protect Unprotected
+3. Fill Empty Plots
+```
+
+Green now protects your colors with "The next time this would wither, it will bloom instead."
+*/
+
+/*
+```
+Yellow AI - Garden and Bloom Yellow
+Action Priority:
+1. Play White
+2. Block Unblocked
+3. Play Empty Slots
+```
+
+Yellow no longer has the ability to protect. It can only block.
+*/
+
+/*
+```
+Purple AI - Bloom
+Action Priority:
+1. Play Purple
+2. Prevent Opponent's Options
+  a. Remove a card that has an empty plot
+  b. Remove a card that opponent has the least of
+```
+*/
+
+/*
+```
+Garden AI - Garden
+Action Priority:
+1. Play Empty Plots
+2. Optimize every play's choices?
+```
+*/
