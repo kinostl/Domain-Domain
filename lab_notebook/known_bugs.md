@@ -1,9 +1,0 @@
-- Opponent's Barriers do nothing.
-- When Player Plays Red when no targets are available, the game soft locks
-- Opponent's Green Doesn't Recover?
-- If Player Draws something that doesn't exist, their turn ends?
-- Drawing >5 doesn't show correctly.
-- Fields don't reset after match
-- Hands don't reset after match
-- Opponent's Red destroys card but doesn't update the drawing
-- Sometimes the player turn is just skipped.
