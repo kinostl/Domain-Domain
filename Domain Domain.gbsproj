@@ -5067,7 +5067,7 @@
                                 "comparator": "0",
                                 "__collapseElse": true,
                                 "__disableElse": true,
-                                "__collapse": true,
+                                "__collapse": false,
                                 "__label": "Do Turn If No Winner"
                             },
                             "children": {
@@ -25538,11 +25538,59 @@
                     "id": "e76c89f9-56fa-4fac-bf40-484dd77c0d7a"
                 },
                 {
-                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "command": "EVENT_GROUP",
                     "args": {
-                        "customEventId": "8dc2885e-3d13-4b0c-9f79-dbb0559c7984"
+                        "__label": "Put Card In Play",
+                        "__collapse": true
                     },
-                    "id": "8e947c0a-e356-47bd-9c08-9f4e4a5339f7"
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "28",
+                                    "value": {
+                                        "type": "variable",
+                                        "value": "31"
+                                    }
+                                },
+                                "id": "a150d870-50cb-4964-a64c-8e26c9e40367"
+                            },
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "3bd4ae54-a9fa-4366-8ef6-2539621cc087"
+                                },
+                                "id": "6ef77d65-3505-44fb-ba17-989730337a2f"
+                            },
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "73970f12-0947-4c62-833a-07c7adbc5cff",
+                                    "$variable[V0]$": {
+                                        "type": "variable",
+                                        "value": "31"
+                                    }
+                                },
+                                "id": "2e84f41a-2581-4c0a-9620-9d6f138df150"
+                            },
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "a4652bcb-8fa9-46d4-b7b2-d4fd7e5f77cf"
+                                },
+                                "id": "c2c958a8-70fb-4777-999b-07a36ee7a23a"
+                            },
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866"
+                                },
+                                "id": "39e36399-d653-424e-937f-6a6973027891"
+                            }
+                        ]
+                    },
+                    "id": "92e4250d-2aee-46a9-a32f-a7b417b87c0f"
                 },
                 {
                     "command": "EVENT_CALL_CUSTOM_EVENT",

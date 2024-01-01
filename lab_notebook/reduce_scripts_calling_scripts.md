@@ -128,4 +128,18 @@ Assume we do that the list will look like this.
 
 - Draw Opponent Hand
 
-Put Card In Play is probably the biggest issue here, it has a lot of calls and absolutely needs to be used in multiple places.
+
+## Call Grid
+
+- Enable Player is only called in Prepare Player
+- End Player Turn is in 14 places
+- Put Card In Play is only in End Player Turn
+- Reveal Opponent Hand is in 5 places
+
+
+## Fixing
+
+- Enable Player is not called anywhere or Prepare Player is commented out
+- End Player Turn still in 14 places
+- Put Card In Play moved to End Player Turn
+- Reveal Opponent Hand is stil in 5 places
