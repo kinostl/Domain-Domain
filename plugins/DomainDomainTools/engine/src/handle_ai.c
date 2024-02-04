@@ -1,9 +1,7 @@
 #pragma bank 255
 
 #include "vm.h"
-#include "vm_gameboy.h"
 #include <rand.h>
-#include <stdlib.h>
 
 /***
  *
