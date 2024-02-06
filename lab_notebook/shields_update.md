@@ -28,3 +28,21 @@ Green = Protect
 # Clean Up
 
 Need to simplify the setter function now, it isn't doing comparisons or complex movement anymore.
+
+Simplified it enough. Still need to add the logic for the opponents'.
+
+Opponent Check For White Shields Good
+
+Need to Check for Green Shields?
+
+Okay looks like I already changed Forest to be a shield for Opponents.
+
+Opponent Setup for playing their own shields, need to update Opponent to be countered correctly. The need to do the same for player.
+
+Need to update the checker for Mountain and Skull
+
+Skull complete. Need to do Flame now.
+
+Did it by making a "Check for Green Shields" script, and making the counter effect be playerhandinc + playerscoreinc & drawings
+
+Mountain handled. Disable old counter check, added another "Player Score Increment" to the counter state.
