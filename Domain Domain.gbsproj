@@ -1132,8 +1132,66 @@
                                                             {
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
-                                                                    "__label": "Make Shield",
+                                                                    "__label": "White Counter Card",
                                                                     "__collapse": false
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_SET_VALUE",
+                                                                            "args": {
+                                                                                "variable": "32",
+                                                                                "value": {
+                                                                                    "type": "number",
+                                                                                    "value": 1
+                                                                                },
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "eaff4422-45a5-4175-9c5e-5f157fab8696"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CLEAR_FLAGS",
+                                                                            "args": {
+                                                                                "variable": "11",
+                                                                                "flag1": false,
+                                                                                "flag2": false,
+                                                                                "flag3": false,
+                                                                                "flag4": false,
+                                                                                "flag5": false,
+                                                                                "flag6": true,
+                                                                                "flag7": false,
+                                                                                "flag8": false,
+                                                                                "flag9": false,
+                                                                                "flag10": false,
+                                                                                "flag11": false,
+                                                                                "flag12": false,
+                                                                                "flag13": false,
+                                                                                "flag14": false,
+                                                                                "flag15": false,
+                                                                                "flag16": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "id": "7c1cd0a6-b458-4947-a351-f21507103288"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "fb598faa-735c-417b-b264-d2c0f09dc47e"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "id": "d440b95f-6525-44e9-88b2-da24d139a748"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "EVENT_GROUP",
+                                                                "args": {
+                                                                    "__label": "Make Shield",
+                                                                    "__collapse": true
                                                                 },
                                                                 "children": {
                                                                     "true": [
@@ -2688,39 +2746,6 @@
                                                                 },
                                                                 "id": "88618026-350c-405a-ae9f-2fc22a477e72"
                                                             }
-                                                        ],
-                                                        "false": [
-                                                            {
-                                                                "command": "EVENT_GROUP",
-                                                                "args": {
-                                                                    "__label": "White Counter Card"
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "32",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 1
-                                                                                },
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "eaff4422-45a5-4175-9c5e-5f157fab8696"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "fb598faa-735c-417b-b264-d2c0f09dc47e"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "d440b95f-6525-44e9-88b2-da24d139a748"
-                                                            }
                                                         ]
                                                     },
                                                     "id": "6393703b-e916-457f-92c6-cfc3b317a246"
@@ -2797,6 +2822,64 @@
                                                     },
                                                     "children": {
                                                         "true": [
+                                                            {
+                                                                "command": "EVENT_GROUP",
+                                                                "args": {
+                                                                    "__label": "White Counter Card",
+                                                                    "__collapse": false
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_SET_VALUE",
+                                                                            "args": {
+                                                                                "variable": "32",
+                                                                                "value": {
+                                                                                    "type": "number",
+                                                                                    "value": 1
+                                                                                },
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "07ed712f-dc08-458b-9e89-54e964944003"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CLEAR_FLAGS",
+                                                                            "args": {
+                                                                                "variable": "11",
+                                                                                "flag1": false,
+                                                                                "flag2": false,
+                                                                                "flag3": false,
+                                                                                "flag4": false,
+                                                                                "flag5": false,
+                                                                                "flag6": false,
+                                                                                "flag7": true,
+                                                                                "flag8": false,
+                                                                                "flag9": false,
+                                                                                "flag10": false,
+                                                                                "flag11": false,
+                                                                                "flag12": false,
+                                                                                "flag13": false,
+                                                                                "flag14": false,
+                                                                                "flag15": false,
+                                                                                "flag16": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "id": "807c2e82-6b91-4c4b-b703-3d5bd2ea9b85"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "3b873ac4-ce76-4596-b3d4-d2cc63e247db"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "id": "0a04530b-5615-4b9b-b982-2ef581b5077a"
+                                                            }
+                                                        ],
+                                                        "false": [
                                                             {
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
@@ -3048,40 +3131,6 @@
                                                                 },
                                                                 "id": "7c9df6c4-c175-4de7-b9f9-7c1a291baff2"
                                                             }
-                                                        ],
-                                                        "false": [
-                                                            {
-                                                                "command": "EVENT_GROUP",
-                                                                "args": {
-                                                                    "__label": "White Counter Card",
-                                                                    "__collapse": true
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "32",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 1
-                                                                                },
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "07ed712f-dc08-458b-9e89-54e964944003"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "3b873ac4-ce76-4596-b3d4-d2cc63e247db"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "0a04530b-5615-4b9b-b982-2ef581b5077a"
-                                                            }
                                                         ]
                                                     },
                                                     "id": "1637a432-83de-426e-a507-ee51bd070952"
@@ -3160,6 +3209,63 @@
                                                             {
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
+                                                                    "__label": "White Counter Card",
+                                                                    "__collapse": false
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_SET_VALUE",
+                                                                            "args": {
+                                                                                "variable": "32",
+                                                                                "value": {
+                                                                                    "type": "number",
+                                                                                    "value": 1
+                                                                                },
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "5c4325bb-0ba2-4216-ac46-2a537c5ff858"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CLEAR_FLAGS",
+                                                                            "args": {
+                                                                                "variable": "11",
+                                                                                "flag1": false,
+                                                                                "flag2": false,
+                                                                                "flag3": false,
+                                                                                "flag4": false,
+                                                                                "flag5": false,
+                                                                                "flag6": false,
+                                                                                "flag7": false,
+                                                                                "flag8": true,
+                                                                                "flag9": false,
+                                                                                "flag10": false,
+                                                                                "flag11": false,
+                                                                                "flag12": false,
+                                                                                "flag13": false,
+                                                                                "flag14": false,
+                                                                                "flag15": false,
+                                                                                "flag16": false
+                                                                            },
+                                                                            "id": "1a88a93f-bb40-4f95-8777-d2909785f870"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "64740b3f-f885-4b3a-a5e4-81a88f79b131"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "id": "a00e98ed-5abb-4088-baec-5497cd700981"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "EVENT_GROUP",
+                                                                "args": {
                                                                     "__label": "Draw Card",
                                                                     "__collapse": true
                                                                 },
@@ -3200,40 +3306,6 @@
                                                                     ]
                                                                 },
                                                                 "id": "23b11e6b-a3d8-4a3e-b974-a7a363c7df2f"
-                                                            }
-                                                        ],
-                                                        "false": [
-                                                            {
-                                                                "command": "EVENT_GROUP",
-                                                                "args": {
-                                                                    "__label": "White Counter Card",
-                                                                    "__collapse": true
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "32",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 1
-                                                                                },
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "5c4325bb-0ba2-4216-ac46-2a537c5ff858"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "64740b3f-f885-4b3a-a5e4-81a88f79b131"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "a00e98ed-5abb-4088-baec-5497cd700981"
                                                             }
                                                         ]
                                                     },
@@ -3310,11 +3382,68 @@
                                                     "children": {
                                                         "true": [
                                                             {
+                                                                "command": "EVENT_GROUP",
+                                                                "args": {
+                                                                    "__label": "White Counter Card",
+                                                                    "__collapse": false
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_SET_VALUE",
+                                                                            "args": {
+                                                                                "variable": "32",
+                                                                                "value": {
+                                                                                    "type": "number",
+                                                                                    "value": 1
+                                                                                },
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "067e0ee2-0b96-4fcd-9919-4bd3b55fb549"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CLEAR_FLAGS",
+                                                                            "args": {
+                                                                                "variable": "11",
+                                                                                "flag1": false,
+                                                                                "flag2": false,
+                                                                                "flag3": false,
+                                                                                "flag4": false,
+                                                                                "flag5": false,
+                                                                                "flag6": false,
+                                                                                "flag7": false,
+                                                                                "flag8": false,
+                                                                                "flag9": true,
+                                                                                "flag10": false,
+                                                                                "flag11": false,
+                                                                                "flag12": false,
+                                                                                "flag13": false,
+                                                                                "flag14": false,
+                                                                                "flag15": false,
+                                                                                "flag16": false
+                                                                            },
+                                                                            "id": "3acfe307-73c8-4d3b-93d1-a88bea7a78b4"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "329226a2-1e3e-463d-9176-3e2a023308ee"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "id": "a0765756-0de1-405c-9731-61cc559d6e4f"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
                                                                 "command": "EVENT_IF_EXPRESSION",
                                                                 "args": {
                                                                     "expression": "(\n$34$ > 0 ||\n$47$ > 0 ||\n$48$ > 0 ||\n$42$ > 0 ||\n$50$ > 0 \n)",
                                                                     "__collapseElse": false,
-                                                                    "__collapse": false,
+                                                                    "__collapse": true,
                                                                     "__label": "Wither Score"
                                                                 },
                                                                 "children": {
@@ -3593,40 +3722,6 @@
                                                                     ]
                                                                 },
                                                                 "id": "afdb0b03-c4ae-4c2e-99f3-42eab2a2933b"
-                                                            }
-                                                        ],
-                                                        "false": [
-                                                            {
-                                                                "command": "EVENT_GROUP",
-                                                                "args": {
-                                                                    "__label": "White Counter Card",
-                                                                    "__collapse": true
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "32",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 1
-                                                                                },
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "067e0ee2-0b96-4fcd-9919-4bd3b55fb549"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "329226a2-1e3e-463d-9176-3e2a023308ee"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "a0765756-0de1-405c-9731-61cc559d6e4f"
                                                             }
                                                         ]
                                                     },
@@ -3969,6 +4064,64 @@
                                                     },
                                                     "children": {
                                                         "true": [
+                                                            {
+                                                                "command": "EVENT_GROUP",
+                                                                "args": {
+                                                                    "__label": "White Counter Card",
+                                                                    "__collapse": false
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_SET_VALUE",
+                                                                            "args": {
+                                                                                "variable": "32",
+                                                                                "value": {
+                                                                                    "type": "number",
+                                                                                    "value": 1
+                                                                                },
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "442a1d58-0f8c-47a9-b3e8-15b61c74fd8e"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CLEAR_FLAGS",
+                                                                            "args": {
+                                                                                "variable": "11",
+                                                                                "flag1": false,
+                                                                                "flag2": false,
+                                                                                "flag3": false,
+                                                                                "flag4": false,
+                                                                                "flag5": false,
+                                                                                "flag6": false,
+                                                                                "flag7": false,
+                                                                                "flag8": false,
+                                                                                "flag9": false,
+                                                                                "flag10": true,
+                                                                                "flag11": false,
+                                                                                "flag12": false,
+                                                                                "flag13": false,
+                                                                                "flag14": false,
+                                                                                "flag15": false,
+                                                                                "flag16": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "id": "24c7f760-93cb-4414-ae99-4bf1447bedbd"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "d4f1ca3d-e61c-445a-910f-e39a639f5db5"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "id": "ffd6b407-c26c-452d-9b50-f548d3a6cd3c"
+                                                            }
+                                                        ],
+                                                        "false": [
                                                             {
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
@@ -5527,40 +5680,6 @@
                                                                     ]
                                                                 },
                                                                 "id": "e252de37-a505-44f1-85ef-03e5320a3ad4"
-                                                            }
-                                                        ],
-                                                        "false": [
-                                                            {
-                                                                "command": "EVENT_GROUP",
-                                                                "args": {
-                                                                    "__label": "White Counter Card",
-                                                                    "__collapse": true
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "32",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 1
-                                                                                },
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "442a1d58-0f8c-47a9-b3e8-15b61c74fd8e"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "d4f1ca3d-e61c-445a-910f-e39a639f5db5"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "ffd6b407-c26c-452d-9b50-f548d3a6cd3c"
                                                             }
                                                         ]
                                                     },
@@ -26137,7 +26256,13 @@
             "id": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
             "name": "End Player Turn",
             "description": "",
-            "variables": {},
+            "variables": {
+                "V0": {
+                    "id": "V0",
+                    "name": "Variable A",
+                    "passByReference": true
+                }
+            },
             "actors": {},
             "symbol": "script_29",
             "script": [
@@ -26267,7 +26392,7 @@
                                         {
                                             "command": "EVENT_IF_VALUE",
                                             "args": {
-                                                "variable": "32",
+                                                "variable": "V0",
                                                 "operator": "==",
                                                 "comparator": 2,
                                                 "__collapseElse": true,
@@ -26286,7 +26411,7 @@
                                                 ],
                                                 "false": []
                                             },
-                                            "id": "c952acf8-1032-4cb6-a5b7-144ed95f1003"
+                                            "id": "7dba4955-41bb-496f-9560-11bed11a8fdd"
                                         }
                                     ]
                                 },
@@ -31106,6 +31231,29 @@
                                                 "__collapse": true
                                             },
                                             "id": "5e326e7d-bda7-43f7-8b98-cb58e89ba657"
+                                        },
+                                        {
+                                            "command": "EVENT_CLEAR_FLAGS",
+                                            "args": {
+                                                "variable": "11",
+                                                "flag1": true,
+                                                "flag2": false,
+                                                "flag3": false,
+                                                "flag4": false,
+                                                "flag5": false,
+                                                "flag6": false,
+                                                "flag7": false,
+                                                "flag8": false,
+                                                "flag9": false,
+                                                "flag10": false,
+                                                "flag11": false,
+                                                "flag12": false,
+                                                "flag13": false,
+                                                "flag14": false,
+                                                "flag15": false,
+                                                "flag16": false
+                                            },
+                                            "id": "fee9414b-508d-4298-aa9c-d2c7e6e9483a"
                                         }
                                     ],
                                     "false": []
@@ -31135,6 +31283,29 @@
                                                 "__collapse": true
                                             },
                                             "id": "782dd8b3-70c9-4a63-ac59-db3efbb62682"
+                                        },
+                                        {
+                                            "command": "EVENT_CLEAR_FLAGS",
+                                            "args": {
+                                                "variable": "11",
+                                                "flag1": false,
+                                                "flag2": true,
+                                                "flag3": false,
+                                                "flag4": false,
+                                                "flag5": false,
+                                                "flag6": false,
+                                                "flag7": false,
+                                                "flag8": false,
+                                                "flag9": false,
+                                                "flag10": false,
+                                                "flag11": false,
+                                                "flag12": false,
+                                                "flag13": false,
+                                                "flag14": false,
+                                                "flag15": false,
+                                                "flag16": false
+                                            },
+                                            "id": "40cadc55-838f-4481-b1cc-164f125df808"
                                         }
                                     ],
                                     "false": []
@@ -31164,6 +31335,29 @@
                                                 "__collapse": true
                                             },
                                             "id": "69f0a845-8e70-4b7e-8372-c8062c6252a4"
+                                        },
+                                        {
+                                            "command": "EVENT_CLEAR_FLAGS",
+                                            "args": {
+                                                "variable": "11",
+                                                "flag1": false,
+                                                "flag2": false,
+                                                "flag3": true,
+                                                "flag4": false,
+                                                "flag5": false,
+                                                "flag6": false,
+                                                "flag7": false,
+                                                "flag8": false,
+                                                "flag9": false,
+                                                "flag10": false,
+                                                "flag11": false,
+                                                "flag12": false,
+                                                "flag13": false,
+                                                "flag14": false,
+                                                "flag15": false,
+                                                "flag16": false
+                                            },
+                                            "id": "480b7d9f-efe9-422e-a518-ab00c81a1dba"
                                         }
                                     ],
                                     "false": []
@@ -31193,6 +31387,29 @@
                                                 "__collapse": true
                                             },
                                             "id": "c4aac791-9cd5-485c-ba50-d9fa31b6c080"
+                                        },
+                                        {
+                                            "command": "EVENT_CLEAR_FLAGS",
+                                            "args": {
+                                                "variable": "11",
+                                                "flag1": false,
+                                                "flag2": false,
+                                                "flag3": false,
+                                                "flag4": true,
+                                                "flag5": false,
+                                                "flag6": false,
+                                                "flag7": false,
+                                                "flag8": false,
+                                                "flag9": false,
+                                                "flag10": false,
+                                                "flag11": false,
+                                                "flag12": false,
+                                                "flag13": false,
+                                                "flag14": false,
+                                                "flag15": false,
+                                                "flag16": false
+                                            },
+                                            "id": "09311592-b4c5-417c-896b-e74e143e938a"
                                         }
                                     ],
                                     "false": []
@@ -31222,6 +31439,29 @@
                                                 "__collapse": true
                                             },
                                             "id": "31a15611-88bf-43cb-afb8-b8c574548f25"
+                                        },
+                                        {
+                                            "command": "EVENT_CLEAR_FLAGS",
+                                            "args": {
+                                                "variable": "11",
+                                                "flag1": false,
+                                                "flag2": false,
+                                                "flag3": false,
+                                                "flag4": false,
+                                                "flag5": true,
+                                                "flag6": false,
+                                                "flag7": false,
+                                                "flag8": false,
+                                                "flag9": false,
+                                                "flag10": false,
+                                                "flag11": false,
+                                                "flag12": false,
+                                                "flag13": false,
+                                                "flag14": false,
+                                                "flag15": false,
+                                                "flag16": false
+                                            },
+                                            "id": "29eba934-2a79-41b0-9030-e06622f15d52"
                                         }
                                     ],
                                     "false": []
@@ -31695,7 +31935,7 @@
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
         "worldScrollX": 1678,
-        "worldScrollY": 424,
+        "worldScrollY": 848,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -31724,9 +31964,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            105,
-            550,
-            276
+            111,
+            582,
+            292
         ],
         "showNavigator": true,
         "defaultFontId": "4bd653f0-e08d-424e-9e5b-c1f3aaa21e47",
