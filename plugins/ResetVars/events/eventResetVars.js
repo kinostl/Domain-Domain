@@ -36,11 +36,13 @@ const compile = (input, helpers) => {
     const {
         _setVariableConst,
         _addComment,
-        _addNL
+        _addNL,
+        getVariableAlias
     } = helpers;
     _addComment('Reset Some Variables')
     for(let i=0; i<input['items'];i++){
-        _setVariableConst(input[`variable${i}`], 0);
+        const variableAlias = getVariableAlias(input[`variable${i}`]);
+        _setVariableConst(variableAlias, 0);
     }
     _addNL()
 };

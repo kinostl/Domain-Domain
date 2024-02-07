@@ -31,6 +31,8 @@ Need to simplify the setter function now, it isn't doing comparisons or complex 
 
 Simplified it enough. Still need to add the logic for the opponents'.
 
+# Implement
+
 Opponent Check For White Shields Good
 
 Need to Check for Green Shields?
@@ -46,3 +48,13 @@ Skull complete. Need to do Flame now.
 Did it by making a "Check for Green Shields" script, and making the counter effect be playerhandinc + playerscoreinc & drawings
 
 Mountain handled. Disable old counter check, added another "Player Score Increment" to the counter state.
+
+Tested green shield - Works when player places it.
+
+# Implement Opponent Can Counter Too
+
+Looks like I actually thought ahead on this and made an End Player Turn that handles playing the card. I can just do a check there.
+
+Mountain and Swamp Opponent Action needs to clear green barriers.
+
+Don't know why I made 3 Stop Wrapper Plugins, but I did. Anyway, White Barrier Code is done now. Just had to wrap the cards' actions into an "if has flag ? action : end turn" and update end turn to account for a countered card.
