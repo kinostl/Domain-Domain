@@ -58,3 +58,5 @@ Looks like I actually thought ahead on this and made an End Player Turn that han
 Mountain and Swamp Opponent Action needs to clear green barriers.
 
 Don't know why I made 3 Stop Wrapper Plugins, but I did. Anyway, White Barrier Code is done now. Just had to wrap the cards' actions into an "if has flag ? action : end turn" and update end turn to account for a countered card.
+
+Mountains needed something similar. All thats left is testing the changes?

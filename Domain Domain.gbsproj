@@ -2801,7 +2801,7 @@
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
                                                                     "__label": "Force Discard",
-                                                                    "__collapse": true
+                                                                    "__collapse": false
                                                                 },
                                                                 "children": {
                                                                     "true": [
@@ -2853,14 +2853,15 @@
                                                                                                     "command": "EVENT_GROUP",
                                                                                                     "args": {
                                                                                                         "__label": "Swamp-Handle",
-                                                                                                        "__collapse": true
+                                                                                                        "__collapse": false
                                                                                                     },
                                                                                                     "children": {
                                                                                                         "true": [
                                                                                                             {
                                                                                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                                 "args": {
-                                                                                                                    "customEventId": "f00d5edc-a4fb-46f1-8530-5cdbebf99889"
+                                                                                                                    "customEventId": "f00d5edc-a4fb-46f1-8530-5cdbebf99889",
+                                                                                                                    "__collapse": true
                                                                                                                 },
                                                                                                                 "id": "ea48775b-8822-456c-b15c-b891ceaf84d3"
                                                                                                             },
@@ -2873,45 +2874,93 @@
                                                                                                                 "children": {
                                                                                                                     "true": [
                                                                                                                         {
-                                                                                                                            "command": "EVENT_ACTOR_EMOTE",
-                                                                                                                            "args": {
-                                                                                                                                "actorId": "$self$",
-                                                                                                                                "emoteId": "56423c9c-dca0-4f5b-ad92-28e9660d50f1",
-                                                                                                                                "__collapse": true
-                                                                                                                            },
-                                                                                                                            "id": "ef743498-f629-40f9-b69c-8e8a4d210054"
-                                                                                                                        },
-                                                                                                                        {
                                                                                                                             "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                                             "args": {
-                                                                                                                                "customEventId": "99701aad-5f7b-4968-bd89-e8670e8ef597",
+                                                                                                                                "customEventId": "cd5690e5-7e47-4b76-8b5a-88e66cd04fb7",
                                                                                                                                 "__collapse": true
                                                                                                                             },
-                                                                                                                            "id": "d2362684-057e-4ca3-8ca8-1c553a3fa895"
+                                                                                                                            "id": "f48ff780-c85b-4f86-a705-3f94fd314a7a"
                                                                                                                         },
                                                                                                                         {
-                                                                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                            "command": "EVENT_IF_VALUE",
                                                                                                                             "args": {
-                                                                                                                                "customEventId": "10293224-690f-47d7-91f4-613210336605",
-                                                                                                                                "__collapse": true
+                                                                                                                                "variable": "32",
+                                                                                                                                "operator": "==",
+                                                                                                                                "comparator": 2,
+                                                                                                                                "__collapseElse": false
                                                                                                                             },
-                                                                                                                            "id": "6d59c9d1-57e8-4a17-8b94-3bec680fbe4e"
-                                                                                                                        },
-                                                                                                                        {
-                                                                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                                                                            "args": {
-                                                                                                                                "customEventId": "3e9afae1-1f62-40f0-8077-eeb26d277bc0",
-                                                                                                                                "__collapse": true
+                                                                                                                            "children": {
+                                                                                                                                "true": [
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                                        "args": {
+                                                                                                                                            "customEventId": "34d252b1-e163-4621-a41a-dfefa051f552",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "c33c348d-df59-4748-b517-11653c482775"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                                        "args": {
+                                                                                                                                            "customEventId": "ace5a682-821d-44da-b215-d8a329789a7b",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "cf9d92e1-ddb0-4e57-83b7-e441bb46423a"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                                        "args": {
+                                                                                                                                            "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "e1f64e42-66ee-41c5-a3b0-833ea7bd0690"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                                "false": [
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_ACTOR_EMOTE",
+                                                                                                                                        "args": {
+                                                                                                                                            "actorId": "$self$",
+                                                                                                                                            "emoteId": "56423c9c-dca0-4f5b-ad92-28e9660d50f1",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "ef743498-f629-40f9-b69c-8e8a4d210054"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                                        "args": {
+                                                                                                                                            "customEventId": "99701aad-5f7b-4968-bd89-e8670e8ef597",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "d2362684-057e-4ca3-8ca8-1c553a3fa895"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                                        "args": {
+                                                                                                                                            "customEventId": "10293224-690f-47d7-91f4-613210336605",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "6d59c9d1-57e8-4a17-8b94-3bec680fbe4e"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                                        "args": {
+                                                                                                                                            "customEventId": "3e9afae1-1f62-40f0-8077-eeb26d277bc0",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "342da661-67dd-4035-a186-41765f8367ac"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                                        "args": {
+                                                                                                                                            "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                                                                            "__collapse": true
+                                                                                                                                        },
+                                                                                                                                        "id": "e2778608-8953-4773-9944-546bb6ae24aa"
+                                                                                                                                    }
+                                                                                                                                ]
                                                                                                                             },
-                                                                                                                            "id": "342da661-67dd-4035-a186-41765f8367ac"
-                                                                                                                        },
-                                                                                                                        {
-                                                                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                                                                            "args": {
-                                                                                                                                "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
-                                                                                                                                "__collapse": true
-                                                                                                                            },
-                                                                                                                            "id": "e2778608-8953-4773-9944-546bb6ae24aa"
+                                                                                                                            "id": "c404dd69-df07-45c3-9381-6ec991ccc732"
                                                                                                                         }
                                                                                                                     ],
                                                                                                                     "false": [
@@ -3265,7 +3314,7 @@
                                                                 "args": {
                                                                     "expression": "(\n$34$ > 0 ||\n$47$ > 0 ||\n$48$ > 0 ||\n$42$ > 0 ||\n$50$ > 0 \n)",
                                                                     "__collapseElse": false,
-                                                                    "__collapse": true,
+                                                                    "__collapse": false,
                                                                     "__label": "Wither Score"
                                                                 },
                                                                 "children": {
@@ -3294,14 +3343,15 @@
                                                                                 ],
                                                                                 "override": true,
                                                                                 "__scriptTabs": "press",
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "children": {
                                                                                 "true": [
                                                                                     {
                                                                                         "command": "EVENT_GROUP",
                                                                                         "args": {
-                                                                                            "__label": "Attempt Play"
+                                                                                            "__label": "Attempt Play",
+                                                                                            "__collapse": false
                                                                                         },
                                                                                         "children": {
                                                                                             "true": [
@@ -3340,48 +3390,124 @@
                                                                                         "children": {
                                                                                             "true": [
                                                                                                 {
-                                                                                                    "command": "EVENT_ACTOR_EMOTE",
+                                                                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                     "args": {
-                                                                                                        "actorId": "$self$",
-                                                                                                        "emoteId": "56423c9c-dca0-4f5b-ad92-28e9660d50f1",
+                                                                                                        "customEventId": "cd5690e5-7e47-4b76-8b5a-88e66cd04fb7",
                                                                                                         "__collapse": true
                                                                                                     },
-                                                                                                    "id": "c11208ee-a7e1-4b1d-a2c5-2da9ff78c742"
+                                                                                                    "id": "ebdf9b2b-7d29-43de-90e4-7b0da64cce28"
                                                                                                 },
                                                                                                 {
-                                                                                                    "command": "EVENT_GROUP",
+                                                                                                    "command": "EVENT_IF_VALUE",
                                                                                                     "args": {
-                                                                                                        "__label": "Do Drawings",
-                                                                                                        "__collapse": false
+                                                                                                        "variable": "32",
+                                                                                                        "operator": "==",
+                                                                                                        "comparator": 2,
+                                                                                                        "__collapseElse": false
                                                                                                     },
                                                                                                     "children": {
                                                                                                         "true": [
                                                                                                             {
                                                                                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                                 "args": {
-                                                                                                                    "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323",
+                                                                                                                    "customEventId": "ace5a682-821d-44da-b215-d8a329789a7b",
                                                                                                                     "__collapse": true
                                                                                                                 },
-                                                                                                                "id": "5bb33277-fd45-444e-bd70-6eadd5211735"
+                                                                                                                "id": "66f257fc-3321-4b66-b26f-af70a56da44b"
                                                                                                             },
                                                                                                             {
                                                                                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                                 "args": {
-                                                                                                                    "customEventId": "3e9afae1-1f62-40f0-8077-eeb26d277bc0",
+                                                                                                                    "customEventId": "ace5a682-821d-44da-b215-d8a329789a7b",
                                                                                                                     "__collapse": true
                                                                                                                 },
-                                                                                                                "id": "4fa8a99f-719f-46b4-9e67-f803183c1665"
+                                                                                                                "id": "0a199e1a-2e13-463c-b540-c26f9205796d"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                "args": {
+                                                                                                                    "customEventId": "7c6e52cf-100d-4956-bf0b-fd11928a3c85",
+                                                                                                                    "__collapse": true
+                                                                                                                },
+                                                                                                                "id": "6b49f7a9-b4a7-417d-b725-1f5d136401f2"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "command": "EVENT_GROUP",
+                                                                                                                "args": {
+                                                                                                                    "__label": "Do Drawings",
+                                                                                                                    "__collapse": false
+                                                                                                                },
+                                                                                                                "children": {
+                                                                                                                    "true": [
+                                                                                                                        {
+                                                                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                            "args": {
+                                                                                                                                "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323",
+                                                                                                                                "__collapse": true
+                                                                                                                            },
+                                                                                                                            "id": "355b912c-0234-4a72-8d23-5cab650ae4f2"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                },
+                                                                                                                "id": "ffbee7fb-faba-4a32-b268-1f2e7fa36575"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                "args": {
+                                                                                                                    "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35",
+                                                                                                                    "__collapse": true
+                                                                                                                },
+                                                                                                                "id": "0be5ff94-34ad-4c27-941b-d2f80871a201"
+                                                                                                            }
+                                                                                                        ],
+                                                                                                        "false": [
+                                                                                                            {
+                                                                                                                "command": "EVENT_ACTOR_EMOTE",
+                                                                                                                "args": {
+                                                                                                                    "actorId": "$self$",
+                                                                                                                    "emoteId": "56423c9c-dca0-4f5b-ad92-28e9660d50f1",
+                                                                                                                    "__collapse": true
+                                                                                                                },
+                                                                                                                "id": "c11208ee-a7e1-4b1d-a2c5-2da9ff78c742"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "command": "EVENT_GROUP",
+                                                                                                                "args": {
+                                                                                                                    "__label": "Do Drawings",
+                                                                                                                    "__collapse": true
+                                                                                                                },
+                                                                                                                "children": {
+                                                                                                                    "true": [
+                                                                                                                        {
+                                                                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                            "args": {
+                                                                                                                                "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323",
+                                                                                                                                "__collapse": true
+                                                                                                                            },
+                                                                                                                            "id": "5bb33277-fd45-444e-bd70-6eadd5211735"
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                            "args": {
+                                                                                                                                "customEventId": "3e9afae1-1f62-40f0-8077-eeb26d277bc0",
+                                                                                                                                "__collapse": true
+                                                                                                                            },
+                                                                                                                            "id": "4fa8a99f-719f-46b4-9e67-f803183c1665"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                },
+                                                                                                                "id": "b0be0657-7259-4d2a-a229-06ea5a85cb19"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                                                "args": {
+                                                                                                                    "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35"
+                                                                                                                },
+                                                                                                                "id": "74cad7cc-80e2-4bb1-8695-ee9f4a4780b6"
                                                                                                             }
                                                                                                         ]
                                                                                                     },
-                                                                                                    "id": "b0be0657-7259-4d2a-a229-06ea5a85cb19"
-                                                                                                },
-                                                                                                {
-                                                                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                                                    "args": {
-                                                                                                        "customEventId": "fa7815e7-b86a-4fb8-b85d-a596edbc4e35"
-                                                                                                    },
-                                                                                                    "id": "74cad7cc-80e2-4bb1-8695-ee9f4a4780b6"
+                                                                                                    "id": "6e931769-6f71-4907-86ac-cf74b76176d2"
                                                                                                 }
                                                                                             ],
                                                                                             "false": [
@@ -26026,11 +26152,31 @@
                     "id": "e76c89f9-56fa-4fac-bf40-484dd77c0d7a"
                 },
                 {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "28",
+                        "value": {
+                            "type": "variable",
+                            "value": "31"
+                        },
+                        "__collapse": true
+                    },
+                    "id": "a150d870-50cb-4964-a64c-8e26c9e40367"
+                },
+                {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "3bd4ae54-a9fa-4366-8ef6-2539621cc087",
+                        "__collapse": true
+                    },
+                    "id": "6ef77d65-3505-44fb-ba17-989730337a2f"
+                },
+                {
                     "command": "EVENT_IF_FALSE",
                     "args": {
                         "variable": "32",
-                        "__collapseElse": true,
-                        "__disableElse": true
+                        "__collapseElse": false,
+                        "__disableElse": false
                     },
                     "children": {
                         "true": [
@@ -26038,28 +26184,10 @@
                                 "command": "EVENT_GROUP",
                                 "args": {
                                     "__label": "Put Card In Play",
-                                    "__collapse": true
+                                    "__collapse": false
                                 },
                                 "children": {
                                     "true": [
-                                        {
-                                            "command": "EVENT_SET_VALUE",
-                                            "args": {
-                                                "variable": "28",
-                                                "value": {
-                                                    "type": "variable",
-                                                    "value": "31"
-                                                }
-                                            },
-                                            "id": "a150d870-50cb-4964-a64c-8e26c9e40367"
-                                        },
-                                        {
-                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                            "args": {
-                                                "customEventId": "3bd4ae54-a9fa-4366-8ef6-2539621cc087"
-                                            },
-                                            "id": "6ef77d65-3505-44fb-ba17-989730337a2f"
-                                        },
                                         {
                                             "command": "EVENT_CALL_CUSTOM_EVENT",
                                             "args": {
@@ -26067,21 +26195,24 @@
                                                 "$variable[V0]$": {
                                                     "type": "variable",
                                                     "value": "31"
-                                                }
+                                                },
+                                                "__collapse": true
                                             },
                                             "id": "2e84f41a-2581-4c0a-9620-9d6f138df150"
                                         },
                                         {
                                             "command": "EVENT_CALL_CUSTOM_EVENT",
                                             "args": {
-                                                "customEventId": "a4652bcb-8fa9-46d4-b7b2-d4fd7e5f77cf"
+                                                "customEventId": "a4652bcb-8fa9-46d4-b7b2-d4fd7e5f77cf",
+                                                "__collapse": true
                                             },
                                             "id": "c2c958a8-70fb-4777-999b-07a36ee7a23a"
                                         },
                                         {
                                             "command": "EVENT_CALL_CUSTOM_EVENT",
                                             "args": {
-                                                "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866"
+                                                "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866",
+                                                "__collapse": true
                                             },
                                             "id": "39e36399-d653-424e-937f-6a6973027891"
                                         }
@@ -26090,7 +26221,72 @@
                                 "id": "92e4250d-2aee-46a9-a32f-a7b417b87c0f"
                             }
                         ],
-                        "false": []
+                        "false": [
+                            {
+                                "command": "EVENT_GROUP",
+                                "args": {
+                                    "__label": "Discard Card",
+                                    "__collapse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "3debc8b9-e4e8-4075-bf23-52c76f988bb1",
+                                                "$variable[V0]$": {
+                                                    "type": "variable",
+                                                    "value": "31"
+                                                },
+                                                "__collapse": true
+                                            },
+                                            "id": "51b7056e-d3ee-4318-9ed9-d38355091511"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "c917a83a-f9d8-474f-bd95-879b484ade98",
+                                                "__collapse": true
+                                            },
+                                            "id": "394e6d92-2b8d-4a76-a07a-cf96764f306c"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866",
+                                                "__collapse": true
+                                            },
+                                            "id": "ae9b23db-98ac-4b93-8317-679cb43074a6"
+                                        },
+                                        {
+                                            "command": "EVENT_IF_VALUE",
+                                            "args": {
+                                                "variable": "32",
+                                                "operator": "==",
+                                                "comparator": 2,
+                                                "__collapseElse": true,
+                                                "__disableElse": true
+                                            },
+                                            "children": {
+                                                "true": [
+                                                    {
+                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                        "args": {
+                                                            "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "ff4d7d3a-ff00-4f4b-8a84-5b1f0d9b090a"
+                                                    }
+                                                ],
+                                                "false": []
+                                            },
+                                            "id": "c952acf8-1032-4cb6-a5b7-144ed95f1003"
+                                        }
+                                    ]
+                                },
+                                "id": "b37e76b2-a403-4e69-8fbb-a6a15c34f06f"
+                            }
+                        ]
                     },
                     "id": "dc37db96-f362-4471-8699-1fcc8ff29c31"
                 },
@@ -30564,8 +30760,8 @@
         },
         {
             "id": "d1bbe9a6-3131-4c18-8665-0bf2b9d942cc",
-            "name": "Check For Green Counters",
-            "description": "0 = Not Countered\n1 = White Counter\n2 = Green Counter",
+            "name": "Check For Green Player Counters",
+            "description": "0 = Not Countered\n2 = Green Counter",
             "variables": {},
             "actors": {},
             "symbol": "script_38",
@@ -30587,6 +30783,65 @@
                         }
                     },
                     "id": "f5faf205-d738-4832-84a7-a7ecad618547"
+                },
+                {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "5570bb72-a55b-4261-9137-132b0bb3341f"
+                    },
+                    "id": "5431ce79-3fb3-4cd6-b9b3-b69091e2b397"
+                }
+            ]
+        },
+        {
+            "id": "cd5690e5-7e47-4b76-8b5a-88e66cd04fb7",
+            "name": "Check For Green Opponent Counters",
+            "description": "",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_39",
+            "script": [
+                {
+                    "command": "EVENT_SET_FALSE",
+                    "args": {
+                        "variable": "32"
+                    },
+                    "id": "63806d26-5191-417a-9187-751b8bf654f7"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "30",
+                        "value": {
+                            "type": "variable",
+                            "value": "11"
+                        }
+                    },
+                    "id": "a19cccdf-5ecf-4bcd-9ac8-8b6b58e17ce8"
+                },
+                {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "5570bb72-a55b-4261-9137-132b0bb3341f"
+                    },
+                    "id": "6ba1d878-fbdc-421a-a78a-cb07939c87d4"
+                }
+            ]
+        },
+        {
+            "id": "5570bb72-a55b-4261-9137-132b0bb3341f",
+            "name": "Check For Green Counters",
+            "description": "",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_40",
+            "script": [
+                {
+                    "command": "EVENT_SET_FALSE",
+                    "args": {
+                        "variable": "32"
+                    },
+                    "id": "de9826a9-bda9-49dd-8d99-3d69614b8b62"
                 },
                 {
                     "command": "EVENT_SWITCH",
@@ -30651,12 +30906,12 @@
                                                 },
                                                 "__collapse": true
                                             },
-                                            "id": "de6d491e-b8f9-40ef-b99b-763afe91f8ee"
+                                            "id": "f2a1cd95-fbdd-47df-b5ea-790a46f15c06"
                                         }
                                     ],
                                     "false": []
                                 },
-                                "id": "2e64b749-6e36-4b0b-adb7-1e2f9a9a14d8"
+                                "id": "51993612-dd62-4f4d-9dd9-424619f7d113"
                             }
                         ],
                         "true1": [
@@ -30680,12 +30935,12 @@
                                                 },
                                                 "__collapse": true
                                             },
-                                            "id": "a77bccd0-8b4c-4547-baa0-3d559ee984a6"
+                                            "id": "8904092c-f67c-48d8-a2f2-ff896d0754fd"
                                         }
                                     ],
                                     "false": []
                                 },
-                                "id": "fed50797-b4e5-4313-be65-139ec2f43753"
+                                "id": "57dc1e92-42bd-41df-a60e-4687aff09ea1"
                             }
                         ],
                         "true2": [
@@ -30709,12 +30964,12 @@
                                                 },
                                                 "__collapse": true
                                             },
-                                            "id": "76cfb5d4-0d43-4aec-b09b-7678e40bae5e"
+                                            "id": "397c7850-288f-4c02-8377-c4991a4eff97"
                                         }
                                     ],
                                     "false": []
                                 },
-                                "id": "609812bb-b79c-4a0c-81ab-ea485cbcb699"
+                                "id": "606b3215-c523-4c0a-8897-d3bd366e7441"
                             }
                         ],
                         "true3": [
@@ -30738,12 +30993,12 @@
                                                 },
                                                 "__collapse": true
                                             },
-                                            "id": "30f74b95-499b-4157-aa71-cddefd21bfc3"
+                                            "id": "d3c61bab-813f-42d3-aeec-1cc0598dc1f2"
                                         }
                                     ],
                                     "false": []
                                 },
-                                "id": "1cb5f764-abb9-47f4-90a0-5a728d83acd7"
+                                "id": "07649094-e05a-481e-a9c4-0c151f1ac8ec"
                             }
                         ],
                         "true4": [
@@ -30767,12 +31022,12 @@
                                                 },
                                                 "__collapse": true
                                             },
-                                            "id": "b50d164f-0d91-4a5b-8a5c-f4b87b25a98b"
+                                            "id": "317526e4-e84d-4e87-9dc2-342935cb5fe4"
                                         }
                                     ],
                                     "false": []
                                 },
-                                "id": "0efa89c8-ecf6-4699-a3aa-9d18451583cc"
+                                "id": "026cc6d2-1a5a-4845-aede-acac8b8fb105"
                             }
                         ],
                         "true5": [],
@@ -30788,7 +31043,7 @@
                         "true15": [],
                         "false": []
                     },
-                    "id": "5d07bda7-c07a-4b7f-b2c3-89328365b121"
+                    "id": "0dd23e32-9b1c-48c8-b0e0-3eab9d685ec9"
                 }
             ]
         }
@@ -31241,7 +31496,7 @@
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
         "worldScrollX": 1618,
-        "worldScrollY": 954,
+        "worldScrollY": 1007,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
