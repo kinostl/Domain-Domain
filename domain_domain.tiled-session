@@ -17,6 +17,14 @@
                 "y": 72
             }
         },
+        "cheats_menu_with_yukari.tmx": {
+            "scale": 3,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 169.16666666666669,
+                "y": 80.33333333333333
+            }
+        },
         "dice.tmx": {
             "scale": 3,
             "selectedLayer": 0,
@@ -60,6 +68,7 @@
     ],
     "project": "domain_domain.tiled-project",
     "recentFiles": [
+        "cheats_menu_with_yukari.tmx",
         "playfield.tmx",
         "rpg.tsx",
         "dice.tmx",
