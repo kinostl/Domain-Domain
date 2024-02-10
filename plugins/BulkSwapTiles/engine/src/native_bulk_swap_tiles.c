@@ -44,22 +44,25 @@ void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     const uint8_t top_left     = (say * tileLength) + sax;
     const uint8_t bottom_left  = (sby * tileLength) + sax;
+    const uint8_t col_count = ((ibx - iax) / 2) + 1;
 
-    uint8_t tay;
+    uint8_t tay, curr_col;
     bool top = true;
 
-    for(tay = iay; tay <= iby; tay+=1){
-        *target_col = iax;
-        *target_row = tay;
-        vm_get_tile_xy(THIS, FN_ARG0, FN_ARG0, FN_ARG1);
-        if(top){
-            *current_index = top_left;
-            top = !!!top;
-        }else{
-            *current_index = bottom_left;
-            top = !!!top;
+    for(curr_col = 0; curr_col < col_count; curr_col+=1){
+        for(tay = iay; tay <= iby; tay+=1){
+            *target_col = iax + (2 * curr_col);
+            *target_row = tay;
+            vm_get_tile_xy(THIS, FN_ARG0, FN_ARG0, FN_ARG1);
+            if(top){
+                *current_index = top_left;
+                top = !!!top;
+            }else{
+                *current_index = bottom_left;
+                top = !!!top;
+            }
+            vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 2);
         }
-        vm_replace_tile(THIS, FN_ARG0, tileset_bank, tileset, FN_ARG2, 2);
     }
 }
 

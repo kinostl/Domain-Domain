@@ -3,26 +3,34 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "dice.tmx",
+    "activeFile": "cheats_menu.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "exportAsImage.includeBackgroundColor": true,
     "fileStates": {
-        "dice.tmx": {
-            "scale": 8,
+        "cheats_menu.tmx": {
+            "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 152.75,
-                "y": 57.625
+                "x": 80,
+                "y": 72
+            }
+        },
+        "dice.tmx": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 121.16666666666666,
+                "y": 101.83333333333333
             }
         },
         "playfield.tmx": {
             "scale": 5.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 98.54545454545455,
-                "y": 53.54545454545455
+                "x": 100.72727272727273,
+                "y": 52.63636363636364
             }
         },
         "random.tsx": {
@@ -47,14 +55,16 @@
         "playfield.tmx",
         "rpg.tsx",
         "dice.tmx",
-        "random.tsx"
+        "random.tsx",
+        "cheats_menu.tmx"
     ],
     "project": "domain_domain.tiled-project",
     "recentFiles": [
         "playfield.tmx",
         "rpg.tsx",
+        "dice.tmx",
         "random.tsx",
-        "dice.tmx"
+        "cheats_menu.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

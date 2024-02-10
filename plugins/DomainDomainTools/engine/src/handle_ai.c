@@ -83,6 +83,59 @@ uint16_t get_random_card(uint16_t cards_in_hand){
         return choice;
 }
 
+
+void handleDebugCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    /*
+     * Debug AI - Garden or Flower
+     * Action Priority:
+     *  1. Play Chosen Color
+     *  2. Play Randomly
+    */
+
+    uint16_t cards_in_hand = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0);
+    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
+    uint16_t color_pref = *(uint16_t *) VM_REF_TO_PTR(FN_ARG2);
+    uint16_t has_color_pref = 0;
+    switch(color_pref){
+        case T_WHITE:
+            if(cards_in_hand & C_WHITE){
+                *card_choice = T_WHITE;
+                has_color_pref = 1;
+            }
+            break;
+        case T_BLACK:
+            if(cards_in_hand & C_BLACK){
+                *card_choice = T_BLACK;
+                has_color_pref = 1;
+            }
+            break;
+        case T_BLUE:
+            if(cards_in_hand & C_BLUE){
+                *card_choice = T_BLUE;
+                has_color_pref = 1;
+            }
+            break;
+        case T_RED:
+            if(cards_in_hand & C_RED){
+                *card_choice = T_RED;
+                has_color_pref = 1;
+            }
+            break;
+        case T_GREEN:
+            if(cards_in_hand & C_GREEN){
+                *card_choice = T_GREEN;
+                has_color_pref = 1;
+            }
+            break;
+    }
+
+    if(has_color_pref == 0){
+        *card_choice = get_random_card(cards_in_hand);
+    }
+
+
+}
+
 void handleCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
     /*
      * Blue AI - Garden or Flower

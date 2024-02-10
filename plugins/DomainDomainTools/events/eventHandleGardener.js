@@ -16,7 +16,14 @@ const fields = [
         description: "Variable holding card choice",
         type: "variable",
         defaultValue: "LAST_VARIABLE"
-    }
+    },
+    {
+        key: "currentOpponent",
+        label: "Current Opponent",
+        type: "variable",
+        defaultValue: "LAST_VARIABLE"
+    },
+
 ];
 
 const compile = (input, helpers) => {
@@ -29,11 +36,12 @@ const compile = (input, helpers) => {
     } = helpers;
 
 
-    const stackSize = 2;
+    const stackSize = 3;
     _reserve(stackSize);
     _setToVariable(".ARG0", input.validChoices);
     _setToVariable(".ARG1", input.targetCard);
-    _callNative("handleCirno");
+    _setToVariable(".ARG2", input.currentOpponent)
+    _callNative("handleDebugCirno");
     _setVariable(input.targetCard, ".ARG1");
     _reserve(stackSize * -1);
 };
