@@ -36,7 +36,7 @@
    <text fontfamily="Kenney Pixel Square" pixelsize="8" wrap="1" color="#071821" valign="center">Always Draw Red</text>
   </object>
   <object id="15" x="16" y="96" width="120" height="16">
-   <text fontfamily="Kenney Pixel Square" pixelsize="8" wrap="1" color="#071821" valign="center">Always Draw Red</text>
+   <text fontfamily="Kenney Pixel Square" pixelsize="8" wrap="1" color="#071821" valign="center">Always Draw Green</text>
   </object>
  </objectgroup>
 </map>
