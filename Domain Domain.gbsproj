@@ -11393,7 +11393,7 @@
         },
         {
             "name": "Scene 6",
-            "backgroundId": "53fa739a-3538-4a37-a3ae-3b76b8a13fee",
+            "backgroundId": "1832d57f-9a14-4d5a-935f-42c484994d82",
             "width": 20,
             "height": 18,
             "type": "TOPDOWN",
@@ -11401,13 +11401,267 @@
             "spritePaletteIds": [],
             "collisions": [],
             "autoFadeSpeed": 1,
-            "id": "e28e8c22-7a03-47dc-9291-8ad42e64234f",
+            "id": "029067bf-ca7d-4115-86ef-eb1b295aa4f7",
             "symbol": "scene_6",
-            "x": 766.6314102564103,
-            "y": 429.6923076923076,
+            "x": 778.4765625,
+            "y": 398.75,
             "actors": [],
             "triggers": [],
-            "script": [],
+            "script": [
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__collapse": true,
+                        "__comment": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_SET_TRUE",
+                                "args": {
+                                    "variable": "L0"
+                                },
+                                "id": "edaa9b46-c22a-4b60-9cde-3c4a263768f8"
+                            },
+                            {
+                                "command": "EVENT_OVERLAY_SHOW",
+                                "args": {
+                                    "color": "black",
+                                    "x": 0,
+                                    "y": 15
+                                },
+                                "id": "5b03b4bc-e7f9-4acf-b5d0-2f9ffd34ce09"
+                            },
+                            {
+                                "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                "args": {
+                                    "__scriptTabs": "text",
+                                    "minHeight": 3,
+                                    "maxHeight": 3,
+                                    "position": "bottom",
+                                    "showBorder": false,
+                                    "clearPrevious": false,
+                                    "textX": 0,
+                                    "textY": 1,
+                                    "textHeight": 1,
+                                    "closeWhen": "notModal",
+                                    "closeButton": "a",
+                                    "text": [
+                                        "\\001\\001It is now opps turn."
+                                    ],
+                                    "avatarId": ""
+                                },
+                                "id": "96026301-3ca1-45f3-9927-cd28be03ec78"
+                            },
+                            {
+                                "command": "EVENT_SET_INPUT_SCRIPT",
+                                "args": {
+                                    "input": [
+                                        "b"
+                                    ],
+                                    "override": true,
+                                    "__scriptTabs": "press"
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_IF_TRUE",
+                                            "args": {
+                                                "variable": "L0",
+                                                "__collapseElse": false
+                                            },
+                                            "children": {
+                                                "true": [
+                                                    {
+                                                        "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                                        "args": {
+                                                            "__scriptTabs": "text",
+                                                            "minHeight": 3,
+                                                            "maxHeight": 3,
+                                                            "position": "bottom",
+                                                            "showBorder": false,
+                                                            "clearPrevious": false,
+                                                            "textX": 0,
+                                                            "textY": 1,
+                                                            "textHeight": 1,
+                                                            "closeWhen": "notModal",
+                                                            "closeButton": "a",
+                                                            "text": [
+                                                                "\\001\\001It is now your turn."
+                                                            ],
+                                                            "avatarId": ""
+                                                        },
+                                                        "id": "7ab6806d-1b65-4e37-9a49-a12b0a1f2c97"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SET_FALSE",
+                                                        "args": {
+                                                            "variable": "L0"
+                                                        },
+                                                        "id": "ba8de353-013e-4bd0-b817-6e1d51c38721"
+                                                    }
+                                                ],
+                                                "false": [
+                                                    {
+                                                        "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                                        "args": {
+                                                            "__scriptTabs": "text",
+                                                            "minHeight": 3,
+                                                            "maxHeight": 3,
+                                                            "position": "bottom",
+                                                            "showBorder": false,
+                                                            "clearPrevious": false,
+                                                            "textX": 0,
+                                                            "textY": 1,
+                                                            "textHeight": 1,
+                                                            "closeWhen": "notModal",
+                                                            "closeButton": "a",
+                                                            "text": [
+                                                                "\\001\\001It is now opps turn."
+                                                            ],
+                                                            "avatarId": ""
+                                                        },
+                                                        "id": "8aa22252-dfd5-4c17-8e05-81ee03b3f78d"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SET_TRUE",
+                                                        "args": {
+                                                            "variable": "L0"
+                                                        },
+                                                        "id": "4b5fea21-dd46-4d3d-acb4-d22461edd97e"
+                                                    }
+                                                ]
+                                            },
+                                            "id": "2312120e-5092-4d2f-b97d-3be1250cdcda"
+                                        }
+                                    ]
+                                },
+                                "id": "908c50a9-ec97-496c-88b6-3c5d3e39a83f"
+                            }
+                        ]
+                    },
+                    "id": "0418860c-449d-438f-a326-9ada21cabb89"
+                },
+                {
+                    "command": "PT_EVENT_START_VISUAL_LOG",
+                    "args": {},
+                    "id": "bcd00049-9e44-495a-b57a-831b5ae13bda"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "L0",
+                        "value": {
+                            "type": "number",
+                            "value": 3
+                        }
+                    },
+                    "id": "b8025191-9c39-41c8-9d3c-fad7ecf9869f"
+                },
+                {
+                    "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                    "args": {
+                        "__scriptTabs": "text",
+                        "minHeight": 3,
+                        "maxHeight": 3,
+                        "position": "bottom",
+                        "showBorder": false,
+                        "clearPrevious": false,
+                        "textX": 0,
+                        "textY": 0,
+                        "textHeight": 3,
+                        "closeWhen": "notModal",
+                        "closeButton": "a",
+                        "text": [
+                            ""
+                        ],
+                        "avatarId": "",
+                        "__comment": true
+                    },
+                    "id": "a1bedaa3-f06e-409c-8977-731c4bea3bcd"
+                },
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_OVERLAY_SET_SCROLL 0, 3, 20, 3, .UI_COLOR_BLACK",
+                        "__comment": true
+                    },
+                    "id": "adcd003f-067e-401c-85cd-da9589c7d6a1"
+                },
+                {
+                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                    "args": {
+                        "text": [
+                            "Log 1",
+                            "Log 2"
+                        ],
+                        "__collapse": false
+                    },
+                    "id": "22753670-6be0-4239-bc00-27828c4b2485"
+                },
+                {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "b"
+                        ],
+                        "override": true,
+                        "__scriptTabs": "press"
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_OVERLAY_SCROLL 0, 0, 20, 3, .UI_COLOR_BLACK",
+                                    "__comment": true
+                                },
+                                "id": "167525e9-32ff-4edc-82f2-3e31c27c8b5a"
+                            },
+                            {
+                                "command": "EVENT_INC_VALUE",
+                                "args": {
+                                    "variable": "L0"
+                                },
+                                "id": "b8ada6a8-bd74-4c5b-bf11-4c06db0b6d5b"
+                            },
+                            {
+                                "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                "args": {
+                                    "__scriptTabs": "layout",
+                                    "minHeight": 3,
+                                    "maxHeight": 3,
+                                    "position": "bottom",
+                                    "showBorder": false,
+                                    "clearPrevious": false,
+                                    "textX": 0,
+                                    "textY": 2,
+                                    "textHeight": 3,
+                                    "closeWhen": "notModal",
+                                    "closeButton": "a",
+                                    "text": [
+                                        "\\001\\001Line $L0$"
+                                    ],
+                                    "avatarId": "",
+                                    "__collapse": false,
+                                    "__comment": true
+                                },
+                                "id": "28bee60c-d3e7-4b1c-b826-54d0991d9312"
+                            },
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "New Line $L0$"
+                                    ]
+                                },
+                                "id": "e680dcc8-0b91-4048-9d22-b1a43504a16c"
+                            }
+                        ]
+                    },
+                    "id": "befec70e-8c36-4df3-8a97-a1e471e423f7"
+                }
+            ],
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": []
@@ -13596,8 +13850,8 @@
                 1,
                 0,
                 0,
-                7,
-                7,
+                0,
+                0,
                 0,
                 0,
                 0,
@@ -14135,6 +14389,17 @@
                 0,
                 0
             ]
+        },
+        {
+            "id": "1832d57f-9a14-4d5a-935f-42c484994d82",
+            "name": "playfield_for_dialog",
+            "symbol": "bg_playfield_for_dialog",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "playfield_for_dialog.png",
+            "tileColors": []
         },
         {
             "id": "c98c7cde-8fe0-4196-a11d-47738a6400bd",
@@ -36785,6 +37050,16 @@
             "symbol": "var_cheats_general"
         },
         {
+            "id": "54",
+            "name": "Cheats - Always Draw",
+            "symbol": "var_cheats_always_draw"
+        },
+        {
+            "id": "55",
+            "name": "Loop Helper",
+            "symbol": "var_loop_helper"
+        },
+        {
             "id": "ad4bc634-6878-4ddd-8167-09924a65a5fb__L0",
             "name": "Loop X",
             "symbol": "var_loop_x"
@@ -36850,19 +37125,44 @@
             "symbol": "var_current_choice"
         },
         {
-            "id": "54",
-            "name": "Cheats - Always Draw",
-            "symbol": "var_cheats_always_draw"
-        },
-        {
             "id": "b20e46b1-aa25-4114-a860-fc6e227db991__L1",
             "name": "Choice State",
             "symbol": "var_choice_state"
         },
         {
-            "id": "55",
-            "name": "Loop Helper",
-            "symbol": "var_loop_helper"
+            "id": "e28e8c22-7a03-47dc-9291-8ad42e64234f__L0",
+            "name": "Show Log",
+            "symbol": "var_show_log"
+        },
+        {
+            "id": "3601aaed-8e92-4aef-8480-7d2bd964c9b1__L0",
+            "name": "Overlay Hidden",
+            "symbol": "var_overlay_hidden"
+        },
+        {
+            "id": "3601aaed-8e92-4aef-8480-7d2bd964c9b1__L1",
+            "name": "Camera Line",
+            "symbol": "var_camera_line"
+        },
+        {
+            "id": "3601aaed-8e92-4aef-8480-7d2bd964c9b1__L2",
+            "name": "Line Count",
+            "symbol": "var_line_count"
+        },
+        {
+            "id": "3601aaed-8e92-4aef-8480-7d2bd964c9b1__L3",
+            "name": "Camera Lowered",
+            "symbol": "var_camera_lowered"
+        },
+        {
+            "id": "029067bf-ca7d-4115-86ef-eb1b295aa4f7__L0",
+            "name": "Line Count",
+            "symbol": "var_line_count_0"
+        },
+        {
+            "id": "029067bf-ca7d-4115-86ef-eb1b295aa4f7__L1",
+            "name": "Overlay Hidden",
+            "symbol": "var_overlay_hidden_0"
         }
     ],
     "engineFieldValues": [
@@ -36876,9 +37176,9 @@
         }
     ],
     "settings": {
-        "startSceneId": "a81bf543-c28c-4f64-a5fe-b35d80117898",
-        "startX": 18,
-        "startY": 11,
+        "startSceneId": "029067bf-ca7d-4115-86ef-eb1b295aa4f7",
+        "startX": 0,
+        "startY": 5,
         "startMoveSpeed": 1,
         "startAnimSpeed": 255,
         "startDirection": "down",
@@ -36886,8 +37186,8 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 1146,
-        "worldScrollY": 96,
+        "worldScrollX": 2689,
+        "worldScrollY": 1524,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -36917,8 +37217,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            552,
-            349
+            553,
+            348
         ],
         "showNavigator": true,
         "defaultFontId": "4bd653f0-e08d-424e-9e5b-c1f3aaa21e47",

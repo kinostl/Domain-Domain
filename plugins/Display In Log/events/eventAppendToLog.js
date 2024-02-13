@@ -1,5 +1,5 @@
-const id = "PT_EVENT_VISUAL_LOG";
-const groups = ["EVENT_GROUP_DIALOGUE"];
+const id = "PT_EVENT_APPEND_VISUAL_LOG";
+const groups = ["EVENT_GROUP_DIALOGUE", "Visual Log"];
 const name = "Log";
 
 const wrap8Bit = (val) => (256 + (val % 256)) % 256;
