@@ -1169,7 +1169,7 @@
                                                                                 "flag14": false,
                                                                                 "flag15": false,
                                                                                 "flag16": false,
-                                                                                "__collapse": false
+                                                                                "__collapse": true
                                                                             },
                                                                             "id": "7c1cd0a6-b458-4947-a351-f21507103288"
                                                                         },
@@ -1191,7 +1191,7 @@
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
                                                                     "__label": "Make Shield",
-                                                                    "__collapse": true
+                                                                    "__collapse": false
                                                                 },
                                                                 "children": {
                                                                     "true": [
@@ -1244,7 +1244,7 @@
                                                                                         "command": "EVENT_GROUP",
                                                                                         "args": {
                                                                                             "__label": "Create Barrier",
-                                                                                            "__collapse": true
+                                                                                            "__collapse": false
                                                                                         },
                                                                                         "children": {
                                                                                             "true": [
@@ -1314,11 +1314,11 @@
                                                                                                                                 "choices": 5,
                                                                                                                                 "__collapseCase0": false,
                                                                                                                                 "value0": 1,
-                                                                                                                                "__collapseCase1": true,
+                                                                                                                                "__collapseCase1": false,
                                                                                                                                 "value1": 2,
-                                                                                                                                "__collapseCase2": true,
+                                                                                                                                "__collapseCase2": false,
                                                                                                                                 "value2": 3,
-                                                                                                                                "__collapseCase3": true,
+                                                                                                                                "__collapseCase3": false,
                                                                                                                                 "value3": 4,
                                                                                                                                 "__collapseCase4": false,
                                                                                                                                 "value4": 5,
@@ -1346,7 +1346,7 @@
                                                                                                                                 "value15": 16,
                                                                                                                                 "__collapseElse": false,
                                                                                                                                 "__disableElse": true,
-                                                                                                                                "__collapse": true,
+                                                                                                                                "__collapse": false,
                                                                                                                                 "__label": "Handle Block"
                                                                                                                             },
                                                                                                                             "children": {
@@ -1606,6 +1606,15 @@
                                                                                                                                             "__collapse": true
                                                                                                                                         },
                                                                                                                                         "id": "e306b4ab-2deb-4d45-bc01-33ba925fbf9c"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                                                        "args": {
+                                                                                                                                            "text": [
+                                                                                                                                                "You: White@White"
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        "id": "9c51b6dc-c5f7-4469-9913-d2cff0a89fe7"
                                                                                                                                     }
                                                                                                                                 ],
                                                                                                                                 "true1": [
@@ -1864,6 +1873,15 @@
                                                                                                                                             "__collapse": true
                                                                                                                                         },
                                                                                                                                         "id": "0e039501-2ef9-4752-bde8-a1cd8d65f260"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                                                        "args": {
+                                                                                                                                            "text": [
+                                                                                                                                                "You: White@Purple"
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        "id": "2a0548c8-3a7c-4723-960c-ba5506697936"
                                                                                                                                     }
                                                                                                                                 ],
                                                                                                                                 "true2": [
@@ -2122,6 +2140,15 @@
                                                                                                                                             "__collapse": true
                                                                                                                                         },
                                                                                                                                         "id": "18f39347-bdc7-4778-806a-3fe0a13de9ad"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                                                        "args": {
+                                                                                                                                            "text": [
+                                                                                                                                                "You: White@Blue"
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        "id": "13920bc7-defd-4bfa-a49f-fd5514e1c5c2"
                                                                                                                                     }
                                                                                                                                 ],
                                                                                                                                 "true3": [
@@ -2380,6 +2407,15 @@
                                                                                                                                             "__collapse": true
                                                                                                                                         },
                                                                                                                                         "id": "fb69f161-52c3-44fe-ae78-12ebedb7044c"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                                                        "args": {
+                                                                                                                                            "text": [
+                                                                                                                                                "You: White@Red"
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        "id": "449525f4-b37a-4ee4-86c0-8f44d743f92f"
                                                                                                                                     }
                                                                                                                                 ],
                                                                                                                                 "true4": [
@@ -2638,6 +2674,15 @@
                                                                                                                                             "__collapse": true
                                                                                                                                         },
                                                                                                                                         "id": "e6031cf0-f2eb-49d4-aed0-09a09a8d4a68"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                                                        "args": {
+                                                                                                                                            "text": [
+                                                                                                                                                "You: White@Green"
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        "id": "0d272883-b548-46b9-9374-da0ddcbdc8e7"
                                                                                                                                     }
                                                                                                                                 ],
                                                                                                                                 "true5": [],
@@ -2713,10 +2758,19 @@
                                                                                         "command": "EVENT_GROUP",
                                                                                         "args": {
                                                                                             "__label": "Play Card",
-                                                                                            "__collapse": true
+                                                                                            "__collapse": false
                                                                                         },
                                                                                         "children": {
                                                                                             "true": [
+                                                                                                {
+                                                                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                    "args": {
+                                                                                                        "text": [
+                                                                                                            "You: White@Nothing"
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "id": "7b5ae38f-4fff-43e2-be4a-75ab978b9a3b"
+                                                                                                },
                                                                                                 {
                                                                                                     "command": "EVENT_ACTOR_EMOTE",
                                                                                                     "args": {
@@ -3245,7 +3299,8 @@
                                                                                 "flag13": false,
                                                                                 "flag14": false,
                                                                                 "flag15": false,
-                                                                                "flag16": false
+                                                                                "flag16": false,
+                                                                                "__collapse": true
                                                                             },
                                                                             "id": "1a88a93f-bb40-4f95-8777-d2909785f870"
                                                                         },
@@ -3294,6 +3349,122 @@
                                                                                 "__collapse": true
                                                                             },
                                                                             "id": "05c9aca7-641f-4ee8-b2dd-8fa153b95582"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SWITCH",
+                                                                            "args": {
+                                                                                "variable": "28",
+                                                                                "choices": 5,
+                                                                                "__collapseCase0": false,
+                                                                                "value0": 1,
+                                                                                "__collapseCase1": false,
+                                                                                "value1": 2,
+                                                                                "__collapseCase2": false,
+                                                                                "value2": 3,
+                                                                                "__collapseCase3": false,
+                                                                                "value3": 4,
+                                                                                "__collapseCase4": false,
+                                                                                "value4": 5,
+                                                                                "__collapseCase5": false,
+                                                                                "value5": 6,
+                                                                                "__collapseCase6": false,
+                                                                                "value6": 7,
+                                                                                "__collapseCase7": false,
+                                                                                "value7": 8,
+                                                                                "__collapseCase8": false,
+                                                                                "value8": 9,
+                                                                                "__collapseCase9": false,
+                                                                                "value9": 10,
+                                                                                "__collapseCase10": false,
+                                                                                "value10": 11,
+                                                                                "__collapseCase11": false,
+                                                                                "value11": 12,
+                                                                                "__collapseCase12": false,
+                                                                                "value12": 13,
+                                                                                "__collapseCase13": false,
+                                                                                "value13": 14,
+                                                                                "__collapseCase14": false,
+                                                                                "value14": 15,
+                                                                                "__collapseCase15": false,
+                                                                                "value15": 16,
+                                                                                "__collapseElse": false,
+                                                                                "__disableElse": true
+                                                                            },
+                                                                            "children": {
+                                                                                "true0": [
+                                                                                    {
+                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "You: Blue => +White"
+                                                                                            ],
+                                                                                            "__collapse": false
+                                                                                        },
+                                                                                        "id": "40c028a8-0a80-4585-be46-6678a40465a6"
+                                                                                    }
+                                                                                ],
+                                                                                "true1": [
+                                                                                    {
+                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "You: Blue => +Purple"
+                                                                                            ],
+                                                                                            "__collapse": false
+                                                                                        },
+                                                                                        "id": "70c46e61-0a28-4f4b-b35a-18b7bf0b04d2"
+                                                                                    }
+                                                                                ],
+                                                                                "true2": [
+                                                                                    {
+                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "You: Blue => +Blue"
+                                                                                            ],
+                                                                                            "__collapse": false
+                                                                                        },
+                                                                                        "id": "bced9ece-9be0-49e0-be7b-de78be14f842"
+                                                                                    }
+                                                                                ],
+                                                                                "true3": [
+                                                                                    {
+                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "You: Blue => +Red"
+                                                                                            ],
+                                                                                            "__collapse": false
+                                                                                        },
+                                                                                        "id": "554e7322-3d4b-4f3d-8dae-7b9c39fcc4b9"
+                                                                                    }
+                                                                                ],
+                                                                                "true4": [
+                                                                                    {
+                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "You: Blue => +Green"
+                                                                                            ],
+                                                                                            "__collapse": false
+                                                                                        },
+                                                                                        "id": "0a38246e-068b-432f-91b2-0d2eae30258e"
+                                                                                    }
+                                                                                ],
+                                                                                "true5": [],
+                                                                                "true6": [],
+                                                                                "true7": [],
+                                                                                "true8": [],
+                                                                                "true9": [],
+                                                                                "true10": [],
+                                                                                "true11": [],
+                                                                                "true12": [],
+                                                                                "true13": [],
+                                                                                "true14": [],
+                                                                                "true15": [],
+                                                                                "false": []
+                                                                            },
+                                                                            "id": "87e60535-04e8-4913-80e1-526f1d93f6e7"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_CALL_CUSTOM_EVENT",
@@ -5830,15 +6001,14 @@
                                                                             "id": "25f4295f-fa47-4d83-b678-4e5ea8818535"
                                                                         },
                                                                         {
-                                                                            "command": "EVENT_TEXT",
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG_FANCY",
                                                                             "args": {
                                                                                 "text": [
                                                                                     "Cirno Drew $28$"
                                                                                 ],
-                                                                                "avatarId": "",
-                                                                                "__collapse": false
+                                                                                "__collapse": true
                                                                             },
-                                                                            "id": "a058b983-c0e0-4d8d-af4d-711a9b9e9e45"
+                                                                            "id": "933b7f9e-ac69-4dd8-9223-65d77eabf355"
                                                                         }
                                                                     ],
                                                                     "false": []
@@ -6534,15 +6704,116 @@
                                                                 "id": "5dd5abff-6bd9-4172-9c0e-1262a4a58cf7"
                                                             },
                                                             {
-                                                                "command": "EVENT_TEXT",
+                                                                "command": "EVENT_SWITCH",
                                                                 "args": {
-                                                                    "text": [
-                                                                        "Cirno Chooses: $22$"
-                                                                    ],
-                                                                    "avatarId": "",
-                                                                    "__collapse": true
+                                                                    "variable": "22",
+                                                                    "choices": 5,
+                                                                    "__collapseCase0": false,
+                                                                    "value0": 1,
+                                                                    "__collapseCase1": false,
+                                                                    "value1": 2,
+                                                                    "__collapseCase2": false,
+                                                                    "value2": 3,
+                                                                    "__collapseCase3": false,
+                                                                    "value3": 4,
+                                                                    "__collapseCase4": false,
+                                                                    "value4": 5,
+                                                                    "__collapseCase5": false,
+                                                                    "value5": 6,
+                                                                    "__collapseCase6": false,
+                                                                    "value6": 7,
+                                                                    "__collapseCase7": false,
+                                                                    "value7": 8,
+                                                                    "__collapseCase8": false,
+                                                                    "value8": 9,
+                                                                    "__collapseCase9": false,
+                                                                    "value9": 10,
+                                                                    "__collapseCase10": false,
+                                                                    "value10": 11,
+                                                                    "__collapseCase11": false,
+                                                                    "value11": 12,
+                                                                    "__collapseCase12": false,
+                                                                    "value12": 13,
+                                                                    "__collapseCase13": false,
+                                                                    "value13": 14,
+                                                                    "__collapseCase14": false,
+                                                                    "value14": 15,
+                                                                    "__collapseCase15": false,
+                                                                    "value15": 16,
+                                                                    "__collapseElse": false,
+                                                                    "__disableElse": true,
+                                                                    "__comment": true
                                                                 },
-                                                                "id": "32913490-a15b-40c4-b82d-006c30529962"
+                                                                "children": {
+                                                                    "true0": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Cirno plays White"
+                                                                                ]
+                                                                            },
+                                                                            "id": "07fe9c1b-00d5-447a-9772-2cfe5d32dca5"
+                                                                        }
+                                                                    ],
+                                                                    "true1": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Cirno plays Purple"
+                                                                                ]
+                                                                            },
+                                                                            "id": "dce9dcef-e485-4ab1-9291-821d9ce1983b"
+                                                                        }
+                                                                    ],
+                                                                    "true2": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Cirno plays Blue"
+                                                                                ]
+                                                                            },
+                                                                            "id": "d3ecb2d4-759d-400d-ba92-b2d3c96f9b98"
+                                                                        }
+                                                                    ],
+                                                                    "true3": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Cirno plays Red"
+                                                                                ]
+                                                                            },
+                                                                            "id": "a8713e59-2860-4cb9-b257-085969d9ea7b"
+                                                                        }
+                                                                    ],
+                                                                    "true4": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Cirno plays Green"
+                                                                                ]
+                                                                            },
+                                                                            "id": "c2a678ac-f555-4979-8eb3-c8770468e467"
+                                                                        }
+                                                                    ],
+                                                                    "true5": [],
+                                                                    "true6": [],
+                                                                    "true7": [],
+                                                                    "true8": [],
+                                                                    "true9": [],
+                                                                    "true10": [],
+                                                                    "true11": [],
+                                                                    "true12": [],
+                                                                    "true13": [],
+                                                                    "true14": [],
+                                                                    "true15": [],
+                                                                    "false": []
+                                                                },
+                                                                "id": "70419a1d-6db2-4477-bfef-412dc23e3f25"
                                                             },
                                                             {
                                                                 "command": "EVENT_SWITCH",
@@ -8214,6 +8485,15 @@
                     "id": "4be71539-c2cc-49b3-a1a8-9a348df40235"
                 },
                 {
+                    "command": "PT_EVENT_START_VISUAL_LOG",
+                    "args": {
+                        "text": "Game Start!",
+                        "line_count": 3,
+                        "bg_color": ".UI_COLOR_WHITE"
+                    },
+                    "id": "906442c7-6732-4465-9a97-11ec15260c1b"
+                },
+                {
                     "command": "EVENT_CAMERA_MOVE_TO",
                     "args": {
                         "x": {
@@ -8236,6 +8516,15 @@
                         "__collapse": true
                     },
                     "id": "2d207858-04bc-4252-ab38-1012de3c4440"
+                },
+                {
+                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                    "args": {
+                        "text": [
+                            "Loading Board..."
+                        ]
+                    },
+                    "id": "f8efb3ec-ba1d-4867-ae42-dba386061179"
                 },
                 {
                     "command": "FO_EVENT_BULK_SWAP_TILES",
@@ -8804,6 +9093,38 @@
                         ]
                     },
                     "id": "4d348814-b34d-402c-8e38-10195e78ae8e"
+                },
+                {
+                    "command": "EVENT_IF_EXPRESSION",
+                    "args": {
+                        "expression": "$53$ > 0 || $54$ > 0",
+                        "__collapseElse": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "Game Ready! Cheating"
+                                    ]
+                                },
+                                "id": "05e571f8-0f34-4b36-a300-ef62e2a49001"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "Game Ready!"
+                                    ]
+                                },
+                                "id": "10f02676-8d17-4b2f-bb71-35ef86d3a307"
+                            }
+                        ]
+                    },
+                    "id": "2ffebd34-87b2-4b53-9647-de30c7cc58b4"
                 }
             ],
             "playerHit1Script": [],
@@ -11545,9 +11866,10 @@
                 {
                     "command": "PT_EVENT_START_VISUAL_LOG",
                     "args": {
-                        "text": "123456789abcdefghijk",
+                        "text": "123456789abcdefghijkaaaaa",
                         "line_count": 3,
-                        "bg_color": ".UI_COLOR_WHITE"
+                        "bg_color": ".UI_COLOR_WHITE",
+                        "__collapse": false
                     },
                     "id": "c21af93c-32af-40b0-9962-770718b05e44"
                 },
@@ -30119,6 +30441,15 @@
                                     "__collapse": false
                                 },
                                 "id": "66ee3ada-1772-440c-bd58-8c214feeffe7"
+                            },
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "Opp: Blue => +1 Card"
+                                    ]
+                                },
+                                "id": "1b39fb2b-0548-48ca-98e7-cc123bc21039"
                             }
                         ]
                     },
@@ -30172,8 +30503,8 @@
                     "command": "EVENT_IF_EXPRESSION",
                     "args": {
                         "expression": "$30$ != $11$",
-                        "__collapseElse": true,
-                        "__disableElse": true
+                        "__collapseElse": false,
+                        "__disableElse": false
                     },
                     "children": {
                         "true": [
@@ -30525,9 +30856,28 @@
                                     ]
                                 },
                                 "id": "73027d71-1a17-4979-9a5c-15a1a4c62dd3"
+                            },
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "Opp: White => +1"
+                                    ]
+                                },
+                                "id": "db61b408-6f5f-42ab-a7d6-69acd6345548"
                             }
                         ],
-                        "false": []
+                        "false": [
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "Opp: White => None"
+                                    ]
+                                },
+                                "id": "40bd9662-f04f-4c3d-afd8-ee5119f3f6d8"
+                            }
+                        ]
                     },
                     "id": "46b21eab-5d51-4c2c-b785-926201c5f759"
                 }
@@ -30613,6 +30963,118 @@
                                                         },
                                                         "children": {
                                                             "true": [
+                                                                {
+                                                                    "command": "EVENT_SWITCH",
+                                                                    "args": {
+                                                                        "variable": "28",
+                                                                        "choices": 5,
+                                                                        "__collapseCase0": false,
+                                                                        "value0": 1,
+                                                                        "__collapseCase1": false,
+                                                                        "value1": 2,
+                                                                        "__collapseCase2": false,
+                                                                        "value2": 3,
+                                                                        "__collapseCase3": false,
+                                                                        "value3": 4,
+                                                                        "__collapseCase4": false,
+                                                                        "value4": 5,
+                                                                        "__collapseCase5": false,
+                                                                        "value5": 6,
+                                                                        "__collapseCase6": false,
+                                                                        "value6": 7,
+                                                                        "__collapseCase7": false,
+                                                                        "value7": 8,
+                                                                        "__collapseCase8": false,
+                                                                        "value8": 9,
+                                                                        "__collapseCase9": false,
+                                                                        "value9": 10,
+                                                                        "__collapseCase10": false,
+                                                                        "value10": 11,
+                                                                        "__collapseCase11": false,
+                                                                        "value11": 12,
+                                                                        "__collapseCase12": false,
+                                                                        "value12": 13,
+                                                                        "__collapseCase13": false,
+                                                                        "value13": 14,
+                                                                        "__collapseCase14": false,
+                                                                        "value14": 15,
+                                                                        "__collapseCase15": false,
+                                                                        "value15": 16,
+                                                                        "__collapseElse": false,
+                                                                        "__collapse": false,
+                                                                        "__disableElse": true
+                                                                    },
+                                                                    "children": {
+                                                                        "true0": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Purple=>-White"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "d66fe9f5-6317-4684-a7a6-93bb8338d1ef"
+                                                                            }
+                                                                        ],
+                                                                        "true1": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Purple=>-Purple"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "5fa36e04-6eed-4955-9617-53bc0379ff9b"
+                                                                            }
+                                                                        ],
+                                                                        "true2": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Purple=>-Blue"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "43f7616d-d055-40af-a2af-6ea9c8b40c5f"
+                                                                            }
+                                                                        ],
+                                                                        "true3": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Purple=>-Red"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "5acd79f0-6e41-4a30-934a-76d2ceee738b"
+                                                                            }
+                                                                        ],
+                                                                        "true4": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Purple=>-Green"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "eb720d9e-9d49-4adf-aea6-824576dea9b1"
+                                                                            }
+                                                                        ],
+                                                                        "true5": [],
+                                                                        "true6": [],
+                                                                        "true7": [],
+                                                                        "true8": [],
+                                                                        "true9": [],
+                                                                        "true10": [],
+                                                                        "true11": [],
+                                                                        "true12": [],
+                                                                        "true13": [],
+                                                                        "true14": [],
+                                                                        "true15": [],
+                                                                        "false": []
+                                                                    },
+                                                                    "id": "8b781f7b-89f2-4eb2-8612-26f91cc9a8eb"
+                                                                },
                                                                 {
                                                                     "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                     "args": {
@@ -31035,6 +31497,117 @@
                                                         "children": {
                                                             "true": [
                                                                 {
+                                                                    "command": "EVENT_SWITCH",
+                                                                    "args": {
+                                                                        "variable": "28",
+                                                                        "choices": 5,
+                                                                        "__collapseCase0": false,
+                                                                        "value0": 1,
+                                                                        "__collapseCase1": false,
+                                                                        "value1": 2,
+                                                                        "__collapseCase2": false,
+                                                                        "value2": 3,
+                                                                        "__collapseCase3": false,
+                                                                        "value3": 4,
+                                                                        "__collapseCase4": false,
+                                                                        "value4": 5,
+                                                                        "__collapseCase5": false,
+                                                                        "value5": 6,
+                                                                        "__collapseCase6": false,
+                                                                        "value6": 7,
+                                                                        "__collapseCase7": false,
+                                                                        "value7": 8,
+                                                                        "__collapseCase8": false,
+                                                                        "value8": 9,
+                                                                        "__collapseCase9": false,
+                                                                        "value9": 10,
+                                                                        "__collapseCase10": false,
+                                                                        "value10": 11,
+                                                                        "__collapseCase11": false,
+                                                                        "value11": 12,
+                                                                        "__collapseCase12": false,
+                                                                        "value12": 13,
+                                                                        "__collapseCase13": false,
+                                                                        "value13": 14,
+                                                                        "__collapseCase14": false,
+                                                                        "value14": 15,
+                                                                        "__collapseCase15": false,
+                                                                        "value15": 16,
+                                                                        "__collapseElse": false,
+                                                                        "__disableElse": true
+                                                                    },
+                                                                    "children": {
+                                                                        "true0": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Red => - White"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "9a4591e7-9563-401a-8f7c-5193db08d4ab"
+                                                                            }
+                                                                        ],
+                                                                        "true1": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Red => - Purple"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "0e1b6f97-0d7d-439a-a7cb-c17720d12ad3"
+                                                                            }
+                                                                        ],
+                                                                        "true2": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Red => - Blue"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "7e9893e3-3faa-4052-9632-2e19ffbb0544"
+                                                                            }
+                                                                        ],
+                                                                        "true3": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Red => - Red"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "b144e1f2-caac-471a-b2e7-5ffbe8474e15"
+                                                                            }
+                                                                        ],
+                                                                        "true4": [
+                                                                            {
+                                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                "args": {
+                                                                                    "text": [
+                                                                                        "Opp: Red => - Green"
+                                                                                    ]
+                                                                                },
+                                                                                "id": "a1cb9450-7664-4541-9eda-d24d1bc96288"
+                                                                            }
+                                                                        ],
+                                                                        "true5": [],
+                                                                        "true6": [],
+                                                                        "true7": [],
+                                                                        "true8": [],
+                                                                        "true9": [],
+                                                                        "true10": [],
+                                                                        "true11": [],
+                                                                        "true12": [],
+                                                                        "true13": [],
+                                                                        "true14": [],
+                                                                        "true15": [],
+                                                                        "false": []
+                                                                    },
+                                                                    "id": "d5ea0e4d-7b3e-440d-99d2-16cc18ade48b"
+                                                                },
+                                                                {
                                                                     "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                     "args": {
                                                                         "customEventId": "a4652bcb-8fa9-46d4-b7b2-d4fd7e5f77cf"
@@ -31282,8 +31855,8 @@
                     "command": "EVENT_IF_EXPRESSION",
                     "args": {
                         "expression": "$30$ != $11$",
-                        "__collapseElse": true,
-                        "__disableElse": true,
+                        "__collapseElse": false,
+                        "__disableElse": false,
                         "__collapse": false
                     },
                     "children": {
@@ -31360,7 +31933,7 @@
                                                 "value15": 16,
                                                 "__collapseElse": false,
                                                 "__disableElse": true,
-                                                "__collapse": false
+                                                "__collapse": true
                                             },
                                             "children": {
                                                 "true0": [
@@ -31636,9 +32209,28 @@
                                     ]
                                 },
                                 "id": "fdbb9d16-5165-41f2-a577-ba54160c7d54"
+                            },
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "Opp: Green => +1"
+                                    ]
+                                },
+                                "id": "e1de419e-c704-4806-b4c3-69fb159b0d96"
                             }
                         ],
-                        "false": []
+                        "false": [
+                            {
+                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                "args": {
+                                    "text": [
+                                        "Opp: Green => None"
+                                    ]
+                                },
+                                "id": "8a47e0c9-5038-4726-9feb-7560eafa2e81"
+                            }
+                        ]
                     },
                     "id": "22277b92-44a6-41e8-9693-671dbc632b96"
                 }
@@ -37194,7 +37786,7 @@
         }
     ],
     "settings": {
-        "startSceneId": "029067bf-ca7d-4115-86ef-eb1b295aa4f7",
+        "startSceneId": "a81bf543-c28c-4f64-a5fe-b35d80117898",
         "startX": 0,
         "startY": 5,
         "startMoveSpeed": 1,
@@ -37204,8 +37796,8 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 2689,
-        "worldScrollY": 1524,
+        "worldScrollX": 1578,
+        "worldScrollY": 1100,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,

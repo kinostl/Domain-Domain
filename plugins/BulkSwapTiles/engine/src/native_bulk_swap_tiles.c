@@ -44,9 +44,8 @@ void drawForBlockMode(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     const uint8_t top_left     = (say * tileLength) + sax;
     const uint8_t bottom_left  = (sby * tileLength) + sax;
-    const uint8_t col_count = ((ibx - iax) / 2) + 1;
 
-    uint8_t tay, curr_col;
+    uint8_t tay;
     bool top = true;
 
     for(tay = iay; tay <= iby; tay+=1){
