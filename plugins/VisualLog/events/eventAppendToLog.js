@@ -8,6 +8,14 @@ const wrap8Bit = (val) => (256 + (val % 256)) % 256;
 const decOct = (dec) => wrap8Bit(dec).toString(8).padStart(3, "0");
 
 const fields = [{
+  key: "color",
+  label: "Palette",
+  type: "togglebuttons",
+  options: [
+    ['010','BG 1'],['001','BG 2'],['002','BG 3'],['003','BG 4'],['004','BG 5'],['005','BG 6'],['006','DMG'],['007','UI']
+  ],
+  defaultValue: '007'
+},{
   key: "text",
   type: "text",
   placeholder: "Text...",
@@ -30,12 +38,13 @@ const compile = (input, helpers) => {
 
   _addComment("Log To Screen");
 
-  const textSpdSequence = '\\001\\001';
+  const speed = '\\001\\003';
+  const color = input.color ? `\\013\\${input.color}` : `\\013\\007`;
 
   text.forEach((_text)=>{
     _addComment(`${_text}`);
     appendRaw(`VM_OVERLAY_WAIT .UI_NONMODAL .UI_WAIT_TEXT`);
-    _loadStructuredText(`\\r${textSpdSequence}${_text}`);
+    _loadStructuredText(`${color}\\r${speed}${_text.padEnd(20, ' ')}`);
     appendRaw('VM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, .TEXT_TILE_CONTINUE');
   })
 

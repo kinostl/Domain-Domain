@@ -35,6 +35,14 @@ const fields = [{
     ['.UI_COLOR_BLACK', 'Black'],
     ['.UI_COLOR_WHITE', 'White']
   ]
+},{
+  key: "color",
+  label: "Palette",
+  type: "togglebuttons",
+  options: [
+    ['010','BG 1'],['001','BG 2'],['002','BG 3'],['003','BG 4'],['004','BG 5'],['005','BG 6'],['006','DMG'],['007','UI']
+  ],
+  defaultValue: '007'
 }];
 
 
@@ -53,9 +61,12 @@ const compile = (input, helpers) => {
   } = helpers;
   _addComment("Initiate Log To Screen");
   const y = decOct(input.line_count);
+  const speed = '\\001\\003';
+  const color = `\\013\\${input.color}`;
+  const text = input.text || '';
 
   appendRaw(`VM_OVERLAY_SHOW       0, ${18 - input.line_count}, ${input.bg_color}, .UI_AUTO_SCROLL`);
-  _loadStructuredText(`\\003\\001\\${y}\\001\\001${input.text || ''}`);
+  _loadStructuredText(`${color}\\003\\001\\${y}${speed}${text.padEnd(20,' ')}`);
   _displayText();
 
   _addNL();

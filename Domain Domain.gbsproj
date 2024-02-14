@@ -8485,15 +8485,6 @@
                     "id": "4be71539-c2cc-49b3-a1a8-9a348df40235"
                 },
                 {
-                    "command": "PT_EVENT_START_VISUAL_LOG",
-                    "args": {
-                        "text": "Game Start!",
-                        "line_count": 3,
-                        "bg_color": ".UI_COLOR_WHITE"
-                    },
-                    "id": "906442c7-6732-4465-9a97-11ec15260c1b"
-                },
-                {
                     "command": "EVENT_CAMERA_MOVE_TO",
                     "args": {
                         "x": {
@@ -8518,11 +8509,24 @@
                     "id": "2d207858-04bc-4252-ab38-1012de3c4440"
                 },
                 {
+                    "command": "PT_EVENT_START_VISUAL_LOG",
+                    "args": {
+                        "text": "Game Start!",
+                        "line_count": 3,
+                        "bg_color": ".UI_COLOR_WHITE",
+                        "color": "005",
+                        "__collapse": false
+                    },
+                    "id": "a591e954-8362-478a-b448-68a43714eba5"
+                },
+                {
                     "command": "PT_EVENT_APPEND_VISUAL_LOG",
                     "args": {
                         "text": [
                             "Loading Board..."
-                        ]
+                        ],
+                        "__collapse": false,
+                        "color": "004"
                     },
                     "id": "f8efb3ec-ba1d-4867-ae42-dba386061179"
                 },
@@ -8894,7 +8898,7 @@
                             "type": "number",
                             "value": 1
                         },
-                        "__collapse": false,
+                        "__collapse": true,
                         "__label": "Make Hands"
                     },
                     "children": {
@@ -8967,7 +8971,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Draw Player Areas",
-                        "__collapse": false,
+                        "__collapse": true,
                         "__comment": false
                     },
                     "children": {
@@ -9006,7 +9010,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Draw Opponent Areas",
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
@@ -9095,10 +9099,20 @@
                     "id": "4d348814-b34d-402c-8e38-10195e78ae8e"
                 },
                 {
+                    "command": "EVENT_OVERLAY_MOVE_TO",
+                    "args": {
+                        "x": 0,
+                        "y": 15,
+                        "speed": 1
+                    },
+                    "id": "0d6c9ef6-399b-4e7b-b697-aab62ef5c6aa"
+                },
+                {
                     "command": "EVENT_IF_EXPRESSION",
                     "args": {
                         "expression": "$53$ > 0 || $54$ > 0",
-                        "__collapseElse": false
+                        "__collapseElse": false,
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -9107,7 +9121,9 @@
                                 "args": {
                                     "text": [
                                         "Game Ready! Cheating"
-                                    ]
+                                    ],
+                                    "__collapse": false,
+                                    "color": "004"
                                 },
                                 "id": "05e571f8-0f34-4b36-a300-ef62e2a49001"
                             }
@@ -9118,13 +9134,26 @@
                                 "args": {
                                     "text": [
                                         "Game Ready!"
-                                    ]
+                                    ],
+                                    "__collapse": false,
+                                    "color": "005"
                                 },
                                 "id": "10f02676-8d17-4b2f-bb71-35ef86d3a307"
                             }
                         ]
                     },
                     "id": "2ffebd34-87b2-4b53-9647-de30c7cc58b4"
+                },
+                {
+                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                    "args": {
+                        "color": "007",
+                        "text": [
+                            "It is your turn."
+                        ],
+                        "__collapse": true
+                    },
+                    "id": "d595bc50-bbdc-4b06-949a-00b8da24f29d"
                 }
             ],
             "playerHit1Script": [],
@@ -17336,7 +17365,7 @@
                 "F85050",
                 "78C838",
                 "488818",
-                "081800"
+                "F8F8B8"
             ],
             "defaultName": "Default BG 5",
             "defaultColors": [
@@ -37796,7 +37825,7 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 1578,
+        "worldScrollX": 1760,
         "worldScrollY": 1100,
         "zoom": 400,
         "customColorsEnabled": true,
