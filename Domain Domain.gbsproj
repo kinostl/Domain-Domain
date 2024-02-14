@@ -11545,12 +11545,11 @@
                 {
                     "command": "PT_EVENT_START_VISUAL_LOG",
                     "args": {
-                        "line_count": 5,
-                        "bg_color": ".UI_COLOR_BLACK",
-                        "__collapse": false,
-                        "text": "123456789abcdefghijk"
+                        "text": "123456789abcdefghijk",
+                        "line_count": 3,
+                        "bg_color": ".UI_COLOR_WHITE"
                     },
-                    "id": "425d566a-1cd9-4be5-b54b-6cd11264de10"
+                    "id": "c21af93c-32af-40b0-9962-770718b05e44"
                 },
                 {
                     "command": "PT_EVENT_APPEND_VISUAL_LOG",

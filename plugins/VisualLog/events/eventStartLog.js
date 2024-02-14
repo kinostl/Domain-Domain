@@ -29,7 +29,7 @@ const fields = [{
 },{
   key: 'bg_color',
   label: 'Background Color',
-  defaultValue: '.UI_COLOR_BLACK',
+  defaultValue: '.UI_COLOR_WHITE',
   type: 'select',
   options: [
     ['.UI_COLOR_BLACK', 'Black'],
