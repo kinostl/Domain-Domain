@@ -11544,8 +11544,24 @@
                 },
                 {
                     "command": "PT_EVENT_START_VISUAL_LOG",
-                    "args": {},
-                    "id": "bcd00049-9e44-495a-b57a-831b5ae13bda"
+                    "args": {
+                        "line_count": 5,
+                        "bg_color": ".UI_COLOR_BLACK",
+                        "__collapse": false,
+                        "text": "123456789abcdefghijk"
+                    },
+                    "id": "425d566a-1cd9-4be5-b54b-6cd11264de10"
+                },
+                {
+                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                    "args": {
+                        "text": [
+                            "Log Test",
+                            "LT 2"
+                        ],
+                        "__comment": true
+                    },
+                    "id": "dfab5a86-e463-4326-9dfe-ee9ed00f2600"
                 },
                 {
                     "command": "EVENT_SET_VALUE",
@@ -11553,8 +11569,9 @@
                         "variable": "L0",
                         "value": {
                             "type": "number",
-                            "value": 3
-                        }
+                            "value": 1
+                        },
+                        "__collapse": false
                     },
                     "id": "b8025191-9c39-41c8-9d3c-fad7ecf9869f"
                 },
@@ -11595,7 +11612,8 @@
                             "Log 1",
                             "Log 2"
                         ],
-                        "__collapse": false
+                        "__collapse": false,
+                        "__comment": true
                     },
                     "id": "22753670-6be0-4239-bc00-27828c4b2485"
                 },
@@ -11653,7 +11671,8 @@
                                 "args": {
                                     "text": [
                                         "New Line $L0$"
-                                    ]
+                                    ],
+                                    "__collapse": false
                                 },
                                 "id": "e680dcc8-0b91-4048-9d22-b1a43504a16c"
                             }

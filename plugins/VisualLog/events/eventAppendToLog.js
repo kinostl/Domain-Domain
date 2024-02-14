@@ -1,6 +1,7 @@
 const id = "PT_EVENT_APPEND_VISUAL_LOG";
 const groups = ["EVENT_GROUP_DIALOGUE", "Visual Log"];
-const name = "Log";
+const name = "Append To Log";
+const description = "Adds to an existing log. Use Start Log in the scene first.";
 
 const wrap8Bit = (val) => (256 + (val % 256)) % 256;
 
@@ -16,10 +17,6 @@ const fields = [{
     multiple: true
 }]
 
-const textX = 0;
-const textY = 2;
-const textHeight = 3;
-
 const compile = (input, helpers) => {
   const {
     _addComment,
@@ -27,27 +24,19 @@ const compile = (input, helpers) => {
     _displayText,
     appendRaw,
     _addNL,
+    _includeHeader
   } = helpers;
-
   const text = Array.isArray(input.text) ? input.text.map((_text)=>_text.trim()) : [input.text || ''];
 
-  const x = decOct(1 + textX);
-  const y = decOct(1 + textY);
-  const textPosSequence = `\\003\\${x}\\${y}`;
-  const textSpdSequence = '\\001\\001';
-
   _addComment("Log To Screen");
+
+  const textSpdSequence = '\\001\\001';
 
   text.forEach((_text)=>{
     _addComment(`${_text}`);
     appendRaw(`VM_OVERLAY_WAIT .UI_NONMODAL .UI_WAIT_TEXT`);
-    appendRaw(`VM_OVERLAY_SCROLL 0, 0, 20, 3, .UI_COLOR_BLACK`);
-    _loadStructuredText(
-      `${textPosSequence}${textSpdSequence}${_text}`,
-      null,
-      textHeight
-    );
-    _displayText();
+    _loadStructuredText(`\\r${textSpdSequence}${_text}`);
+    appendRaw('VM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, .TEXT_TILE_CONTINUE');
   })
 
   _addNL();
@@ -60,4 +49,5 @@ module.exports = {
   fields,
   compile,
   waitUntilAfterInitFade: true,
+  description
 };
