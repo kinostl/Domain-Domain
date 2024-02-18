@@ -8318,11 +8318,22 @@
                                             "comparator": 1,
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": false,
+                                            "__collapse": true,
                                             "__label": "Handle Opponent Wins"
                                         },
                                         "children": {
-                                            "true": [],
+                                            "true": [
+                                                {
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                    "args": {
+                                                        "color": "004",
+                                                        "text": [
+                                                            "Opponent Wins!"
+                                                        ]
+                                                    },
+                                                    "id": "836e8fe8-b1ba-416f-ba19-19c2dc0fc431"
+                                                }
+                                            ],
                                             "false": []
                                         },
                                         "id": "9a659937-5d77-419c-9f2d-8701b2d82092"
@@ -8341,14 +8352,14 @@
                                         "children": {
                                             "true": [
                                                 {
-                                                    "command": "EVENT_TEXT",
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                     "args": {
+                                                        "color": "005",
                                                         "text": [
-                                                            "Player Wins"
-                                                        ],
-                                                        "avatarId": ""
+                                                            "Player Wins!"
+                                                        ]
                                                     },
-                                                    "id": "947bb5c0-4b74-4c9c-aa6f-490bfac60d23"
+                                                    "id": "7f491f0b-21c1-4acd-a3bc-7359fc757139"
                                                 }
                                             ],
                                             "false": []
@@ -8363,7 +8374,7 @@
                                             "comparator": 0,
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": true,
+                                            "__collapse": false,
                                             "__label": "Handle Game Ends"
                                         },
                                         "children": {
