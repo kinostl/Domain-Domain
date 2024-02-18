@@ -11,7 +11,12 @@
             "height": 18,
             "type": "TOPDOWN",
             "paletteIds": [],
-            "spritePaletteIds": [],
+            "spritePaletteIds": [
+                "default-bg-5",
+                "dmg",
+                "5aceab4a-33b8-4bcc-b32c-e398e3e713ad",
+                "ac6460f7-eee1-4352-b3e9-ef475e7474e0"
+            ],
             "collisions": [
                 0,
                 0,
@@ -6382,7 +6387,7 @@
                                             "comparator": "0",
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": false,
+                                            "__collapse": true,
                                             "__label": "Do Turn If No Winner"
                                         },
                                         "children": {
@@ -8202,7 +8207,7 @@
                                             "comparator": 0,
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": true,
+                                            "__collapse": false,
                                             "__label": "Handle No Winner"
                                         },
                                         "children": {
@@ -8299,9 +8304,18 @@
                                                                         "type": "number",
                                                                         "value": 0
                                                                     },
-                                                                    "__collapse": true
+                                                                    "__collapse": true,
+                                                                    "__comment": true
                                                                 },
                                                                 "id": "882aaabe-0960-4ab3-bf17-2014ffb8607a"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_PLAYER_SET_SPRITE",
+                                                                "args": {
+                                                                    "spriteSheetId": "df0d5733-54ee-4d81-a690-202edf78ed85",
+                                                                    "persist": false
+                                                                },
+                                                                "id": "7a5b8ccb-1b1f-44d7-a6a3-e03472033fd5"
                                                             },
                                                             {
                                                                 "command": "EVENT_SET_FALSE",
@@ -8454,6 +8468,14 @@
                         ]
                     },
                     "id": "7bed965c-30a2-41d2-86a0-45321cbce76f"
+                },
+                {
+                    "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                    "args": {
+                        "actorId": "$self$",
+                        "speed": 15
+                    },
+                    "id": "639ee6d7-f68a-4e04-b0cd-3dfe232c30db"
                 },
                 {
                     "command": "EVENT_GROUP",
@@ -18543,37 +18565,6 @@
                                             "priority": false
                                         }
                                     ]
-                                },
-                                {
-                                    "id": "8c331205-cb8c-48e4-853f-6c64061d4f36",
-                                    "tiles": [
-                                        {
-                                            "id": "2b34350b-8a02-485b-aadd-1126533ceece",
-                                            "x": 0,
-                                            "y": 0,
-                                            "sliceX": 0,
-                                            "sliceY": 0,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP1",
-                                            "paletteIndex": 1,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "547dc964-8263-4536-a29e-aa34fe303107",
-                                            "x": 8,
-                                            "y": 0,
-                                            "sliceX": 8,
-                                            "sliceY": 0,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP1",
-                                            "paletteIndex": 1,
-                                            "priority": false
-                                        }
-                                    ]
                                 }
                             ]
                         },
@@ -19207,6 +19198,16 @@
                 "F8F8D8",
                 "509878",
                 "202850"
+            ]
+        },
+        {
+            "id": "e8f3adc6-d222-4334-a1a8-0b14852a0822",
+            "name": "Palette 17",
+            "colors": [
+                "7868C8",
+                "B0F088",
+                "509878",
+                "000000"
             ]
         }
     ],
@@ -32285,9 +32286,18 @@
                                         "type": "number",
                                         "value": 1
                                     },
-                                    "__collapse": true
+                                    "__collapse": true,
+                                    "__comment": true
                                 },
                                 "id": "bddbdb3f-8714-4c84-80ae-9a679fad2e0d"
+                            },
+                            {
+                                "command": "EVENT_PLAYER_SET_SPRITE",
+                                "args": {
+                                    "spriteSheetId": "7c3653ae-ce44-49bc-8d73-617d201373f7",
+                                    "persist": false
+                                },
+                                "id": "6a6ce790-303b-4630-967b-bf3e4c954fe8"
                             },
                             {
                                 "command": "EVENT_ACTOR_MOVE_TO",
@@ -39998,8 +40008,8 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 1655,
-        "worldScrollY": 1007,
+        "worldScrollX": 1566,
+        "worldScrollY": 1060,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
