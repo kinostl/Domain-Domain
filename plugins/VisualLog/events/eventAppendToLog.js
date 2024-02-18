@@ -3,6 +3,15 @@ const groups = ["EVENT_GROUP_DIALOGUE", "Visual Log"];
 const name = "Append To Log";
 const description = "Adds to an existing log. Use Start Log in the scene first.";
 
+const autoLabel = (fetchArg, args) => {
+  if (args.text) {
+    return `Log "${fetchArg("text")}"`;
+  } else {
+    return "Append To Log";
+  }
+};
+
+
 const wrap8Bit = (val) => (256 + (val % 256)) % 256;
 
 const decOct = (dec) => wrap8Bit(dec).toString(8).padStart(3, "0");
@@ -58,5 +67,6 @@ module.exports = {
   fields,
   compile,
   waitUntilAfterInitFade: true,
-  description
+  description,
+  autoLabel
 };

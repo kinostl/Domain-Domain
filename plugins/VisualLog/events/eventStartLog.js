@@ -3,6 +3,14 @@ const groups = ["EVENT_GROUP_DIALOGUE", "Visual Log"];
 const name = "Start Log";
 const description = "Prepares the Scene for displaying a log."
 
+const autoLabel = (fetchArg, args) => {
+  if (args.text) {
+    return `Start Log "${fetchArg("text")}"`;
+  } else {
+    return "Start Log";
+  }
+};
+
 const fields = [{
   key: "text",
   label: 'First Line',
@@ -79,5 +87,6 @@ module.exports = {
   fields,
   compile,
   waitUntilAfterInitFade: false,
-  description
+  description,
+  autoLabel
 };
