@@ -13124,6 +13124,13 @@
                                 "id": "9ea07952-5ef3-4350-bf47-101319a66401"
                             },
                             {
+                                "command": "EVENT_FADE_OUT",
+                                "args": {
+                                    "speed": 1
+                                },
+                                "id": "45164902-1da5-4e5a-8962-985d0208bf44"
+                            },
+                            {
                                 "command": "EVENT_CAMERA_MOVE_TO",
                                 "args": {
                                     "x": {
@@ -13137,6 +13144,13 @@
                                     "speed": 0
                                 },
                                 "id": "99fe755c-7264-4153-beb3-1c3ca8c31ba6"
+                            },
+                            {
+                                "command": "EVENT_FADE_IN",
+                                "args": {
+                                    "speed": 1
+                                },
+                                "id": "7c7e221c-e82c-4340-b80e-1275ca783df8"
                             }
                         ]
                     },
@@ -13162,6 +13176,13 @@
                                 "children": {
                                     "true": [
                                         {
+                                            "command": "EVENT_FADE_OUT",
+                                            "args": {
+                                                "speed": 1
+                                            },
+                                            "id": "14ea2bb9-ffa4-4f11-a62c-53cea087b10b"
+                                        },
+                                        {
                                             "command": "EVENT_CAMERA_MOVE_TO",
                                             "args": {
                                                 "x": {
@@ -13183,6 +13204,13 @@
                                                 "expression": "$L0$ - 9"
                                             },
                                             "id": "0f69285d-d323-4d8f-9e16-4764ca645114"
+                                        },
+                                        {
+                                            "command": "EVENT_FADE_IN",
+                                            "args": {
+                                                "speed": 1
+                                            },
+                                            "id": "959b84d8-6b2a-414e-9e30-f64df7f915bb"
                                         }
                                     ],
                                     "false": [
