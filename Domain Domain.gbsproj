@@ -1105,7 +1105,7 @@
                             "command": "EVENT_SET_INPUT_SCRIPT",
                             "args": {
                                 "input": [
-                                    "b"
+                                    "a"
                                 ],
                                 "override": true,
                                 "__scriptTabs": "press"
@@ -1262,9 +1262,9 @@
                                                                                                     "command": "EVENT_REMOVE_INPUT_SCRIPT",
                                                                                                     "args": {
                                                                                                         "input": [
-                                                                                                            "b",
                                                                                                             "left",
-                                                                                                            "right"
+                                                                                                            "right",
+                                                                                                            "a"
                                                                                                         ],
                                                                                                         "__collapse": false
                                                                                                     },
@@ -1290,7 +1290,7 @@
                                                                                                     "command": "EVENT_SET_INPUT_SCRIPT",
                                                                                                     "args": {
                                                                                                         "input": [
-                                                                                                            "b"
+                                                                                                            "a"
                                                                                                         ],
                                                                                                         "override": true,
                                                                                                         "__scriptTabs": "press",
@@ -2865,7 +2865,7 @@
                             "command": "EVENT_SET_INPUT_SCRIPT",
                             "args": {
                                 "input": [
-                                    "b"
+                                    "a"
                                 ],
                                 "override": true,
                                 "__scriptTabs": "press"
@@ -2995,7 +2995,7 @@
                                                                             "command": "EVENT_SET_INPUT_SCRIPT",
                                                                             "args": {
                                                                                 "input": [
-                                                                                    "b"
+                                                                                    "a"
                                                                                 ],
                                                                                 "override": true,
                                                                                 "__scriptTabs": "press",
@@ -3382,7 +3382,7 @@
                             "command": "EVENT_SET_INPUT_SCRIPT",
                             "args": {
                                 "input": [
-                                    "b"
+                                    "a"
                                 ],
                                 "override": true,
                                 "__scriptTabs": "press"
@@ -3691,7 +3691,7 @@
                             "command": "EVENT_SET_INPUT_SCRIPT",
                             "args": {
                                 "input": [
-                                    "b"
+                                    "a"
                                 ],
                                 "override": true,
                                 "__scriptTabs": "press"
@@ -3785,7 +3785,7 @@
                                                             {
                                                                 "command": "EVENT_IF_EXPRESSION",
                                                                 "args": {
-                                                                    "expression": "(\n$34$ > 0 ||\n$47$ > 0 ||\n$48$ > 0 ||\n$42$ > 0 ||\n$50$ > 0 \n)",
+                                                                    "expression": "(\n$34$ > 0 ||\n$47$ > 0 ||\n$48$ > 0 ||\n$49$ > 0 ||\n$50$ > 0 \n)",
                                                                     "__collapseElse": false,
                                                                     "__collapse": false,
                                                                     "__label": "Wither Score"
@@ -3812,7 +3812,7 @@
                                                                             "command": "EVENT_SET_INPUT_SCRIPT",
                                                                             "args": {
                                                                                 "input": [
-                                                                                    "b"
+                                                                                    "a"
                                                                                 ],
                                                                                 "override": true,
                                                                                 "__scriptTabs": "press",
@@ -4161,10 +4161,20 @@
                                                                             "command": "EVENT_GROUP",
                                                                             "args": {
                                                                                 "__label": "Play Card",
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "children": {
                                                                                 "true": [
+                                                                                    {
+                                                                                        "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                        "args": {
+                                                                                            "color": "007",
+                                                                                            "text": [
+                                                                                                "You Wither Nothing"
+                                                                                            ]
+                                                                                        },
+                                                                                        "id": "04db6120-b37b-4320-948a-22ae2d92cea1"
+                                                                                    },
                                                                                     {
                                                                                         "command": "EVENT_ACTOR_EMOTE",
                                                                                         "args": {
@@ -4507,7 +4517,7 @@
                             "command": "EVENT_SET_INPUT_SCRIPT",
                             "args": {
                                 "input": [
-                                    "b"
+                                    "a"
                                 ],
                                 "override": true,
                                 "__scriptTabs": "press"
@@ -4664,9 +4674,9 @@
                                                                                                     "command": "EVENT_REMOVE_INPUT_SCRIPT",
                                                                                                     "args": {
                                                                                                         "input": [
-                                                                                                            "b",
                                                                                                             "left",
-                                                                                                            "right"
+                                                                                                            "right",
+                                                                                                            "a"
                                                                                                         ],
                                                                                                         "__collapse": false
                                                                                                     },
@@ -4692,7 +4702,7 @@
                                                                                                     "command": "EVENT_SET_INPUT_SCRIPT",
                                                                                                     "args": {
                                                                                                         "input": [
-                                                                                                            "b"
+                                                                                                            "a"
                                                                                                         ],
                                                                                                         "override": true,
                                                                                                         "__scriptTabs": "press",
@@ -16005,7 +16015,8 @@
             "height": 18,
             "imageWidth": 1440,
             "imageHeight": 144,
-            "filename": "rules.png"
+            "filename": "rules.png",
+            "tileColors": []
         },
         {
             "id": "c29c4282-22d2-4f72-8174-59d45ae0998a",
@@ -31872,7 +31883,7 @@
                                 "command": "EVENT_GROUP",
                                 "args": {
                                     "__label": "Put Card In Play",
-                                    "__collapse": false
+                                    "__collapse": true
                                 },
                                 "children": {
                                     "true": [
@@ -32030,7 +32041,7 @@
                                 "command": "EVENT_GROUP",
                                 "args": {
                                     "__label": "Discard Card",
-                                    "__collapse": false
+                                    "__collapse": true
                                 },
                                 "children": {
                                     "true": [
@@ -32250,7 +32261,7 @@
                         ],
                         "override": true,
                         "__scriptTabs": "press",
-                        "__collapse": true,
+                        "__collapse": false,
                         "__label": "Remove Player Control"
                     },
                     "children": {
@@ -32262,7 +32273,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Change Player to Opponent",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -32290,7 +32301,7 @@
                                         "type": "number",
                                         "value": 9
                                     },
-                                    "moveType": "diagonal",
+                                    "moveType": "vertical",
                                     "useCollisions": false
                                 },
                                 "id": "9d597f01-b3df-4fde-9efc-57e0d49dfb96"
@@ -32298,24 +32309,6 @@
                         ]
                     },
                     "id": "b7dd1c15-806f-44e1-b7ba-b9da315058be"
-                },
-                {
-                    "command": "EVENT_ACTOR_MOVE_TO",
-                    "args": {
-                        "actorId": "$self$",
-                        "x": {
-                            "type": "number",
-                            "value": 18
-                        },
-                        "y": {
-                            "type": "number",
-                            "value": 9
-                        },
-                        "moveType": "diagonal",
-                        "useCollisions": false,
-                        "__collapse": true
-                    },
-                    "id": "afeabebf-9680-44e4-82f9-3ad4de454440"
                 }
             ]
         },
@@ -40005,8 +39998,8 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 3616,
-        "worldScrollY": 689,
+        "worldScrollX": 1655,
+        "worldScrollY": 1007,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,
