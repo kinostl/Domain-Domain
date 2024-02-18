@@ -1121,6 +1121,16 @@
                                         "children": {
                                             "true": [
                                                 {
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                    "args": {
+                                                        "color": "007",
+                                                        "text": [
+                                                            "You Play Yellow"
+                                                        ]
+                                                    },
+                                                    "id": "eaced972-c787-49ff-82d2-ec88ecce88e1"
+                                                },
+                                                {
                                                     "command": "EVENT_IF_FLAGS_COMPARE",
                                                     "args": {
                                                         "variable": "11",
@@ -2873,6 +2883,16 @@
                                         "children": {
                                             "true": [
                                                 {
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                    "args": {
+                                                        "color": "007",
+                                                        "text": [
+                                                            "You Play Purple"
+                                                        ]
+                                                    },
+                                                    "id": "529a1997-080f-40c5-b2ad-6c746ba300cc"
+                                                },
+                                                {
                                                     "command": "EVENT_IF_FLAGS_COMPARE",
                                                     "args": {
                                                         "variable": "11",
@@ -3380,6 +3400,16 @@
                                         "children": {
                                             "true": [
                                                 {
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                    "args": {
+                                                        "color": "007",
+                                                        "text": [
+                                                            "You Play Blue"
+                                                        ]
+                                                    },
+                                                    "id": "ce413c04-e918-45e3-a212-63dcf762330e"
+                                                },
+                                                {
                                                     "command": "EVENT_IF_FLAGS_COMPARE",
                                                     "args": {
                                                         "variable": "11",
@@ -3676,6 +3706,16 @@
                                         },
                                         "children": {
                                             "true": [
+                                                {
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                    "args": {
+                                                        "color": "007",
+                                                        "text": [
+                                                            "You Play Red"
+                                                        ]
+                                                    },
+                                                    "id": "f95fa744-57d0-4db9-9530-00900ae1087d"
+                                                },
                                                 {
                                                     "command": "EVENT_IF_FLAGS_COMPARE",
                                                     "args": {
@@ -4482,6 +4522,16 @@
                                         },
                                         "children": {
                                             "true": [
+                                                {
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                    "args": {
+                                                        "color": "007",
+                                                        "text": [
+                                                            "You Play Green"
+                                                        ]
+                                                    },
+                                                    "id": "ef3bbfdb-3dca-4a58-9ece-0bf40b4a15e0"
+                                                },
                                                 {
                                                     "command": "EVENT_IF_FLAGS_COMPARE",
                                                     "args": {
@@ -6331,7 +6381,7 @@
                                                     "command": "EVENT_GROUP",
                                                     "args": {
                                                         "__label": "Draw Card",
-                                                        "__collapse": true
+                                                        "__collapse": false
                                                     },
                                                     "children": {
                                                         "true": [
@@ -6525,7 +6575,7 @@
                                                     "command": "EVENT_GROUP",
                                                     "args": {
                                                         "__label": "Make Play Choice",
-                                                        "__collapse": true
+                                                        "__collapse": false
                                                     },
                                                     "children": {
                                                         "true": [
@@ -7451,12 +7501,22 @@
                                                         "__collapseCase15": false,
                                                         "value15": 16,
                                                         "__collapseElse": false,
-                                                        "__collapse": true,
+                                                        "__collapse": false,
                                                         "__label": "Check for White Shields",
                                                         "__disableElse": true
                                                     },
                                                     "children": {
                                                         "true0": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays White"
+                                                                    ]
+                                                                },
+                                                                "id": "4edeebe3-54b4-4551-bae7-fbe22b701053"
+                                                            },
                                                             {
                                                                 "command": "EVENT_IF_FLAGS_COMPARE",
                                                                 "args": {
@@ -7504,6 +7564,16 @@
                                                         ],
                                                         "true1": [
                                                             {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Purple"
+                                                                    ]
+                                                                },
+                                                                "id": "9d0c14c4-9e8c-4f63-be4c-752c6ffc9408"
+                                                            },
+                                                            {
                                                                 "command": "EVENT_IF_FLAGS_COMPARE",
                                                                 "args": {
                                                                     "variable": "10",
@@ -7546,6 +7616,16 @@
                                                             }
                                                         ],
                                                         "true2": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Blue"
+                                                                    ]
+                                                                },
+                                                                "id": "ee0920fa-e186-4d72-82c9-8562c934f631"
+                                                            },
                                                             {
                                                                 "command": "EVENT_IF_FLAGS_COMPARE",
                                                                 "args": {
@@ -7590,6 +7670,16 @@
                                                         ],
                                                         "true3": [
                                                             {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Red"
+                                                                    ]
+                                                                },
+                                                                "id": "28c14208-fdc4-49a2-959e-d58194237280"
+                                                            },
+                                                            {
                                                                 "command": "EVENT_IF_FLAGS_COMPARE",
                                                                 "args": {
                                                                     "variable": "10",
@@ -7632,6 +7722,16 @@
                                                             }
                                                         ],
                                                         "true4": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Green"
+                                                                    ]
+                                                                },
+                                                                "id": "33a11750-c597-41a7-b015-0b199a9c02f7"
+                                                            },
                                                             {
                                                                 "command": "EVENT_IF_FLAGS_COMPARE",
                                                                 "args": {
@@ -7722,7 +7822,7 @@
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
                                                                     "__label": "Put Card in Graveyard",
-                                                                    "__collapse": false
+                                                                    "__collapse": true
                                                                 },
                                                                 "children": {
                                                                     "true": [
@@ -7775,7 +7875,7 @@
                                                                                 "value15": 16,
                                                                                 "__collapseElse": false,
                                                                                 "__disableElse": true,
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "children": {
                                                                                 "true0": [
@@ -7947,7 +8047,7 @@
                                                                                 "value15": 16,
                                                                                 "__collapseElse": false,
                                                                                 "__disableElse": true,
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "children": {
                                                                                 "true0": [
@@ -7956,7 +8056,7 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Plays White"
+                                                                                                "Opp Blooms White"
                                                                                             ]
                                                                                         },
                                                                                         "id": "57405183-fa26-46bd-9345-40c227a6e603"
@@ -7968,7 +8068,7 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Plays Purple"
+                                                                                                "Opp Blooms Purple"
                                                                                             ]
                                                                                         },
                                                                                         "id": "dea806bd-e0a5-482b-aa73-305be43ccdb8"
@@ -7980,7 +8080,7 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Plays Blue"
+                                                                                                "Opp Blooms Blue"
                                                                                             ]
                                                                                         },
                                                                                         "id": "74802fda-18a7-4647-9dae-6049f42aaec1"
@@ -7992,7 +8092,7 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Plays Red"
+                                                                                                "Opp Blooms Red"
                                                                                             ]
                                                                                         },
                                                                                         "id": "2d17340a-3bb2-47b0-af52-d0017082833f"
@@ -8004,7 +8104,7 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Plays Green"
+                                                                                                "Opp Blooms Green"
                                                                                             ]
                                                                                         },
                                                                                         "id": "a063e551-57ae-41ab-9b1c-3334e8e22507"
@@ -31004,7 +31104,7 @@
                                 "command": "EVENT_GROUP",
                                 "args": {
                                     "__label": "Put Card In Play",
-                                    "__collapse": true
+                                    "__collapse": false
                                 },
                                 "children": {
                                     "true": [
@@ -31055,7 +31155,7 @@
                                                         "args": {
                                                             "color": "007",
                                                             "text": [
-                                                                "You Play White"
+                                                                "You Bloom White"
                                                             ]
                                                         },
                                                         "id": "bcd9471a-b261-4daa-8eda-79712c6cb8b3"
@@ -31067,7 +31167,7 @@
                                                         "args": {
                                                             "color": "007",
                                                             "text": [
-                                                                "You Play Purple"
+                                                                "You Bloom Purple"
                                                             ]
                                                         },
                                                         "id": "a9bdb737-f760-48d7-aaef-7e5aa3a40272"
@@ -31079,7 +31179,7 @@
                                                         "args": {
                                                             "color": "007",
                                                             "text": [
-                                                                "You Play Blue"
+                                                                "You Bloom Blue"
                                                             ]
                                                         },
                                                         "id": "213d7bf1-7aca-4665-a880-57b7d427ae61"
@@ -31091,7 +31191,7 @@
                                                         "args": {
                                                             "color": "007",
                                                             "text": [
-                                                                "You Play Red"
+                                                                "You Bloom Red"
                                                             ]
                                                         },
                                                         "id": "df2b8043-35b7-44dc-b650-42bc089f08fa"
@@ -31103,7 +31203,7 @@
                                                         "args": {
                                                             "color": "007",
                                                             "text": [
-                                                                "You Play Green"
+                                                                "You Bloom Green"
                                                             ]
                                                         },
                                                         "id": "7ce6f90b-d942-4a3a-b656-59eaa437b150"
@@ -31544,8 +31644,9 @@
                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                 "args": {
                                     "text": [
-                                        "Opp: Blue => +1 Card"
-                                    ]
+                                        "Opp Waters ???"
+                                    ],
+                                    "color": "006"
                                 },
                                 "id": "1b39fb2b-0548-48ca-98e7-cc123bc21039"
                             }
@@ -31959,7 +32060,7 @@
                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                 "args": {
                                     "text": [
-                                        "Opp: White => +1"
+                                        "Opp Salts ???"
                                     ],
                                     "color": "006"
                                 },
@@ -31971,7 +32072,7 @@
                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                 "args": {
                                     "text": [
-                                        "Opp: White => None"
+                                        "Opp Salts Nothing"
                                     ]
                                 },
                                 "id": "40bd9662-f04f-4c3d-afd8-ee5119f3f6d8"
@@ -32109,8 +32210,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Purple=>-White"
-                                                                                    ]
+                                                                                        "Opp Pulls Yellow"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "d66fe9f5-6317-4684-a7a6-93bb8338d1ef"
                                                                             }
@@ -32120,8 +32222,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Purple=>-Purple"
-                                                                                    ]
+                                                                                        "Opp Pulls Purple"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "5fa36e04-6eed-4955-9617-53bc0379ff9b"
                                                                             }
@@ -32131,8 +32234,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Purple=>-Blue"
-                                                                                    ]
+                                                                                        "Opp Pulls Blue"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "43f7616d-d055-40af-a2af-6ea9c8b40c5f"
                                                                             }
@@ -32142,8 +32246,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Purple=>-Red"
-                                                                                    ]
+                                                                                        "Opp Pulls Red"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "5acd79f0-6e41-4a30-934a-76d2ceee738b"
                                                                             }
@@ -32153,8 +32258,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Purple=>-Green"
-                                                                                    ]
+                                                                                        "Opp Pulls Green"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "eb720d9e-9d49-4adf-aea6-824576dea9b1"
                                                                             }
@@ -32641,8 +32747,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Red => - White"
-                                                                                    ]
+                                                                                        "Opp Withers Yellow"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "9a4591e7-9563-401a-8f7c-5193db08d4ab"
                                                                             }
@@ -32652,8 +32759,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Red => - Purple"
-                                                                                    ]
+                                                                                        "Opp Withers Purple"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "0e1b6f97-0d7d-439a-a7cb-c17720d12ad3"
                                                                             }
@@ -32663,8 +32771,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Red => - Blue"
-                                                                                    ]
+                                                                                        "Opp Withers Blue"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "7e9893e3-3faa-4052-9632-2e19ffbb0544"
                                                                             }
@@ -32674,8 +32783,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Red => - Red"
-                                                                                    ]
+                                                                                        "Opp Withers Red"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "b144e1f2-caac-471a-b2e7-5ffbe8474e15"
                                                                             }
@@ -32685,8 +32795,9 @@
                                                                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                                 "args": {
                                                                                     "text": [
-                                                                                        "Opp: Red => - Green"
-                                                                                    ]
+                                                                                        "Opp Withers Green"
+                                                                                    ],
+                                                                                    "color": "006"
                                                                                 },
                                                                                 "id": "a1cb9450-7664-4541-9eda-d24d1bc96288"
                                                                             }
@@ -33313,8 +33424,9 @@
                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                 "args": {
                                     "text": [
-                                        "Opp: Green => +1"
-                                    ]
+                                        "Opp Braces ???"
+                                    ],
+                                    "color": "006"
                                 },
                                 "id": "e1de419e-c704-4806-b4c3-69fb159b0d96"
                             }
@@ -33324,8 +33436,9 @@
                                 "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                 "args": {
                                     "text": [
-                                        "Opp: Green => None"
-                                    ]
+                                        "Opp Braces Nothing"
+                                    ],
+                                    "color": "006"
                                 },
                                 "id": "8a47e0c9-5038-4726-9feb-7560eafa2e81"
                             }
