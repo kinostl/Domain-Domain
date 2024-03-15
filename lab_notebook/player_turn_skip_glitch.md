@@ -6,3 +6,5 @@ Fix above did not work. Now entering via Swamp skips the turn instead.
 
 
 New Theory: This happens when the player moves into the opponent trigger at an angle instead of from the player's side of the field. Teleports will probably fix this. I'm guessing the diagonal counts as multiple movements.
+
+Solved: Turing off diagonal movement fixed ths problem.
