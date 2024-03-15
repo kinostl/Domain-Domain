@@ -46,3 +46,51 @@ void changePlot(SCRIPT_CTX * THIS) OLDCALL BANKED {
     bkg_tile = get_bkg_tile_xy(f_x, FACE_BOT_Y);
     set_bkg_tile_xy(p_x, p_y + 1, bkg_tile);
 }
+
+#define BARRIER_START 12
+#define BASE_BARRIER_X 8
+
+void changeBarrierState(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    THIS;
+    uint8_t bkg_tile;
+
+    uint16_t row =  (*(uint16_t *) VM_REF_TO_PTR(FN_ARG1));
+    uint16_t state =  (*(uint16_t *) VM_REF_TO_PTR(FN_ARG0));
+
+    uint8_t f_x, p_x, p_y;
+
+    f_x = BARRIER_START + state;
+    p_x = BASE_BARRIER_X + (state * 3);
+    p_y = BASE_PLOT_Y + (row * 2);
+
+    //Top
+    bkg_tile = get_bkg_tile_xy(f_x, FACE_TOP_Y);
+    set_bkg_tile_xy(p_x, p_y, bkg_tile);
+
+    //Bottom
+    bkg_tile = get_bkg_tile_xy(f_x, FACE_BOT_Y);
+    set_bkg_tile_xy(p_x, p_y + 1, bkg_tile);
+}
+
+
+void clearBarrierState(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    THIS;
+    uint8_t bkg_tile;
+
+    uint16_t row =  (*(uint16_t *) VM_REF_TO_PTR(FN_ARG1));
+    uint16_t state =  (*(uint16_t *) VM_REF_TO_PTR(FN_ARG0));
+
+    uint8_t f_x, p_x, p_y;
+
+    f_x = BARRIER_START + 2;
+    p_x = BASE_BARRIER_X + (state * 3);
+    p_y = BASE_PLOT_Y + (row * 2);
+
+    //Top
+    bkg_tile = get_bkg_tile_xy(f_x, FACE_TOP_Y);
+    set_bkg_tile_xy(p_x, p_y, bkg_tile);
+
+    //Bottom
+    bkg_tile = get_bkg_tile_xy(f_x, FACE_BOT_Y);
+    set_bkg_tile_xy(p_x, p_y + 1, bkg_tile);
+}
