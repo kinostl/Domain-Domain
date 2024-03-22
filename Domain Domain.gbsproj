@@ -12075,42 +12075,6 @@
                     "command": "MHF_EVENT_MAKE_GLOBALS_H",
                     "args": {},
                     "id": "df262a95-bf8a-402a-8e0a-c9970c1ac328"
-                },
-                {
-                    "command": "EVENT_SET_VALUE",
-                    "args": {
-                        "variable": "28",
-                        "value": {
-                            "type": "number",
-                            "value": 0
-                        }
-                    },
-                    "id": "ba0c41dc-61df-48d2-97bd-7abda7ccdc48"
-                },
-                {
-                    "command": "EVENT_TEXT",
-                    "args": {
-                        "text": [
-                            "Before: $28$"
-                        ],
-                        "avatarId": ""
-                    },
-                    "id": "37ee846d-8282-430b-b603-b06ced06bad7"
-                },
-                {
-                    "command": "MHF_EVENT_HANDLE_OPPONENT_AI",
-                    "args": {},
-                    "id": "a8ae627c-8c1e-4fc5-ad3f-31d5b2ac3745"
-                },
-                {
-                    "command": "EVENT_TEXT",
-                    "args": {
-                        "text": [
-                            "Before: $28$"
-                        ],
-                        "avatarId": ""
-                    },
-                    "id": "7b44651e-7d7c-4963-9b34-86afe6cb8854"
                 }
             ],
             "playerHit1Script": [],
@@ -14470,7 +14434,8 @@
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
                                                                     "__label": "Set Valid Card Choices",
-                                                                    "__collapse": true
+                                                                    "__collapse": false,
+                                                                    "__comment": true
                                                                 },
                                                                 "children": {
                                                                     "true": [
@@ -14938,7 +14903,7 @@
                                                         "__collapseCase15": false,
                                                         "value15": 16,
                                                         "__collapseElse": false,
-                                                        "__collapse": false,
+                                                        "__collapse": true,
                                                         "__label": "Check for White Shields",
                                                         "__disableElse": true
                                                     },
@@ -38929,11 +38894,6 @@
             "symbol": "var_current_opponent"
         },
         {
-            "id": "36",
-            "name": "Valid Card Choices",
-            "symbol": "var_valid_card_choices"
-        },
-        {
             "id": "37",
             "name": "Player Plains Graveyard",
             "symbol": "var_player_plains_graveyard"
@@ -39147,6 +39107,11 @@
             "id": "4a353d59-565b-4c21-a1f8-cd569858354b__L0",
             "name": "Selection",
             "symbol": "var_selection"
+        },
+        {
+            "id": "36",
+            "name": "Valid Card Choices",
+            "symbol": "var_valid_card_choices"
         }
     ],
     "engineFieldValues": [
@@ -39170,8 +39135,8 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 1469,
-        "worldScrollY": 0,
+        "worldScrollX": 4013,
+        "worldScrollY": 106,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,

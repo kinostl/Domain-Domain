@@ -23,12 +23,12 @@ const compile = (input, helpers) => {
 
     __output += Object.values(variableAliasLookup)
       .map((str, stringIndex) => {
-          //const alias = var_names[str]
-        return `#define ${str} ${stringIndex}\n`;
+        const alias = var_names[str]
+        return `#define ${alias} ${stringIndex}\n`;
       })
       .join("")
 
-    __output+="#define GET_GLOBAL_VAL(idx) *(uint16_t *) script_memory + (idx)\n"
+    __output+="#define GET_GLOBAL_VAL(idx) *((uint16_t *) script_memory + (idx))\n"
     __output+="#define GET_GLOBAL_REF(idx) (uint16_t *) script_memory + (idx)\n"
     __output+="#endif"
 

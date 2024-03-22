@@ -47,6 +47,27 @@ if (flags & THIRD) { ...
 // Required for randomization, taken from gbvm's implementation.
 #define C_MASK (limit | (limit >> 1) | (limit >> 2) | (limit >> 3) | (limit >> 4) | (limit >> 5) | (limit >> 6) | (limit >> 7) | (limit >> 8) | (limit >> 9) | (limit >> 10) | (limit >> 11) | (limit >> 12) | (limit >> 13) | (limit >> 14) | (limit >> 15))
 
+
+uint16_t get_cards_in_hand() {
+    uint16_t cards_in_hand = 0;
+    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_HAND) > 0) {
+        cards_in_hand |= C_WHITE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_HAND) > 0) {
+        cards_in_hand |= C_BLACK;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_HAND) > 0) {
+        cards_in_hand |= C_BLUE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_HAND) > 0) {
+        cards_in_hand |= C_RED;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_HAND) > 0) {
+        cards_in_hand |= C_GREEN;
+    }
+    return cards_in_hand;
+}
+
 uint16_t sample(uint16_t* choices, uint16_t limit){
 
     uint16_t value = randw() & C_MASK;
@@ -95,9 +116,9 @@ void handleDebugCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
      *  2. Play Randomly
     */
 
-    uint16_t cards_in_hand = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0);
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
-    uint16_t color_pref = *(uint16_t *) VM_REF_TO_PTR(FN_ARG2);
+    uint16_t cards_in_hand = get_cards_in_hand();
+    uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
+    uint16_t color_pref = GET_GLOBAL_VAL(CURRENT_OPPONENT);
     uint16_t has_color_pref = 0;
     switch(color_pref){
         case T_WHITE:
@@ -147,10 +168,10 @@ void handleDebugCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
     *
     * Played by Cirno
 */
-void handleBlueAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
-
-    uint16_t cards_in_hand = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0);
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
+void handleBlueAi(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    THIS;
+    uint16_t cards_in_hand = get_cards_in_hand();
+    uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
     if(cards_in_hand & C_BLUE){
         *card_choice = T_BLUE;
@@ -296,7 +317,17 @@ Choose random empty plot. Play that color optimally.
 
 void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
+    handleDebugCirno(THIS);/*
+    uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
+    switch (current_opponent) {
+        case 0:
+            //Rainbow Cirno
+            handleDebugCirno(THIS);
+            break;
+        case 3:
+            //Classic Cirno
 
-    uint16_t * target_card = GET_GLOBAL_REF(TARGETED_CARD);
-    *target_card = 96;
+            break;
+
+    }*/
 }
