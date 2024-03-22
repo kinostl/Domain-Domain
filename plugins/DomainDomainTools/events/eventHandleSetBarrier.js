@@ -31,12 +31,8 @@ const autoLabel = (fetchArg, args) => {
 const compile = (input, helpers) => {
     const {
         _callNative,
-        _stackPop,
         _reserve,
-        variableSetToUnionValue,
-        variableDec,
         _setConst,
-        _setToVariable
     } = helpers;
 
 

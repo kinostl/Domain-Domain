@@ -6387,7 +6387,7 @@
                                             "comparator": "0",
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": true,
+                                            "__collapse": false,
                                             "__label": "Do Turn If No Winner"
                                         },
                                         "children": {
@@ -7271,14 +7271,9 @@
                                                                 "id": "853a2598-413d-4100-acfa-a7b234b4d0f5"
                                                             },
                                                             {
-                                                                "command": "MHF_EVENT_HANDLE_GARDENER_AI",
-                                                                "args": {
-                                                                    "validChoices": "36",
-                                                                    "__collapse": true,
-                                                                    "targetCard": "22",
-                                                                    "currentOpponent": "35"
-                                                                },
-                                                                "id": "5dd5abff-6bd9-4172-9c0e-1262a4a58cf7"
+                                                                "command": "MHF_EVENT_HANDLE_OPPONENT_AI",
+                                                                "args": {},
+                                                                "id": "86a1c443-374b-4ff2-9e21-0bf601b51087"
                                                             },
                                                             {
                                                                 "command": "EVENT_SWITCH",
@@ -10108,6 +10103,11 @@
                         ]
                     },
                     "id": "b91be83a-cc42-4d53-9331-acf85389da6a"
+                },
+                {
+                    "command": "MHF_EVENT_MAKE_GLOBALS_H",
+                    "args": {},
+                    "id": "4ed19ef3-c7f5-429a-9e0d-f182ecf2195f"
                 }
             ],
             "playerHit1Script": [],
@@ -12070,7 +12070,49 @@
                 }
             ],
             "triggers": [],
-            "script": [],
+            "script": [
+                {
+                    "command": "MHF_EVENT_MAKE_GLOBALS_H",
+                    "args": {},
+                    "id": "df262a95-bf8a-402a-8e0a-c9970c1ac328"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "28",
+                        "value": {
+                            "type": "number",
+                            "value": 0
+                        }
+                    },
+                    "id": "ba0c41dc-61df-48d2-97bd-7abda7ccdc48"
+                },
+                {
+                    "command": "EVENT_TEXT",
+                    "args": {
+                        "text": [
+                            "Before: $28$"
+                        ],
+                        "avatarId": ""
+                    },
+                    "id": "37ee846d-8282-430b-b603-b06ced06bad7"
+                },
+                {
+                    "command": "MHF_EVENT_HANDLE_OPPONENT_AI",
+                    "args": {},
+                    "id": "a8ae627c-8c1e-4fc5-ad3f-31d5b2ac3745"
+                },
+                {
+                    "command": "EVENT_TEXT",
+                    "args": {
+                        "text": [
+                            "Before: $28$"
+                        ],
+                        "avatarId": ""
+                    },
+                    "id": "7b44651e-7d7c-4963-9b34-86afe6cb8854"
+                }
+            ],
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": []
@@ -13772,7 +13814,7 @@
                                             "comparator": "0",
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": true,
+                                            "__collapse": false,
                                             "__label": "Do Turn If No Winner"
                                         },
                                         "children": {
@@ -14656,14 +14698,9 @@
                                                                 "id": "832404fc-4ff0-42f6-8e10-76c93b6d1de4"
                                                             },
                                                             {
-                                                                "command": "MHF_EVENT_HANDLE_GARDENER_AI",
-                                                                "args": {
-                                                                    "validChoices": "36",
-                                                                    "__collapse": true,
-                                                                    "targetCard": "22",
-                                                                    "currentOpponent": "35"
-                                                                },
-                                                                "id": "6c1a094f-bb07-4630-8921-756830bfa4b6"
+                                                                "command": "MHF_EVENT_HANDLE_OPPONENT_AI",
+                                                                "args": {},
+                                                                "id": "07f4f9ec-f2a6-4090-ba9b-84dfbfeea376"
                                                             },
                                                             {
                                                                 "command": "EVENT_SWITCH",
@@ -39133,8 +39170,8 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 4129,
-        "worldScrollY": 106,
+        "worldScrollX": 1469,
+        "worldScrollY": 0,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,

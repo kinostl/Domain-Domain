@@ -2,6 +2,6 @@
 
 You can see the helpers here: https://github.com/chrismaltby/gb-studio/blob/develop/src/lib/compiler/scriptBuilder.ts
 
-variableSetToUnionValue might be what you're looking for half the time.
+~~variableSetToUnionValue might be what you're looking for half the time.~~ false, does not set variables like the other set commands. Just use currying.
 
 _declareLocal has potential to be interesting.

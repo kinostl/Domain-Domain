@@ -1,49 +1,17 @@
-const id = "MHF_EVENT_HANDLE_GARDENER_AI";
+const id = "MHF_EVENT_HANDLE_OPPONENT_AI";
 const groups = ["Garden Cards"];
-const name = "Handle Gardener AI";
+const name = "Handle Opponent AI";
 
-const fields = [
-    {
-        key: "validChoices",
-        label: "Valid Choices",
-        description: "Flag of Valid Choices.\n 1. White\n2. Black\n3. Blue\n4. Red\n5. Green",
-        type: "variable",
-        defaultValue: "LAST_VARIABLE"
-    },
-    {
-        key: "targetCard",
-        label: "Where to Store Choice",
-        description: "Variable holding card choice",
-        type: "variable",
-        defaultValue: "LAST_VARIABLE"
-    },
-    {
-        key: "currentOpponent",
-        label: "Current Opponent",
-        type: "variable",
-        defaultValue: "LAST_VARIABLE"
-    },
-
-];
+const fields = [{
+    label: "Run the Current Opponent's AI"
+}]
 
 const compile = (input, helpers) => {
     const {
-        _callNative,
-        _setVariable,
-        _setToVariable,
-        _stackPop,
-        _reserve
+        _callNative
     } = helpers;
 
-
-    const stackSize = 3;
-    _reserve(stackSize);
-    _setToVariable(".ARG0", input.validChoices);
-    _setToVariable(".ARG1", input.targetCard);
-    _setToVariable(".ARG2", input.currentOpponent)
-    _callNative("handleDebugCirno");
-    _setVariable(input.targetCard, ".ARG1");
-    _reserve(stackSize * -1);
+    _callNative("handleOpponentTurn")
 };
 
 
