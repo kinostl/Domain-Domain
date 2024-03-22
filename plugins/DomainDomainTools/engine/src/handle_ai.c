@@ -1,3 +1,4 @@
+#include "math.h"
 #pragma bank 255
 
 #include "vm.h"
@@ -66,6 +67,103 @@ uint16_t get_cards_in_hand() {
         cards_in_hand |= C_GREEN;
     }
     return cards_in_hand;
+}
+
+uint16_t get_empty_plots() {
+    uint16_t empty_plots = 0;
+    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) == 0) {
+        empty_plots |= C_WHITE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE) == 0) {
+        empty_plots |= C_BLACK;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE) == 0) {
+        empty_plots |= C_BLUE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_SCORE) == 0) {
+        empty_plots |= C_RED;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_SCORE) == 0) {
+        empty_plots |= C_GREEN;
+    }
+    return empty_plots;
+}
+
+uint16_t get_suffering_plots() {
+    uint16_t weakest_plot = 5;
+    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) > 0) {
+        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE) > 0) {
+        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE) > 0) {
+        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_SCORE) > 0) {
+        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_SCORE));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_SCORE) > 0) {
+        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_FORESTS_SCORE));
+    }
+
+    uint16_t suffering_plots = 0;
+    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) == weakest_plot) {
+        suffering_plots |= C_WHITE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE) == weakest_plot) {
+        suffering_plots |= C_BLACK;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE) == weakest_plot) {
+        suffering_plots |= C_BLUE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_SCORE) == weakest_plot) {
+        suffering_plots |= C_RED;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_SCORE) == weakest_plot) {
+        suffering_plots |= C_GREEN;
+    }
+
+    return suffering_plots;
+}
+
+
+uint16_t get_suffering_cards() {
+    uint16_t weakest_card = 5;
+    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(OPPONENT_PLAINS_HAND));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(OPPONENT_SWAMPS_HAND));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(OPPONENT_ISLANDS_HAND));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_HAND));
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(OPPONENT_FORESTS_HAND));
+    }
+
+    uint16_t suffering_cards = 0;
+    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_HAND) == weakest_card) {
+        suffering_cards |= C_WHITE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_HAND) == weakest_card) {
+        suffering_cards |= C_BLACK;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_HAND) == weakest_card) {
+        suffering_cards |= C_BLUE;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_HAND) == weakest_card) {
+        suffering_cards |= C_RED;
+    }
+    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_HAND) == weakest_card) {
+        suffering_cards |= C_GREEN;
+    }
+
+    return suffering_cards;
 }
 
 uint16_t sample(uint16_t* choices, uint16_t limit){
@@ -192,17 +290,17 @@ void handleBlueAi(SCRIPT_CTX * THIS) OLDCALL BANKED {
     Green now protects your colors with "The next time this would wither, it will bloom instead."
 */
 void handleGreenAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t cards_in_hand = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0);
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
-    uint16_t empty_plots = ~(*(uint16_t *) VM_REF_TO_PTR(FN_ARG2)); //Inversion of filled plots
+    uint16_t cards_in_hand = get_cards_in_hand();
+    uint16_t empty_plots = get_empty_plots();
     uint16_t cards_in_hand_with_empty_plots = cards_in_hand & empty_plots;
+
+    uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
     if(cards_in_hand & C_GREEN){
         *card_choice = T_GREEN;
     }else{
         if(cards_in_hand_with_empty_plots > 0){
-            //Choose random plot that we have cards for
-            *card_choice = get_random_choice(cards_in_hand & empty_plots);
+            *card_choice = get_random_choice(cards_in_hand_with_empty_plots);
         }else{
             *card_choice = get_random_choice(cards_in_hand);
         }
@@ -210,8 +308,8 @@ void handleGreenAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 void handleGreenChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t unprotected_cards = ~(*(uint16_t *) VM_REF_TO_PTR(FN_ARG0)); //Inversion of the Protected Cards
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
+    uint16_t unprotected_cards = ~(GET_GLOBAL_VAL(OPPONENT_SHIELDS)); //Inversion of the Protected Cards
+    uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
     *card_choice = get_random_choice(unprotected_cards);
 }
 
@@ -226,8 +324,8 @@ void handleGreenChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
     Yellow no longer has the ability to protect. It can only block.
 */
 void handleWhiteAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t cards_in_hand = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0);
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
+    uint16_t cards_in_hand = get_cards_in_hand();
+    uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
     if(cards_in_hand & C_WHITE){
         *card_choice = T_WHITE;
@@ -237,9 +335,13 @@ void handleWhiteAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 void handleWhiteAiChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t unblocked_cards = ~(*(uint16_t *) VM_REF_TO_PTR(FN_ARG0)); //Inversion of the Protected Cards
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
-    *card_choice = get_random_choice(unblocked_cards);
+    uint16_t unblocked_cards = ~(GET_GLOBAL_VAL(OPPONENT_SHIELDS)) >> 5; //Inversion of the Protected Cards
+    uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
+    if(unblocked_cards & C_RED){
+        *card_choice = T_RED;
+    }else{
+        *card_choice = get_random_choice(unblocked_cards);
+    }
 }
 
 /*
@@ -253,8 +355,8 @@ Action Priority:
 ```
 */
 void handlePurpleAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t cards_in_hand = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0);
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
+    uint16_t cards_in_hand = get_cards_in_hand();
+    uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
     if(cards_in_hand & C_BLACK){
         *card_choice = T_BLACK;
@@ -264,9 +366,13 @@ void handlePurpleAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 void handlePurpleAiChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t suffering_cards = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0); //Cards with the lowest values > 0
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
-    *card_choice = get_random_choice(suffering_cards);
+    uint16_t suffering_cards = get_suffering_cards(); //Cards with the lowest values > 0
+    uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
+    if(suffering_cards & C_RED){
+        *card_choice = T_RED;
+    }else{
+        *card_choice = get_random_choice(suffering_cards);
+    }
 }
 
 /*
@@ -279,17 +385,18 @@ Aim to have a Garden win by outpacing the opponent, aiming to remove their plots
 ```
 */
 void handleRedAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t cards_in_hand = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0);
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
-    uint16_t empty_plots = ~(*(uint16_t *) VM_REF_TO_PTR(FN_ARG2)); //Inversion of filled plots
+    uint16_t cards_in_hand = get_cards_in_hand();
+    uint16_t empty_plots = get_empty_plots();
     uint16_t cards_in_hand_with_empty_plots = cards_in_hand & empty_plots;
+
+    uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
     if(cards_in_hand & C_RED){
         *card_choice = T_RED;
     }else{
         if(cards_in_hand_with_empty_plots > 0){
             //Choose random plot that we have cards for
-            *card_choice = get_random_choice(cards_in_hand & empty_plots);
+            *card_choice = get_random_choice(cards_in_hand_with_empty_plots);
         }else{
             *card_choice = get_random_choice(cards_in_hand);
         }
@@ -297,8 +404,8 @@ void handleRedAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 void handleRedAiChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint16_t suffering_plots = *(uint16_t *) VM_REF_TO_PTR(FN_ARG0); //Plots with the lowest values > 0
-    uint16_t * card_choice = (uint16_t *) VM_REF_TO_PTR(FN_ARG1);
+    uint16_t suffering_plots = get_suffering_plots(); //Plots with the lowest values > 0
+    uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
     *card_choice = get_random_choice(suffering_plots);
 }
 
