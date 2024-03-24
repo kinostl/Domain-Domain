@@ -651,6 +651,13 @@ bool playerHasWhiteBarrier(void) {
     return player_shields & card_choice;
 }
 
+bool playerHasGreenBarrier(void) {
+    uint16_t target_card = GET_GLOBAL_VAL(TARGETED_CARD);
+    uint16_t player_shields = GET_GLOBAL_VAL(PLAYER_SHIELDS);
+    target_card = 1 << (target_card - 1);
+    return player_shields & target_card;
+}
+
 void doBlueEffect(void) {
     uint16_t * random_hand_slot = get_random_opp_hand_slot();
     *random_hand_slot = *random_hand_slot + 1;
@@ -690,8 +697,21 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
     if(card_choice == 2) {
-        //handlePurpleAiChooseTarget();
         chooseRandomPurpleTarget();
+        if (playerHasGreenBarrier()) {
+            uint16_t * shield_triggered = GET_GLOBAL_REF(SHIELD_TRIGGERED);
+
+            uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
+            uint16_t * target_play_slot = get_player_play_slot(target_choice);
+
+            *shield_triggered = target_choice;
+            *target_play_slot = *target_play_slot + 1;
+
+            opp_discard_card(card_choice);
+
+            return;
+        }
+        //handlePurpleAiChooseTarget();
         doPurpleEffect();
     }
     opp_play_card(card_choice);
