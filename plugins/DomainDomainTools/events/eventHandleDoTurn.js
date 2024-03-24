@@ -1,9 +1,9 @@
-const id = "MHF_EVENT_HANDLE_OPPONENT_AI";
+const id = "MHF_EVENT_HANDLE_OPPONENT_AI_TURN";
 const groups = ["Garden Cards"];
-const name = "Handle Opponent Card Choice";
+const name = "Handle Opponent AI";
 
 const fields = [{
-    label: "Choose the current AI's card to play"
+    label: "Run the Current Opponent's AI"
 }]
 
 const compile = (input, helpers) => {
@@ -11,7 +11,7 @@ const compile = (input, helpers) => {
         _callNative
     } = helpers;
 
-    _callNative("handleOpponentCardChoice")
+    _callNative("handleOpponentTurn")
 };
 
 

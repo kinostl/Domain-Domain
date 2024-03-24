@@ -1,4 +1,6 @@
 #include "math.h"
+#include <stdlib.h>
+#include <types.h>
 #pragma bank 255
 
 #include "vm.h"
@@ -49,7 +51,7 @@ if (flags & THIRD) { ...
 #define C_MASK (limit | (limit >> 1) | (limit >> 2) | (limit >> 3) | (limit >> 4) | (limit >> 5) | (limit >> 6) | (limit >> 7) | (limit >> 8) | (limit >> 9) | (limit >> 10) | (limit >> 11) | (limit >> 12) | (limit >> 13) | (limit >> 14) | (limit >> 15))
 
 
-uint16_t get_cards_in_hand() {
+uint16_t get_cards_in_hand(void) {
     uint16_t cards_in_hand = 0;
     if(GET_GLOBAL_VAL(OPPONENT_PLAINS_HAND) > 0) {
         cards_in_hand |= C_WHITE;
@@ -69,7 +71,7 @@ uint16_t get_cards_in_hand() {
     return cards_in_hand;
 }
 
-uint16_t get_empty_plots() {
+uint16_t get_empty_plots(void) {
     uint16_t empty_plots = 0;
     if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) == 0) {
         empty_plots |= C_WHITE;
@@ -89,7 +91,7 @@ uint16_t get_empty_plots() {
     return empty_plots;
 }
 
-uint16_t get_suffering_plots() {
+uint16_t get_suffering_plots(void) {
     uint16_t weakest_plot = 5;
     if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) > 0) {
         weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE));
@@ -128,7 +130,7 @@ uint16_t get_suffering_plots() {
 }
 
 
-uint16_t get_suffering_cards() {
+uint16_t get_suffering_cards(void) {
     uint16_t weakest_card = 5;
     if(GET_GLOBAL_VAL(OPPONENT_PLAINS_HAND) > 0) {
         weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(OPPONENT_PLAINS_HAND));
@@ -164,6 +166,15 @@ uint16_t get_suffering_cards() {
     }
 
     return suffering_cards;
+}
+
+uint16_t random(uint16_t limit){
+
+    uint16_t value = randw() & C_MASK;
+    if (value >= limit) value -= limit;
+    if (value >= limit) value -= limit;
+
+    return value;
 }
 
 uint16_t sample(uint16_t* choices, uint16_t limit){
@@ -206,7 +217,7 @@ uint16_t get_random_choice(uint16_t options){
         return choice;
 }
 
-void handleDebugCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handleDebugCirno(void) {
     /*
      * Debug AI - Garden or Flower
      * Action Priority:
@@ -266,8 +277,7 @@ void handleDebugCirno(SCRIPT_CTX * THIS) OLDCALL BANKED {
     *
     * Played by Cirno
 */
-void handleBlueAi(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    THIS;
+void handleBlueAiCardChoice(void) {
     uint16_t cards_in_hand = get_cards_in_hand();
     uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
@@ -288,8 +298,10 @@ void handleBlueAi(SCRIPT_CTX * THIS) OLDCALL BANKED {
     ```
 
     Green now protects your colors with "The next time this would wither, it will bloom instead."
+
+    Played by Yuuka
 */
-void handleGreenAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handleGreenAiCardChoice(void) {
     uint16_t cards_in_hand = get_cards_in_hand();
     uint16_t empty_plots = get_empty_plots();
     uint16_t cards_in_hand_with_empty_plots = cards_in_hand & empty_plots;
@@ -307,7 +319,7 @@ void handleGreenAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 }
 
-void handleGreenChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handleGreenAiChooseTarget(void) {
     uint16_t unprotected_cards = ~(GET_GLOBAL_VAL(OPPONENT_SHIELDS)); //Inversion of the Protected Cards
     uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
     *card_choice = get_random_choice(unprotected_cards);
@@ -322,8 +334,10 @@ void handleGreenChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
     ```
 
     Yellow no longer has the ability to protect. It can only block.
+
+    Played by Marissa? Or Reimu?
 */
-void handleWhiteAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handleWhiteAiCardChoice(void) {
     uint16_t cards_in_hand = get_cards_in_hand();
     uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
@@ -334,7 +348,7 @@ void handleWhiteAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 }
 
-void handleWhiteAiChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handleWhiteAiChooseTarget(void) {
     uint16_t unblocked_cards = ~(GET_GLOBAL_VAL(OPPONENT_SHIELDS)) >> 5; //Inversion of the Protected Cards
     uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
     if(unblocked_cards & C_RED){
@@ -352,9 +366,11 @@ Action Priority:
 2. Prevent Opponent's Options
   a. Remove a card that has an empty plot
   b. Remove a card that opponent has the least of
+
+Played by Patchouli
 ```
 */
-void handlePurpleAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handlePurpleAiCardChoice(void) {
     uint16_t cards_in_hand = get_cards_in_hand();
     uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
@@ -365,9 +381,17 @@ void handlePurpleAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 }
 
-void handlePurpleAiChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handlePurpleAiChooseTarget(void) {
     uint16_t suffering_cards = get_suffering_cards(); //Cards with the lowest values > 0
     uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
+    /**
+     * This should reflect Patchouli's personality.
+     *
+     * She doesn't have a very proactive personality, but rather always walks her own path.
+     * However, she's always interested where knowledge is concerned and will proactively go and try to acquire it.
+     * She does everything by the book, but still makes a lot of mistakes.
+     * She's also described as very dark and taciturn, which in this case means she is introverted and silent in expression and manner.
+     **/
     if(suffering_cards & C_RED){
         *card_choice = T_RED;
     }else{
@@ -382,9 +406,11 @@ Red AI - ???
 Original design was dependant on Green's recover feature.'
 
 Aim to have a Garden win by outpacing the opponent, aiming to remove their plots and reduce their blooms.
+
+Played by Marissa? Or Reimu?
 ```
 */
-void handleRedAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handleRedAiCardChoice(void) {
     uint16_t cards_in_hand = get_cards_in_hand();
     uint16_t empty_plots = get_empty_plots();
     uint16_t cards_in_hand_with_empty_plots = cards_in_hand & empty_plots;
@@ -403,7 +429,7 @@ void handleRedAiCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 }
 
-void handleRedAiChooseTarget(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void handleRedAiChooseTarget(void) {
     uint16_t suffering_plots = get_suffering_plots(); //Plots with the lowest values > 0
     uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
     *card_choice = get_random_choice(suffering_plots);
@@ -419,22 +445,146 @@ Action Priority:
 Alternative concept:
 
 Choose random empty plot. Play that color optimally.
+
+Also played by Yuuka?
 ```
 */
 
+void handleOpponentCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    THIS;
+    uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
+
+    switch (current_opponent) {
+        case 1:
+            // White
+            handleWhiteAiCardChoice();
+            break;
+        case 2:
+            // Purple
+            handlePurpleAiCardChoice();
+        case 3:
+            // Blue
+            handleBlueAiCardChoice();
+            break;
+        case 4:
+            handleRedAiCardChoice();
+            break;
+        case 5:
+            handleGreenAiCardChoice();
+            break;
+    }
+}
+
+uint16_t * get_random_opp_hand_slot(void) {
+    uint16_t card_to_draw = random(5) + 1;
+    switch (card_to_draw) {
+        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_HAND);
+        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_HAND);
+        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_HAND);
+        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_HAND);
+        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_HAND);
+    }
+    return 0;
+}
+
+uint16_t * get_opp_hand_slot(uint16_t card_choice) {
+    switch (card_choice) {
+        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_HAND);
+        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_HAND);
+        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_HAND);
+        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_HAND);
+        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_HAND);
+    }
+    return 0;
+}
+
+uint16_t * get_opp_discard_slot(uint16_t card_choice) {
+    switch (card_choice) {
+        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_GRAVEYARD);
+        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_GRAVEYARD);
+        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_GRAVEYARD);
+        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_GRAVEYARD);
+        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_GRAVEYARD);
+    }
+    return 0;
+}
+
+uint16_t * get_opp_play_slot(uint16_t card_choice) {
+    switch (card_choice) {
+        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_SCORE);
+        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_SCORE);
+        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_SCORE);
+        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_SCORE);
+        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_SCORE);
+    }
+    return 0;
+}
+
+void opp_discard_card(uint16_t card_choice) {
+    uint16_t * hand_slot = get_opp_hand_slot(card_choice);
+    uint16_t * disc_slot = get_opp_discard_slot(card_choice);
+
+    *hand_slot = *hand_slot - 1;
+    *disc_slot = *disc_slot + 1;
+}
+
+void opp_play_card(uint16_t card_choice) {
+    uint16_t * hand_slot = get_opp_hand_slot(card_choice);
+    uint16_t * play_slot = get_opp_play_slot(card_choice);
+
+    *hand_slot = *hand_slot - 1;
+    *play_slot = *play_slot + 1;
+}
+
+bool playerHasWhiteBarrier(void) {
+    uint16_t card_choice = GET_GLOBAL_VAL(OPPONENT_LAST_CHOICE);
+    uint16_t player_shields = GET_GLOBAL_VAL(PLAYER_SHIELDS);
+    card_choice = 1 << (4 + card_choice);
+    return player_shields & card_choice;
+}
+
+void doBlueEffect(void) {
+    uint16_t * random_hand_slot = get_random_opp_hand_slot();
+    *random_hand_slot = *random_hand_slot + 1;
+}
+
 void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
-    handleDebugCirno(THIS);/*
+    uint16_t card_choice = GET_GLOBAL_VAL(OPPONENT_LAST_CHOICE);
+    if (playerHasWhiteBarrier()) {
+        uint16_t * card_was_countered = GET_GLOBAL_REF(CARD_WAS_COUNTERED);
+        *card_was_countered = card_choice + 5;
+        opp_discard_card(card_choice);
+        return;
+    }
+
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
-    switch (current_opponent) {
-        case 0:
-            //Rainbow Cirno
-            handleDebugCirno(THIS);
+    doBlueEffect();
+    opp_play_card(card_choice);
+/*
+    switch (card_choice) {
+        case 1:
+            // White
+            if(current_opponent == 1) handleWhiteAiChooseTarget();
+            else chooseRandomWhiteTarget();
+            doWhiteEffect();
             break;
+        case 2:
+            // Purple
+            if(current_opponent == 2) handlePurpleAiChooseTarget();
+            else chooseRandomPurpleTarget();
+            doPurpleEffect();
         case 3:
-            //Classic Cirno
-
+            doBlueEffect();
+        case 4:
+            if(current_opponent == 4) handleRedAiChooseTarget();
+            else chooseRandomRedTarget();
+            doRedEffect();
             break;
-
+        case 5:
+            if(current_opponent == 5) handleGreenAiChooseTarget();
+            else chooseRandomGreenTarget();
+            doGreenEffect();
+            break;
     }*/
 }

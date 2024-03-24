@@ -11931,7 +11931,7 @@
                                 "option3": "Blue",
                                 "option4": "Red",
                                 "option5": "Green",
-                                "option6": "Rainbow",
+                                "option6": "Random",
                                 "option7": "Cancel",
                                 "option8": "",
                                 "cancelOnB": true,
@@ -11963,16 +11963,34 @@
                             "id": "4b810471-5625-47ae-a817-f1c2ad4fc8a6"
                         },
                         {
-                            "command": "EVENT_SET_VALUE",
+                            "command": "EVENT_IF_VALUE",
                             "args": {
                                 "variable": "35",
-                                "value": {
-                                    "type": "number",
-                                    "value": 1
-                                },
+                                "operator": "==",
+                                "comparator": 6,
+                                "__collapseElse": true,
                                 "__comment": true
                             },
-                            "id": "eb95930d-a9ae-40ea-a5b4-7425aec430d5"
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_VARIABLE_MATH",
+                                        "args": {
+                                            "vectorX": "35",
+                                            "operation": "set",
+                                            "other": "rnd",
+                                            "vectorY": "L0",
+                                            "value": "0",
+                                            "minValue": 1,
+                                            "maxValue": 5,
+                                            "clamp": false
+                                        },
+                                        "id": "03cea688-2ab3-40e3-b59a-2f972e8c8ddf"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "0b9967b9-3d9d-443b-93a2-38131ce17894"
                         },
                         {
                             "command": "EVENT_SCENE_PUSH_STATE",
@@ -13787,7 +13805,7 @@
                                                     "command": "EVENT_GROUP",
                                                     "args": {
                                                         "__label": "Draw Card",
-                                                        "__collapse": false
+                                                        "__collapse": true
                                                     },
                                                     "children": {
                                                         "true": [
@@ -13797,7 +13815,8 @@
                                                                     "color": "007",
                                                                     "text": [
                                                                         "Opponent's Turn"
-                                                                    ]
+                                                                    ],
+                                                                    "__collapse": true
                                                                 },
                                                                 "id": "3d765a29-90c6-4ec1-9e12-7d0b64374916"
                                                             },
@@ -13816,7 +13835,8 @@
                                                             {
                                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                 "args": {
-                                                                    "customEventId": "34d252b1-e163-4621-a41a-dfefa051f552"
+                                                                    "customEventId": "34d252b1-e163-4621-a41a-dfefa051f552",
+                                                                    "__collapse": true
                                                                 },
                                                                 "id": "6982f304-50a6-4a85-83b7-0d4be6a5d308"
                                                             },
@@ -13826,7 +13846,8 @@
                                                                     "variable": "53",
                                                                     "flag": 0,
                                                                     "__collapseElse": false,
-                                                                    "__disableElse": false
+                                                                    "__disableElse": false,
+                                                                    "__collapse": true
                                                                 },
                                                                 "children": {
                                                                     "true": [
@@ -14664,7 +14685,9 @@
                                                             },
                                                             {
                                                                 "command": "MHF_EVENT_HANDLE_OPPONENT_AI",
-                                                                "args": {},
+                                                                "args": {
+                                                                    "__collapse": true
+                                                                },
                                                                 "id": "07f4f9ec-f2a6-4090-ba9b-84dfbfeea376"
                                                             },
                                                             {
@@ -14706,7 +14729,8 @@
                                                                     "value15": 16,
                                                                     "__collapseElse": false,
                                                                     "__disableElse": true,
-                                                                    "__comment": true
+                                                                    "__comment": true,
+                                                                    "__collapse": false
                                                                 },
                                                                 "children": {
                                                                     "true0": [
@@ -14858,365 +14882,393 @@
                                                     "id": "b6238145-159d-4791-a8a1-dfed2c637097"
                                                 },
                                                 {
-                                                    "command": "EVENT_SET_FALSE",
+                                                    "command": "EVENT_GROUP",
                                                     "args": {
-                                                        "variable": "32",
-                                                        "__collapse": true
-                                                    },
-                                                    "id": "78d99267-482f-40e1-b5b6-1f856d97c373"
-                                                },
-                                                {
-                                                    "command": "EVENT_SWITCH",
-                                                    "args": {
-                                                        "variable": "22",
-                                                        "choices": 5,
-                                                        "__collapseCase0": false,
-                                                        "value0": 1,
-                                                        "__collapseCase1": false,
-                                                        "value1": 2,
-                                                        "__collapseCase2": false,
-                                                        "value2": 3,
-                                                        "__collapseCase3": false,
-                                                        "value3": 4,
-                                                        "__collapseCase4": false,
-                                                        "value4": 5,
-                                                        "__collapseCase5": false,
-                                                        "value5": 6,
-                                                        "__collapseCase6": false,
-                                                        "value6": 7,
-                                                        "__collapseCase7": false,
-                                                        "value7": 8,
-                                                        "__collapseCase8": false,
-                                                        "value8": 9,
-                                                        "__collapseCase9": false,
-                                                        "value9": 10,
-                                                        "__collapseCase10": false,
-                                                        "value10": 11,
-                                                        "__collapseCase11": false,
-                                                        "value11": 12,
-                                                        "__collapseCase12": false,
-                                                        "value12": 13,
-                                                        "__collapseCase13": false,
-                                                        "value13": 14,
-                                                        "__collapseCase14": false,
-                                                        "value14": 15,
-                                                        "__collapseCase15": false,
-                                                        "value15": 16,
-                                                        "__collapseElse": false,
-                                                        "__collapse": true,
-                                                        "__label": "Check for White Shields",
-                                                        "__disableElse": true
+                                                        "__label": "Do Opponent Turn",
+                                                        "__comment": true
                                                     },
                                                     "children": {
-                                                        "true0": [
+                                                        "true": [
                                                             {
-                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "command": "EVENT_SET_FALSE",
                                                                 "args": {
-                                                                    "color": "006",
-                                                                    "text": [
-                                                                        "Opp Plays White"
-                                                                    ]
+                                                                    "variable": "32",
+                                                                    "__collapse": true
                                                                 },
-                                                                "id": "4fba6dd2-eade-4579-968a-aaf4f88d0fc7"
+                                                                "id": "78d99267-482f-40e1-b5b6-1f856d97c373"
                                                             },
                                                             {
-                                                                "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                "command": "EVENT_SWITCH",
                                                                 "args": {
-                                                                    "variable": "10",
-                                                                    "flag": 5,
+                                                                    "variable": "22",
+                                                                    "choices": 5,
+                                                                    "__collapseCase0": true,
+                                                                    "value0": 1,
+                                                                    "__collapseCase1": false,
+                                                                    "value1": 2,
+                                                                    "__collapseCase2": true,
+                                                                    "value2": 3,
+                                                                    "__collapseCase3": true,
+                                                                    "value3": 4,
+                                                                    "__collapseCase4": true,
+                                                                    "value4": 5,
+                                                                    "__collapseCase5": false,
+                                                                    "value5": 6,
+                                                                    "__collapseCase6": false,
+                                                                    "value6": 7,
+                                                                    "__collapseCase7": false,
+                                                                    "value7": 8,
+                                                                    "__collapseCase8": false,
+                                                                    "value8": 9,
+                                                                    "__collapseCase9": false,
+                                                                    "value9": 10,
+                                                                    "__collapseCase10": false,
+                                                                    "value10": 11,
+                                                                    "__collapseCase11": false,
+                                                                    "value11": 12,
+                                                                    "__collapseCase12": false,
+                                                                    "value12": 13,
+                                                                    "__collapseCase13": false,
+                                                                    "value13": 14,
+                                                                    "__collapseCase14": false,
+                                                                    "value14": 15,
+                                                                    "__collapseCase15": false,
+                                                                    "value15": 16,
                                                                     "__collapseElse": false,
-                                                                    "__collapse": false
+                                                                    "__collapse": true,
+                                                                    "__label": "Check for White Shields",
+                                                                    "__disableElse": true
                                                                 },
                                                                 "children": {
-                                                                    "true": [
+                                                                    "true0": [
                                                                         {
-                                                                            "command": "EVENT_SET_TRUE",
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                             "args": {
-                                                                                "variable": "32",
-                                                                                "__collapse": true
+                                                                                "color": "006",
+                                                                                "text": [
+                                                                                    "Opp Plays White"
+                                                                                ]
                                                                             },
-                                                                            "id": "7b9aa84a-b155-4442-b5cd-b8c5bb45c5ef"
+                                                                            "id": "4fba6dd2-eade-4579-968a-aaf4f88d0fc7"
                                                                         },
                                                                         {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "command": "EVENT_IF_FLAGS_COMPARE",
                                                                             "args": {
-                                                                                "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
-                                                                                "$variable[V0]$": {
-                                                                                    "type": "number",
-                                                                                    "value": 6
-                                                                                },
-                                                                                "__collapse": true
+                                                                                "variable": "10",
+                                                                                "flag": 5,
+                                                                                "__collapseElse": false,
+                                                                                "__collapse": false
                                                                             },
-                                                                            "id": "b4dd9afa-e1d0-4679-aab4-c851eff44444"
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "EVENT_SET_TRUE",
+                                                                                        "args": {
+                                                                                            "variable": "32",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "7b9aa84a-b155-4442-b5cd-b8c5bb45c5ef"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
+                                                                                            "$variable[V0]$": {
+                                                                                                "type": "number",
+                                                                                                "value": 6
+                                                                                            },
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "b4dd9afa-e1d0-4679-aab4-c851eff44444"
+                                                                                    }
+                                                                                ],
+                                                                                "false": [
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "c7fd15e7-bef1-4093-9ccb-02db37f50d5e",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "a9ed84ec-c820-4c83-ac5f-990c7a12ece3"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "id": "823ea396-bce1-4688-bdde-45a0eb582bcd"
                                                                         }
                                                                     ],
-                                                                    "false": [
+                                                                    "true1": [
                                                                         {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                             "args": {
-                                                                                "customEventId": "c7fd15e7-bef1-4093-9ccb-02db37f50d5e",
-                                                                                "__collapse": true
+                                                                                "color": "006",
+                                                                                "text": [
+                                                                                    "Opp Plays Purple"
+                                                                                ]
                                                                             },
-                                                                            "id": "a9ed84ec-c820-4c83-ac5f-990c7a12ece3"
+                                                                            "id": "9d61e2f5-12e7-436e-af64-f4ad7c8632af"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                            "args": {
+                                                                                "variable": "10",
+                                                                                "flag": 6,
+                                                                                "__collapseElse": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "EVENT_SET_TRUE",
+                                                                                        "args": {
+                                                                                            "variable": "32"
+                                                                                        },
+                                                                                        "id": "9a684205-b011-4251-acd7-3a2f3b73a341"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
+                                                                                            "$variable[V0]$": {
+                                                                                                "type": "number",
+                                                                                                "value": 7
+                                                                                            }
+                                                                                        },
+                                                                                        "id": "84ee1a2b-6f38-49dd-907e-ec7b6f48a520"
+                                                                                    }
+                                                                                ],
+                                                                                "false": [
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "a8e1a44c-4fcc-495c-a22a-6eeda7fa4201"
+                                                                                        },
+                                                                                        "id": "249f4d65-1eac-42ae-8a40-addc1eb551f9"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "id": "715cc815-8fe5-4ea0-b7bf-a4f145169dcc"
                                                                         }
-                                                                    ]
+                                                                    ],
+                                                                    "true2": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "color": "006",
+                                                                                "text": [
+                                                                                    "Opp Plays Blue"
+                                                                                ]
+                                                                            },
+                                                                            "id": "c0fefa9c-5a78-46d4-b9fb-83ce5c35b708"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                            "args": {
+                                                                                "variable": "10",
+                                                                                "flag": 7,
+                                                                                "__collapseElse": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "EVENT_SET_TRUE",
+                                                                                        "args": {
+                                                                                            "variable": "32"
+                                                                                        },
+                                                                                        "id": "7fad643d-35e8-4837-9695-304625f4b1e8"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
+                                                                                            "$variable[V0]$": {
+                                                                                                "type": "number",
+                                                                                                "value": 8
+                                                                                            }
+                                                                                        },
+                                                                                        "id": "d46b50e6-427e-4fec-87eb-73f4bdeedaf6"
+                                                                                    }
+                                                                                ],
+                                                                                "false": [
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "d42f871c-58fa-4268-8a3b-e1b912b3562c"
+                                                                                        },
+                                                                                        "id": "d5e27fdc-b5b6-4220-a870-76b5a26b3077"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "id": "4ea5a057-7ecb-4cb6-b6d7-26701ad07a1b"
+                                                                        }
+                                                                    ],
+                                                                    "true3": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "color": "006",
+                                                                                "text": [
+                                                                                    "Opp Plays Red"
+                                                                                ]
+                                                                            },
+                                                                            "id": "424768b2-bb11-4edb-a222-8d543de7f64e"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                            "args": {
+                                                                                "variable": "10",
+                                                                                "flag": 8,
+                                                                                "__collapseElse": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "EVENT_SET_TRUE",
+                                                                                        "args": {
+                                                                                            "variable": "32"
+                                                                                        },
+                                                                                        "id": "1f489b3e-86ce-4928-b268-77081517a968"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
+                                                                                            "$variable[V0]$": {
+                                                                                                "type": "number",
+                                                                                                "value": 9
+                                                                                            }
+                                                                                        },
+                                                                                        "id": "5423e98e-5aa8-4382-9a29-17924dcdfc7d"
+                                                                                    }
+                                                                                ],
+                                                                                "false": [
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "19f9c978-9ad1-4f30-9e30-fb9c5fcf6985"
+                                                                                        },
+                                                                                        "id": "fc138554-6124-4d8a-921d-3f6d733c7ed0"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "id": "0423274a-91ee-4975-b4c3-f3fbe460273c"
+                                                                        }
+                                                                    ],
+                                                                    "true4": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "color": "006",
+                                                                                "text": [
+                                                                                    "Opp Plays Green"
+                                                                                ]
+                                                                            },
+                                                                            "id": "ae1a9992-d046-4323-8206-e0b719c9ac33"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                            "args": {
+                                                                                "variable": "10",
+                                                                                "flag": 9,
+                                                                                "__collapseElse": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "EVENT_SET_TRUE",
+                                                                                        "args": {
+                                                                                            "variable": "32"
+                                                                                        },
+                                                                                        "id": "39b22760-1c34-4073-9a43-9c42eccee886"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
+                                                                                            "$variable[V0]$": {
+                                                                                                "type": "number",
+                                                                                                "value": 10
+                                                                                            }
+                                                                                        },
+                                                                                        "id": "aa083bc6-aced-40aa-bf7e-9eabf2a6bd02"
+                                                                                    }
+                                                                                ],
+                                                                                "false": [
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "97f100ba-98fe-4b87-bf63-ed039091f27c"
+                                                                                        },
+                                                                                        "id": "45f451d6-083a-490a-a435-02d70cd3af60"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "id": "242f357c-c196-43f8-aea4-9d21a7f90e20"
+                                                                        }
+                                                                    ],
+                                                                    "true5": [],
+                                                                    "true6": [],
+                                                                    "true7": [],
+                                                                    "true8": [],
+                                                                    "true9": [],
+                                                                    "true10": [],
+                                                                    "true11": [],
+                                                                    "true12": [],
+                                                                    "true13": [],
+                                                                    "true14": [],
+                                                                    "true15": [],
+                                                                    "false": []
                                                                 },
-                                                                "id": "823ea396-bce1-4688-bdde-45a0eb582bcd"
-                                                            }
-                                                        ],
-                                                        "true1": [
-                                                            {
-                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
-                                                                "args": {
-                                                                    "color": "006",
-                                                                    "text": [
-                                                                        "Opp Plays Purple"
-                                                                    ]
-                                                                },
-                                                                "id": "9d61e2f5-12e7-436e-af64-f4ad7c8632af"
+                                                                "id": "1a29f514-77a3-44fa-be79-3349c4678260"
                                                             },
                                                             {
-                                                                "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                "command": "EVENT_SET_VALUE",
                                                                 "args": {
-                                                                    "variable": "10",
-                                                                    "flag": 6,
-                                                                    "__collapseElse": false,
-                                                                    "__collapse": false
+                                                                    "variable": "28",
+                                                                    "value": {
+                                                                        "type": "variable",
+                                                                        "value": "22"
+                                                                    },
+                                                                    "__collapse": true
                                                                 },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_TRUE",
-                                                                            "args": {
-                                                                                "variable": "32"
-                                                                            },
-                                                                            "id": "9a684205-b011-4251-acd7-3a2f3b73a341"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
-                                                                                "$variable[V0]$": {
-                                                                                    "type": "number",
-                                                                                    "value": 7
-                                                                                }
-                                                                            },
-                                                                            "id": "84ee1a2b-6f38-49dd-907e-ec7b6f48a520"
-                                                                        }
-                                                                    ],
-                                                                    "false": [
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "a8e1a44c-4fcc-495c-a22a-6eeda7fa4201"
-                                                                            },
-                                                                            "id": "249f4d65-1eac-42ae-8a40-addc1eb551f9"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "715cc815-8fe5-4ea0-b7bf-a4f145169dcc"
-                                                            }
-                                                        ],
-                                                        "true2": [
-                                                            {
-                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
-                                                                "args": {
-                                                                    "color": "006",
-                                                                    "text": [
-                                                                        "Opp Plays Blue"
-                                                                    ]
-                                                                },
-                                                                "id": "c0fefa9c-5a78-46d4-b9fb-83ce5c35b708"
+                                                                "id": "fc4505f3-30f6-4c66-a7a0-0f3e12874cd4"
                                                             },
                                                             {
-                                                                "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                 "args": {
-                                                                    "variable": "10",
-                                                                    "flag": 7,
-                                                                    "__collapseElse": false,
-                                                                    "__collapse": false
+                                                                    "customEventId": "f00d5edc-a4fb-46f1-8530-5cdbebf99889",
+                                                                    "__collapse": true
                                                                 },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_TRUE",
-                                                                            "args": {
-                                                                                "variable": "32"
-                                                                            },
-                                                                            "id": "7fad643d-35e8-4837-9695-304625f4b1e8"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
-                                                                                "$variable[V0]$": {
-                                                                                    "type": "number",
-                                                                                    "value": 8
-                                                                                }
-                                                                            },
-                                                                            "id": "d46b50e6-427e-4fec-87eb-73f4bdeedaf6"
-                                                                        }
-                                                                    ],
-                                                                    "false": [
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "d42f871c-58fa-4268-8a3b-e1b912b3562c"
-                                                                            },
-                                                                            "id": "d5e27fdc-b5b6-4220-a870-76b5a26b3077"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "4ea5a057-7ecb-4cb6-b6d7-26701ad07a1b"
-                                                            }
-                                                        ],
-                                                        "true3": [
-                                                            {
-                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
-                                                                "args": {
-                                                                    "color": "006",
-                                                                    "text": [
-                                                                        "Opp Plays Red"
-                                                                    ]
-                                                                },
-                                                                "id": "424768b2-bb11-4edb-a222-8d543de7f64e"
+                                                                "id": "fb5b9e1a-f594-47ae-a957-d38d19639184"
                                                             },
                                                             {
-                                                                "command": "EVENT_IF_FLAGS_COMPARE",
+                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                 "args": {
-                                                                    "variable": "10",
-                                                                    "flag": 8,
-                                                                    "__collapseElse": false,
-                                                                    "__collapse": false
+                                                                    "customEventId": "784a18f2-e78d-44fc-8984-07ab4c023cc2",
+                                                                    "__collapse": true
                                                                 },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_TRUE",
-                                                                            "args": {
-                                                                                "variable": "32"
-                                                                            },
-                                                                            "id": "1f489b3e-86ce-4928-b268-77081517a968"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
-                                                                                "$variable[V0]$": {
-                                                                                    "type": "number",
-                                                                                    "value": 9
-                                                                                }
-                                                                            },
-                                                                            "id": "5423e98e-5aa8-4382-9a29-17924dcdfc7d"
-                                                                        }
-                                                                    ],
-                                                                    "false": [
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "19f9c978-9ad1-4f30-9e30-fb9c5fcf6985"
-                                                                            },
-                                                                            "id": "fc138554-6124-4d8a-921d-3f6d733c7ed0"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "0423274a-91ee-4975-b4c3-f3fbe460273c"
+                                                                "id": "691751d5-48b3-40c6-ba5a-80bed3c4b6ea"
                                                             }
-                                                        ],
-                                                        "true4": [
-                                                            {
-                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
-                                                                "args": {
-                                                                    "color": "006",
-                                                                    "text": [
-                                                                        "Opp Plays Green"
-                                                                    ]
-                                                                },
-                                                                "id": "ae1a9992-d046-4323-8206-e0b719c9ac33"
-                                                            },
-                                                            {
-                                                                "command": "EVENT_IF_FLAGS_COMPARE",
-                                                                "args": {
-                                                                    "variable": "10",
-                                                                    "flag": 9,
-                                                                    "__collapseElse": false,
-                                                                    "__collapse": false
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_TRUE",
-                                                                            "args": {
-                                                                                "variable": "32"
-                                                                            },
-                                                                            "id": "39b22760-1c34-4073-9a43-9c42eccee886"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
-                                                                                "$variable[V0]$": {
-                                                                                    "type": "number",
-                                                                                    "value": 10
-                                                                                }
-                                                                            },
-                                                                            "id": "aa083bc6-aced-40aa-bf7e-9eabf2a6bd02"
-                                                                        }
-                                                                    ],
-                                                                    "false": [
-                                                                        {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "97f100ba-98fe-4b87-bf63-ed039091f27c"
-                                                                            },
-                                                                            "id": "45f451d6-083a-490a-a435-02d70cd3af60"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                "id": "242f357c-c196-43f8-aea4-9d21a7f90e20"
-                                                            }
-                                                        ],
-                                                        "true5": [],
-                                                        "true6": [],
-                                                        "true7": [],
-                                                        "true8": [],
-                                                        "true9": [],
-                                                        "true10": [],
-                                                        "true11": [],
-                                                        "true12": [],
-                                                        "true13": [],
-                                                        "true14": [],
-                                                        "true15": [],
-                                                        "false": []
+                                                        ]
                                                     },
-                                                    "id": "1a29f514-77a3-44fa-be79-3349c4678260"
+                                                    "id": "a99c9770-0240-455d-86da-db7bf157f5f9"
                                                 },
                                                 {
-                                                    "command": "EVENT_SET_VALUE",
+                                                    "command": "MHF_EVENT_HANDLE_OPPONENT_AI_TURN",
                                                     "args": {
-                                                        "variable": "28",
-                                                        "value": {
-                                                            "type": "variable",
-                                                            "value": "22"
-                                                        },
                                                         "__collapse": true
                                                     },
-                                                    "id": "fc4505f3-30f6-4c66-a7a0-0f3e12874cd4"
-                                                },
-                                                {
-                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                    "args": {
-                                                        "customEventId": "f00d5edc-a4fb-46f1-8530-5cdbebf99889",
-                                                        "__collapse": true
-                                                    },
-                                                    "id": "fb5b9e1a-f594-47ae-a957-d38d19639184"
+                                                    "id": "5fdea1ae-8175-4c6e-b339-201867521ab4"
                                                 },
                                                 {
                                                     "command": "EVENT_IF_TRUE",
                                                     "args": {
                                                         "variable": "32",
                                                         "__collapseElse": false,
-                                                        "__collapse": false
+                                                        "__collapse": false,
+                                                        "__label": "Announce Discard or Bloom"
                                                     },
                                                     "children": {
                                                         "true": [
@@ -15224,10 +15276,21 @@
                                                                 "command": "EVENT_GROUP",
                                                                 "args": {
                                                                     "__label": "Put Card in Graveyard",
-                                                                    "__collapse": true
+                                                                    "__collapse": false
                                                                 },
                                                                 "children": {
                                                                     "true": [
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "d529c986-b273-4ef4-919c-8d113c13745d",
+                                                                                "$variable[V0]$": {
+                                                                                    "type": "variable",
+                                                                                    "value": "32"
+                                                                                }
+                                                                            },
+                                                                            "id": "d697f013-9edc-4473-a9ee-cc9e826e17ed"
+                                                                        },
                                                                         {
                                                                             "command": "PT_EVENT_APPEND_VISUAL_LOG",
                                                                             "args": {
@@ -15241,7 +15304,7 @@
                                                                         {
                                                                             "command": "EVENT_SWITCH",
                                                                             "args": {
-                                                                                "variable": "28",
+                                                                                "variable": "22",
                                                                                 "choices": 5,
                                                                                 "__collapseCase0": false,
                                                                                 "value0": 1,
@@ -15277,7 +15340,7 @@
                                                                                 "value15": 16,
                                                                                 "__collapseElse": false,
                                                                                 "__disableElse": true,
-                                                                                "__collapse": false
+                                                                                "__collapse": true
                                                                             },
                                                                             "children": {
                                                                                 "true0": [
@@ -15360,7 +15423,7 @@
                                                                             "args": {
                                                                                 "actorId": "$self$",
                                                                                 "emoteId": "9df5f63f-ea47-447e-9b14-cb2dbafb697d",
-                                                                                "__collapse": false
+                                                                                "__collapse": true
                                                                             },
                                                                             "id": "7db4bd10-9427-4283-a32a-927cb1105b46"
                                                                         },
@@ -15368,7 +15431,8 @@
                                                                             "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                             "args": {
                                                                                 "customEventId": "99701aad-5f7b-4968-bd89-e8670e8ef597",
-                                                                                "__collapse": true
+                                                                                "__collapse": true,
+                                                                                "__comment": true
                                                                             },
                                                                             "id": "de5be0ea-6af5-4348-9bcf-4092da59ccfe"
                                                                         },
@@ -15379,6 +15443,13 @@
                                                                                 "__collapse": true
                                                                             },
                                                                             "id": "132e572c-40dd-4009-b0eb-110d258e75d9"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SET_FALSE",
+                                                                            "args": {
+                                                                                "variable": "32"
+                                                                            },
+                                                                            "id": "ab574717-4a6e-4be6-8a94-d11458a26285"
                                                                         }
                                                                     ]
                                                                 },
@@ -15398,22 +15469,15 @@
                                                                             "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                             "args": {
                                                                                 "customEventId": "ace5a682-821d-44da-b215-d8a329789a7b",
-                                                                                "__collapse": true
+                                                                                "__collapse": true,
+                                                                                "__comment": true
                                                                             },
                                                                             "id": "4403e8ce-d54f-4120-9270-6ccc4868df7e"
                                                                         },
                                                                         {
-                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
-                                                                            "args": {
-                                                                                "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "1819bc13-325b-493e-b601-cffab678e0a0"
-                                                                        },
-                                                                        {
                                                                             "command": "EVENT_SWITCH",
                                                                             "args": {
-                                                                                "variable": "28",
+                                                                                "variable": "22",
                                                                                 "choices": 5,
                                                                                 "__collapseCase0": false,
                                                                                 "value0": 1,
@@ -15449,7 +15513,7 @@
                                                                                 "value15": 16,
                                                                                 "__collapseElse": false,
                                                                                 "__disableElse": true,
-                                                                                "__collapse": false
+                                                                                "__collapse": true
                                                                             },
                                                                             "children": {
                                                                                 "true0": [
@@ -15526,6 +15590,14 @@
                                                                                 "false": []
                                                                             },
                                                                             "id": "a2d18943-7bed-4c53-8d37-87f0ae1a9cef"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "1819bc13-325b-493e-b601-cffab678e0a0"
                                                                         }
                                                                     ]
                                                                 },
@@ -15536,18 +15608,43 @@
                                                     "id": "2212a085-ad6f-4b31-ad63-84cd2a159a00"
                                                 },
                                                 {
-                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                    "command": "EVENT_IF_FLAGS_COMPARE",
                                                     "args": {
-                                                        "customEventId": "784a18f2-e78d-44fc-8984-07ab4c023cc2",
-                                                        "__collapse": true
+                                                        "variable": "53",
+                                                        "flag": 0,
+                                                        "__collapseElse": false,
+                                                        "__label": "Update Opponent Hand",
+                                                        "__collapse": false
                                                     },
-                                                    "id": "691751d5-48b3-40c6-ba5a-80bed3c4b6ea"
+                                                    "children": {
+                                                        "true": [
+                                                            {
+                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                "args": {
+                                                                    "customEventId": "10293224-690f-47d7-91f4-613210336605",
+                                                                    "__collapse": false
+                                                                },
+                                                                "id": "3108925a-8e92-46cd-9a04-1999cb2d1211"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                "args": {
+                                                                    "customEventId": "784a18f2-e78d-44fc-8984-07ab4c023cc2",
+                                                                    "__collapse": false
+                                                                },
+                                                                "id": "194c615d-04e5-4d0a-b944-f0d078fab3ba"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "id": "b382164d-4ae4-4b82-96bd-5433f5f65e08"
                                                 },
                                                 {
                                                     "command": "EVENT_GROUP",
                                                     "args": {
                                                         "__label": "Check Player Wins",
-                                                        "__collapse": true
+                                                        "__collapse": false
                                                     },
                                                     "children": {
                                                         "true": [
@@ -15798,6 +15895,19 @@
                                         },
                                         "children": {
                                             "true": [
+                                                {
+                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                    "args": {
+                                                        "color": "007",
+                                                        "text": ""
+                                                    },
+                                                    "id": "6f459ea0-cf44-4259-812a-cafd084625d4"
+                                                },
+                                                {
+                                                    "command": "EVENT_OVERLAY_HIDE",
+                                                    "args": {},
+                                                    "id": "108b8568-2829-444e-b91e-b4ad1ae3a873"
+                                                },
                                                 {
                                                     "command": "EVENT_SCENE_POP_STATE",
                                                     "args": {
@@ -20651,7 +20761,7 @@
                                     "__collapseElse": true,
                                     "__disableElse": true,
                                     "__comment": false,
-                                    "__collapse": true
+                                    "__collapse": false
                                 },
                                 "children": {
                                     "true": [
@@ -34225,14 +34335,16 @@
                                     "value": {
                                         "type": "number",
                                         "value": 0
-                                    }
+                                    },
+                                    "__collapse": true
                                 },
                                 "id": "ca1f333d-eb34-45f5-b014-21d7c5c7836c"
                             },
                             {
                                 "command": "EVENT_LOOP_WHILE",
                                 "args": {
-                                    "expression": "$28$ == 0"
+                                    "expression": "$28$ == 0",
+                                    "__collapse": false
                                 },
                                 "children": {
                                     "true": [
@@ -34268,7 +34380,8 @@
                                                     {
                                                         "command": "EVENT_CALL_CUSTOM_EVENT",
                                                         "args": {
-                                                            "customEventId": "d1bbe9a6-3131-4c18-8665-0bf2b9d942cc"
+                                                            "customEventId": "d1bbe9a6-3131-4c18-8665-0bf2b9d942cc",
+                                                            "__collapse": true
                                                         },
                                                         "id": "a54aa08d-b728-4aa6-990c-e963ae34c86a"
                                                     },
@@ -34277,7 +34390,8 @@
                                                         "args": {
                                                             "variable": "32",
                                                             "__collapseElse": false,
-                                                            "__disableElse": false
+                                                            "__disableElse": false,
+                                                            "__collapse": true
                                                         },
                                                         "children": {
                                                             "true": [
@@ -38894,6 +39008,11 @@
             "symbol": "var_current_opponent"
         },
         {
+            "id": "36",
+            "name": "Valid Card Choices",
+            "symbol": "var_valid_card_choices"
+        },
+        {
             "id": "37",
             "name": "Player Plains Graveyard",
             "symbol": "var_player_plains_graveyard"
@@ -39107,11 +39226,6 @@
             "id": "4a353d59-565b-4c21-a1f8-cd569858354b__L0",
             "name": "Selection",
             "symbol": "var_selection"
-        },
-        {
-            "id": "36",
-            "name": "Valid Card Choices",
-            "symbol": "var_valid_card_choices"
         }
     ],
     "engineFieldValues": [
@@ -39135,7 +39249,7 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 4013,
+        "worldScrollX": 4027,
         "worldScrollY": 106,
         "zoom": 400,
         "customColorsEnabled": true,
