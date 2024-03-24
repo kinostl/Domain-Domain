@@ -13897,7 +13897,7 @@
                                                                                 "__collapseCase15": false,
                                                                                 "value15": 16,
                                                                                 "__collapseElse": false,
-                                                                                "__collapse": false
+                                                                                "__collapse": true
                                                                             },
                                                                             "children": {
                                                                                 "true0": [
@@ -14902,9 +14902,9 @@
                                                                 "args": {
                                                                     "variable": "22",
                                                                     "choices": 5,
-                                                                    "__collapseCase0": true,
+                                                                    "__collapseCase0": false,
                                                                     "value0": 1,
-                                                                    "__collapseCase1": false,
+                                                                    "__collapseCase1": true,
                                                                     "value1": 2,
                                                                     "__collapseCase2": true,
                                                                     "value2": 3,
@@ -14935,7 +14935,7 @@
                                                                     "__collapseCase15": false,
                                                                     "value15": 16,
                                                                     "__collapseElse": false,
-                                                                    "__collapse": true,
+                                                                    "__collapse": false,
                                                                     "__label": "Check for White Shields",
                                                                     "__disableElse": true
                                                                 },
@@ -15340,7 +15340,7 @@
                                                                                 "value15": 16,
                                                                                 "__collapseElse": false,
                                                                                 "__disableElse": true,
-                                                                                "__collapse": false
+                                                                                "__collapse": true
                                                                             },
                                                                             "children": {
                                                                                 "true0": [
@@ -15604,6 +15604,13 @@
                                                                                 "customEventId": "c917a83a-f9d8-474f-bd95-879b484ade98"
                                                                             },
                                                                             "id": "dc1645f1-ec13-4729-8400-33931e156a0a"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                            "args": {
+                                                                                "customEventId": "a37e6039-5655-4680-98de-ad3c984a5866"
+                                                                            },
+                                                                            "id": "41426167-b67e-4444-8ac8-d9cb6cdbbe3b"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_CALL_CUSTOM_EVENT",
@@ -39264,9 +39271,9 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 4398,
-        "worldScrollY": 53,
-        "zoom": 400,
+        "worldScrollX": 2116,
+        "worldScrollY": 458,
+        "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",

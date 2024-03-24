@@ -71,6 +71,26 @@ uint16_t get_cards_in_hand(void) {
     return cards_in_hand;
 }
 
+uint16_t get_player_hand_slots_with_cards(void) {
+    uint16_t player_hand_slots_with_cards = 0;
+    if(GET_GLOBAL_VAL(PLAYER_PLAINS_HAND) > 0) {
+        player_hand_slots_with_cards |= C_WHITE;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_SWAMPS_HAND) > 0) {
+        player_hand_slots_with_cards |= C_BLACK;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_ISLANDS_HAND) > 0) {
+        player_hand_slots_with_cards |= C_BLUE;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_MOUNTAINS_HAND) > 0) {
+        player_hand_slots_with_cards |= C_RED;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_FORESTS_HAND) > 0) {
+        player_hand_slots_with_cards |= C_GREEN;
+    }
+    return player_hand_slots_with_cards;
+}
+
 uint16_t get_planted_player_plots(void) {
     uint16_t planted_player_plots = 0;
     if(GET_GLOBAL_VAL(PLAYER_PLAINS_SCORE) > 0) {
@@ -479,6 +499,16 @@ void chooseRandomRedTarget(void) {
     }
 }
 
+void chooseRandomPurpleTarget(void) {
+    uint16_t valid_hand_slots = get_player_hand_slots_with_cards(); //Hand Slots with values > 0
+    uint16_t * target_choice = GET_GLOBAL_REF(TARGETED_CARD);
+    if(valid_hand_slots > 0) {
+        *target_choice = get_random_choice(valid_hand_slots);
+    }else{
+        *target_choice = 0;
+    }
+}
+
 /*
 ```
 Garden AI - Garden
@@ -575,6 +605,17 @@ uint16_t * get_player_play_slot(uint16_t card_choice) {
     return 0;
 }
 
+uint16_t * get_player_hand_slot(uint16_t card_choice) {
+    switch (card_choice) {
+        case 1: return GET_GLOBAL_REF(PLAYER_PLAINS_HAND);
+        case 2: return GET_GLOBAL_REF(PLAYER_SWAMPS_HAND);
+        case 3: return GET_GLOBAL_REF(PLAYER_ISLANDS_HAND);
+        case 4: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_HAND);
+        case 5: return GET_GLOBAL_REF(PLAYER_FORESTS_HAND);
+    }
+    return 0;
+}
+
 uint16_t * get_player_gy_slot(uint16_t card_choice) {
     switch (card_choice) {
         case 1: return GET_GLOBAL_REF(PLAYER_PLAINS_GRAVEYARD);
@@ -626,6 +667,17 @@ void doRedEffect(void) {
     }
 }
 
+void doPurpleEffect(void) {
+    uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
+    if(target_choice > 0) {
+        uint16_t * target_hand_slot = get_player_hand_slot(target_choice);
+        uint16_t * target_gy_slot = get_player_gy_slot(target_choice);
+
+        *target_hand_slot = *target_hand_slot - 1;
+        *target_gy_slot = *target_gy_slot + 1;
+    }
+}
+
 void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
     uint16_t card_choice = GET_GLOBAL_VAL(OPPONENT_LAST_CHOICE);
@@ -637,10 +689,10 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
-    if(card_choice == 4) {
-        handleRedAiChooseTarget();
-        //chooseRandomRedTarget();
-        doRedEffect();
+    if(card_choice == 2) {
+        //handlePurpleAiChooseTarget();
+        chooseRandomPurpleTarget();
+        doPurpleEffect();
     }
     opp_play_card(card_choice);
 /*
