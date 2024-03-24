@@ -71,6 +71,26 @@ uint16_t get_cards_in_hand(void) {
     return cards_in_hand;
 }
 
+uint16_t get_planted_player_plots(void) {
+    uint16_t planted_player_plots = 0;
+    if(GET_GLOBAL_VAL(PLAYER_PLAINS_SCORE) > 0) {
+        planted_player_plots |= C_WHITE;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_SWAMPS_SCORE) > 0) {
+        planted_player_plots |= C_BLACK;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_ISLANDS_SCORE) > 0) {
+        planted_player_plots |= C_BLUE;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_MOUNTAINS_SCORE) > 0) {
+        planted_player_plots |= C_RED;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_FORESTS_SCORE) > 0) {
+        planted_player_plots |= C_GREEN;
+    }
+    return planted_player_plots;
+}
+
 uint16_t get_empty_plots(void) {
     uint16_t empty_plots = 0;
     if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) == 0) {
@@ -93,36 +113,46 @@ uint16_t get_empty_plots(void) {
 
 uint16_t get_suffering_plots(void) {
     uint16_t weakest_plot = 5;
-    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) > 0) {
-        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE));
+    uint16_t current_plot = 0;
+    if(GET_GLOBAL_VAL(PLAYER_PLAINS_SCORE) > 0) {
+        current_plot = GET_GLOBAL_VAL(PLAYER_PLAINS_SCORE);
+        weakest_plot = MIN(weakest_plot, current_plot);
     }
-    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE) > 0) {
-        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE));
+    if(GET_GLOBAL_VAL(PLAYER_SWAMPS_SCORE) > 0) {
+        current_plot = GET_GLOBAL_VAL(PLAYER_SWAMPS_SCORE);
+        weakest_plot = MIN(weakest_plot, current_plot);
     }
-    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE) > 0) {
-        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE));
+    if(GET_GLOBAL_VAL(PLAYER_ISLANDS_SCORE) > 0) {
+        current_plot = GET_GLOBAL_VAL(PLAYER_ISLANDS_SCORE);
+        weakest_plot = MIN(weakest_plot, current_plot);
     }
-    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_SCORE) > 0) {
-        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_SCORE));
+    if(GET_GLOBAL_VAL(PLAYER_MOUNTAINS_SCORE) > 0) {
+        current_plot = GET_GLOBAL_VAL(PLAYER_MOUNTAINS_SCORE);
+        weakest_plot = MIN(weakest_plot, current_plot);
     }
-    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_SCORE) > 0) {
-        weakest_plot = MIN(weakest_plot, GET_GLOBAL_VAL(OPPONENT_FORESTS_SCORE));
+    if(GET_GLOBAL_VAL(PLAYER_FORESTS_SCORE) > 0) {
+        current_plot = GET_GLOBAL_VAL(PLAYER_FORESTS_SCORE);
+        weakest_plot = MIN(weakest_plot, current_plot);
+    }
+
+    if (weakest_plot == 5) {
+        return 0;
     }
 
     uint16_t suffering_plots = 0;
-    if(GET_GLOBAL_VAL(OPPONENT_PLAINS_SCORE) == weakest_plot) {
+    if(GET_GLOBAL_VAL(PLAYER_PLAINS_SCORE) == weakest_plot) {
         suffering_plots |= C_WHITE;
     }
-    if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE) == weakest_plot) {
+    if(GET_GLOBAL_VAL(PLAYER_SWAMPS_SCORE) == weakest_plot) {
         suffering_plots |= C_BLACK;
     }
-    if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE) == weakest_plot) {
+    if(GET_GLOBAL_VAL(PLAYER_ISLANDS_SCORE) == weakest_plot) {
         suffering_plots |= C_BLUE;
     }
-    if(GET_GLOBAL_VAL(OPPONENT_MOUNTAINS_SCORE) == weakest_plot) {
+    if(GET_GLOBAL_VAL(PLAYER_MOUNTAINS_SCORE) == weakest_plot) {
         suffering_plots |= C_RED;
     }
-    if(GET_GLOBAL_VAL(OPPONENT_FORESTS_SCORE) == weakest_plot) {
+    if(GET_GLOBAL_VAL(PLAYER_FORESTS_SCORE) == weakest_plot) {
         suffering_plots |= C_GREEN;
     }
 
@@ -431,8 +461,22 @@ void handleRedAiCardChoice(void) {
 
 void handleRedAiChooseTarget(void) {
     uint16_t suffering_plots = get_suffering_plots(); //Plots with the lowest values > 0
-    uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
-    *card_choice = get_random_choice(suffering_plots);
+    uint16_t * target_choice = GET_GLOBAL_REF(TARGETED_CARD);
+    if(suffering_plots > 0) {
+        *target_choice = get_random_choice(suffering_plots);
+    }else{
+        *target_choice = 0;
+    }
+}
+
+void chooseRandomRedTarget(void) {
+    uint16_t valid_plots = get_planted_player_plots(); //Plots with values > 0
+    uint16_t * target_choice = GET_GLOBAL_REF(TARGETED_CARD);
+    if(valid_plots > 0) {
+        *target_choice = get_random_choice(valid_plots);
+    }else{
+        *target_choice = 0;
+    }
 }
 
 /*
@@ -520,6 +564,29 @@ uint16_t * get_opp_play_slot(uint16_t card_choice) {
     return 0;
 }
 
+uint16_t * get_player_play_slot(uint16_t card_choice) {
+    switch (card_choice) {
+        case 1: return GET_GLOBAL_REF(PLAYER_PLAINS_SCORE);
+        case 2: return GET_GLOBAL_REF(PLAYER_SWAMPS_SCORE);
+        case 3: return GET_GLOBAL_REF(PLAYER_ISLANDS_SCORE);
+        case 4: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_SCORE);
+        case 5: return GET_GLOBAL_REF(PLAYER_FORESTS_SCORE);
+    }
+    return 0;
+}
+
+uint16_t * get_player_gy_slot(uint16_t card_choice) {
+    switch (card_choice) {
+        case 1: return GET_GLOBAL_REF(PLAYER_PLAINS_GRAVEYARD);
+        case 2: return GET_GLOBAL_REF(PLAYER_SWAMPS_GRAVEYARD);
+        case 3: return GET_GLOBAL_REF(PLAYER_ISLANDS_GRAVEYARD);
+        case 4: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_GRAVEYARD);
+        case 5: return GET_GLOBAL_REF(PLAYER_FORESTS_GRAVEYARD);
+    }
+    return 0;
+}
+
+
 void opp_discard_card(uint16_t card_choice) {
     uint16_t * hand_slot = get_opp_hand_slot(card_choice);
     uint16_t * disc_slot = get_opp_discard_slot(card_choice);
@@ -548,6 +615,17 @@ void doBlueEffect(void) {
     *random_hand_slot = *random_hand_slot + 1;
 }
 
+void doRedEffect(void) {
+    uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
+    if(target_choice > 0) {
+        uint16_t * target_play_slot = get_player_play_slot(target_choice);
+        uint16_t * target_gy_slot = get_player_gy_slot(target_choice);
+
+        *target_play_slot = *target_play_slot - 1;
+        *target_gy_slot = *target_gy_slot + 1;
+    }
+}
+
 void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
     uint16_t card_choice = GET_GLOBAL_VAL(OPPONENT_LAST_CHOICE);
@@ -559,7 +637,11 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
-    doBlueEffect();
+    if(card_choice == 4) {
+        handleRedAiChooseTarget();
+        //chooseRandomRedTarget();
+        doRedEffect();
+    }
     opp_play_card(card_choice);
 /*
     switch (card_choice) {
