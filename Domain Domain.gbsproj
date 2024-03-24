@@ -15268,7 +15268,7 @@
                                                         "variable": "32",
                                                         "__collapseElse": false,
                                                         "__collapse": false,
-                                                        "__label": "Announce Discard or Bloom"
+                                                        "__label": "If $ShieldTriggered Discard Else Bloom"
                                                     },
                                                     "children": {
                                                         "true": [
@@ -15691,7 +15691,7 @@
                                             "comparator": 0,
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": false,
+                                            "__collapse": true,
                                             "__label": "Handle No Winner"
                                         },
                                         "children": {
@@ -15890,7 +15890,7 @@
                                             "comparator": 0,
                                             "__collapseElse": true,
                                             "__disableElse": true,
-                                            "__collapse": false,
+                                            "__collapse": true,
                                             "__label": "Handle Game Ends"
                                         },
                                         "children": {
@@ -38989,8 +38989,8 @@
         },
         {
             "id": "32",
-            "name": "Card Was Countered",
-            "symbol": "var_card_was_countered"
+            "name": "Shield Triggered",
+            "symbol": "var_shield_triggered"
         },
         {
             "id": "33",
@@ -39249,8 +39249,8 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 4027,
-        "worldScrollY": 106,
+        "worldScrollX": 4398,
+        "worldScrollY": 53,
         "zoom": 400,
         "customColorsEnabled": true,
         "sgbEnabled": false,

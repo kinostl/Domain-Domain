@@ -552,8 +552,8 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
     uint16_t card_choice = GET_GLOBAL_VAL(OPPONENT_LAST_CHOICE);
     if (playerHasWhiteBarrier()) {
-        uint16_t * card_was_countered = GET_GLOBAL_REF(CARD_WAS_COUNTERED);
-        *card_was_countered = card_choice + 5;
+        uint16_t * shield_triggered = GET_GLOBAL_REF(SHIELD_TRIGGERED);
+        *shield_triggered = card_choice + 5;
         opp_discard_card(card_choice);
         return;
     }
