@@ -34,18 +34,18 @@ if (flags & THIRD) { ...
 */
 
 // Choice Flags
-#define C_WHITE (1 << 0)
-#define C_BLACK (1 << 1)
-#define C_BLUE  (1 << 2)
-#define C_RED   (1 << 3)
-#define C_GREEN (1 << 4)
+#define C_WHITE  (1 << 0)
+#define C_PURPLE (1 << 1)
+#define C_BLUE   (1 << 2)
+#define C_RED    (1 << 3)
+#define C_GREEN  (1 << 4)
 
 // Targets as values
-#define T_WHITE 1
-#define T_BLACK 2
-#define T_BLUE  3
-#define T_RED   4
-#define T_GREEN 5
+#define T_WHITE  1
+#define T_PURPLE 2
+#define T_BLUE   3
+#define T_RED    4
+#define T_GREEN  5
 
 // Required for randomization, taken from gbvm's implementation.
 #define C_MASK (limit | (limit >> 1) | (limit >> 2) | (limit >> 3) | (limit >> 4) | (limit >> 5) | (limit >> 6) | (limit >> 7) | (limit >> 8) | (limit >> 9) | (limit >> 10) | (limit >> 11) | (limit >> 12) | (limit >> 13) | (limit >> 14) | (limit >> 15))
@@ -57,7 +57,7 @@ uint16_t get_cards_in_hand(void) {
         cards_in_hand |= C_WHITE;
     }
     if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_HAND) > 0) {
-        cards_in_hand |= C_BLACK;
+        cards_in_hand |= C_PURPLE;
     }
     if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_HAND) > 0) {
         cards_in_hand |= C_BLUE;
@@ -77,7 +77,7 @@ uint16_t get_player_hand_slots_with_cards(void) {
         player_hand_slots_with_cards |= C_WHITE;
     }
     if(GET_GLOBAL_VAL(PLAYER_SWAMPS_HAND) > 0) {
-        player_hand_slots_with_cards |= C_BLACK;
+        player_hand_slots_with_cards |= C_PURPLE;
     }
     if(GET_GLOBAL_VAL(PLAYER_ISLANDS_HAND) > 0) {
         player_hand_slots_with_cards |= C_BLUE;
@@ -97,7 +97,7 @@ uint16_t get_planted_player_plots(void) {
         planted_player_plots |= C_WHITE;
     }
     if(GET_GLOBAL_VAL(PLAYER_SWAMPS_SCORE) > 0) {
-        planted_player_plots |= C_BLACK;
+        planted_player_plots |= C_PURPLE;
     }
     if(GET_GLOBAL_VAL(PLAYER_ISLANDS_SCORE) > 0) {
         planted_player_plots |= C_BLUE;
@@ -117,7 +117,7 @@ uint16_t get_empty_plots(void) {
         empty_plots |= C_WHITE;
     }
     if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_SCORE) == 0) {
-        empty_plots |= C_BLACK;
+        empty_plots |= C_PURPLE;
     }
     if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_SCORE) == 0) {
         empty_plots |= C_BLUE;
@@ -164,7 +164,7 @@ uint16_t get_suffering_plots(void) {
         suffering_plots |= C_WHITE;
     }
     if(GET_GLOBAL_VAL(PLAYER_SWAMPS_SCORE) == weakest_plot) {
-        suffering_plots |= C_BLACK;
+        suffering_plots |= C_PURPLE;
     }
     if(GET_GLOBAL_VAL(PLAYER_ISLANDS_SCORE) == weakest_plot) {
         suffering_plots |= C_BLUE;
@@ -179,6 +179,44 @@ uint16_t get_suffering_plots(void) {
     return suffering_plots;
 }
 
+
+uint16_t get_suffering_player_cards(void) {
+    uint16_t weakest_card = 5;
+    if(GET_GLOBAL_VAL(PLAYER_PLAINS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(PLAYER_PLAINS_HAND));
+    }
+    if(GET_GLOBAL_VAL(PLAYER_SWAMPS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(PLAYER_SWAMPS_HAND));
+    }
+    if(GET_GLOBAL_VAL(PLAYER_ISLANDS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(PLAYER_ISLANDS_HAND));
+    }
+    if(GET_GLOBAL_VAL(PLAYER_MOUNTAINS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(PLAYER_MOUNTAINS_HAND));
+    }
+    if(GET_GLOBAL_VAL(PLAYER_FORESTS_HAND) > 0) {
+        weakest_card = MIN(weakest_card, GET_GLOBAL_VAL(PLAYER_FORESTS_HAND));
+    }
+
+    uint16_t suffering_cards = 0;
+    if(GET_GLOBAL_VAL(PLAYER_PLAINS_HAND) == weakest_card) {
+        suffering_cards |= C_WHITE;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_SWAMPS_HAND) == weakest_card) {
+        suffering_cards |= C_PURPLE;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_ISLANDS_HAND) == weakest_card) {
+        suffering_cards |= C_BLUE;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_MOUNTAINS_HAND) == weakest_card) {
+        suffering_cards |= C_RED;
+    }
+    if(GET_GLOBAL_VAL(PLAYER_FORESTS_HAND) == weakest_card) {
+        suffering_cards |= C_GREEN;
+    }
+
+    return suffering_cards;
+}
 
 uint16_t get_suffering_cards(void) {
     uint16_t weakest_card = 5;
@@ -203,7 +241,7 @@ uint16_t get_suffering_cards(void) {
         suffering_cards |= C_WHITE;
     }
     if(GET_GLOBAL_VAL(OPPONENT_SWAMPS_HAND) == weakest_card) {
-        suffering_cards |= C_BLACK;
+        suffering_cards |= C_PURPLE;
     }
     if(GET_GLOBAL_VAL(OPPONENT_ISLANDS_HAND) == weakest_card) {
         suffering_cards |= C_BLUE;
@@ -243,8 +281,8 @@ uint16_t get_random_choice(uint16_t options){
             choices[choices_size] = T_WHITE;
             choices_size++;
         }
-        if(options & C_BLACK){
-            choices[choices_size] = T_BLACK;
+        if(options & C_PURPLE){
+            choices[choices_size] = T_PURPLE;
             choices_size++;
         }
         if(options & C_BLUE){
@@ -286,9 +324,9 @@ void handleDebugCirno(void) {
                 has_color_pref = 1;
             }
             break;
-        case T_BLACK:
-            if(cards_in_hand & C_BLACK){
-                *card_choice = T_BLACK;
+        case T_PURPLE:
+            if(cards_in_hand & C_PURPLE){
+                *card_choice = T_PURPLE;
                 has_color_pref = 1;
             }
             break;
@@ -349,6 +387,8 @@ void handleBlueAiCardChoice(void) {
 
     Green now protects your colors with "The next time this would wither, it will bloom instead."
 
+    Green Smart AI should protect whatever is lowest in hand at the moment
+
     Played by Yuuka
 */
 void handleGreenAiCardChoice(void) {
@@ -370,6 +410,14 @@ void handleGreenAiCardChoice(void) {
 }
 
 void handleGreenAiChooseTarget(void) {
+    uint16_t unprotected_cards = ~(GET_GLOBAL_VAL(OPPONENT_SHIELDS)); //Inversion of the Protected Cards
+    uint16_t suffering_cards = get_suffering_cards();
+    uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
+
+    *card_choice = get_random_choice(unprotected_cards & suffering_cards);
+}
+
+void chooseRandomGreenTarget(void) {
     uint16_t unprotected_cards = ~(GET_GLOBAL_VAL(OPPONENT_SHIELDS)); //Inversion of the Protected Cards
     uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
     *card_choice = get_random_choice(unprotected_cards);
@@ -408,6 +456,12 @@ void handleWhiteAiChooseTarget(void) {
     }
 }
 
+void chooseRandomWhiteTarget(void) {
+    uint16_t unblocked_cards = ~(GET_GLOBAL_VAL(OPPONENT_SHIELDS)) >> 5; //Inversion of the Protected Cards
+    uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
+    *card_choice = get_random_choice(unblocked_cards);
+}
+
 /*
 ```
 Purple AI - Bloom
@@ -424,15 +478,15 @@ void handlePurpleAiCardChoice(void) {
     uint16_t cards_in_hand = get_cards_in_hand();
     uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
 
-    if(cards_in_hand & C_BLACK){
-        *card_choice = T_BLACK;
+    if(cards_in_hand & C_PURPLE){
+        *card_choice = T_PURPLE;
     }else{
         *card_choice = get_random_choice(cards_in_hand);
     }
 }
 
 void handlePurpleAiChooseTarget(void) {
-    uint16_t suffering_cards = get_suffering_cards(); //Cards with the lowest values > 0
+    uint16_t suffering_cards = get_suffering_player_cards(); //Cards with the lowest values > 0
     uint16_t * card_choice = GET_GLOBAL_REF(TARGETED_CARD);
     /**
      * This should reflect Patchouli's personality.
@@ -523,27 +577,26 @@ Choose random empty plot. Play that color optimally.
 Also played by Yuuka?
 ```
 */
-
 void handleOpponentCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
 
     switch (current_opponent) {
-        case 1:
+        case T_WHITE:
             // White
             handleWhiteAiCardChoice();
             break;
-        case 2:
+        case T_PURPLE:
             // Purple
             handlePurpleAiCardChoice();
-        case 3:
+        case T_BLUE:
             // Blue
             handleBlueAiCardChoice();
             break;
-        case 4:
+        case T_RED:
             handleRedAiCardChoice();
             break;
-        case 5:
+        case T_GREEN:
             handleGreenAiCardChoice();
             break;
     }
@@ -552,81 +605,80 @@ void handleOpponentCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
 uint16_t * get_random_opp_hand_slot(void) {
     uint16_t card_to_draw = random(5) + 1;
     switch (card_to_draw) {
-        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_HAND);
-        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_HAND);
-        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_HAND);
-        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_HAND);
-        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_HAND);
+        case T_WHITE: return GET_GLOBAL_REF(OPPONENT_PLAINS_HAND);
+        case T_PURPLE: return GET_GLOBAL_REF(OPPONENT_SWAMPS_HAND);
+        case T_BLUE: return GET_GLOBAL_REF(OPPONENT_ISLANDS_HAND);
+        case T_RED: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_HAND);
+        case T_GREEN: return GET_GLOBAL_REF(OPPONENT_FORESTS_HAND);
     }
     return 0;
 }
 
 uint16_t * get_opp_hand_slot(uint16_t card_choice) {
     switch (card_choice) {
-        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_HAND);
-        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_HAND);
-        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_HAND);
-        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_HAND);
-        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_HAND);
+        case T_WHITE: return GET_GLOBAL_REF(OPPONENT_PLAINS_HAND);
+        case T_PURPLE: return GET_GLOBAL_REF(OPPONENT_SWAMPS_HAND);
+        case T_BLUE: return GET_GLOBAL_REF(OPPONENT_ISLANDS_HAND);
+        case T_RED: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_HAND);
+        case T_GREEN: return GET_GLOBAL_REF(OPPONENT_FORESTS_HAND);
     }
     return 0;
 }
 
 uint16_t * get_opp_discard_slot(uint16_t card_choice) {
     switch (card_choice) {
-        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_GRAVEYARD);
-        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_GRAVEYARD);
-        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_GRAVEYARD);
-        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_GRAVEYARD);
-        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_GRAVEYARD);
+        case T_WHITE: return GET_GLOBAL_REF(OPPONENT_PLAINS_GRAVEYARD);
+        case T_PURPLE: return GET_GLOBAL_REF(OPPONENT_SWAMPS_GRAVEYARD);
+        case T_BLUE: return GET_GLOBAL_REF(OPPONENT_ISLANDS_GRAVEYARD);
+        case T_RED: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_GRAVEYARD);
+        case T_GREEN: return GET_GLOBAL_REF(OPPONENT_FORESTS_GRAVEYARD);
     }
     return 0;
 }
 
 uint16_t * get_opp_play_slot(uint16_t card_choice) {
     switch (card_choice) {
-        case 1: return GET_GLOBAL_REF(OPPONENT_PLAINS_SCORE);
-        case 2: return GET_GLOBAL_REF(OPPONENT_SWAMPS_SCORE);
-        case 3: return GET_GLOBAL_REF(OPPONENT_ISLANDS_SCORE);
-        case 4: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_SCORE);
-        case 5: return GET_GLOBAL_REF(OPPONENT_FORESTS_SCORE);
+        case T_WHITE: return GET_GLOBAL_REF(OPPONENT_PLAINS_SCORE);
+        case T_PURPLE: return GET_GLOBAL_REF(OPPONENT_SWAMPS_SCORE);
+        case T_BLUE: return GET_GLOBAL_REF(OPPONENT_ISLANDS_SCORE);
+        case T_RED: return GET_GLOBAL_REF(OPPONENT_MOUNTAINS_SCORE);
+        case T_GREEN: return GET_GLOBAL_REF(OPPONENT_FORESTS_SCORE);
     }
     return 0;
 }
 
 uint16_t * get_player_play_slot(uint16_t card_choice) {
     switch (card_choice) {
-        case 1: return GET_GLOBAL_REF(PLAYER_PLAINS_SCORE);
-        case 2: return GET_GLOBAL_REF(PLAYER_SWAMPS_SCORE);
-        case 3: return GET_GLOBAL_REF(PLAYER_ISLANDS_SCORE);
-        case 4: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_SCORE);
-        case 5: return GET_GLOBAL_REF(PLAYER_FORESTS_SCORE);
+        case T_WHITE: return GET_GLOBAL_REF(PLAYER_PLAINS_SCORE);
+        case T_PURPLE: return GET_GLOBAL_REF(PLAYER_SWAMPS_SCORE);
+        case T_BLUE: return GET_GLOBAL_REF(PLAYER_ISLANDS_SCORE);
+        case T_RED: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_SCORE);
+        case T_GREEN: return GET_GLOBAL_REF(PLAYER_FORESTS_SCORE);
     }
     return 0;
 }
 
 uint16_t * get_player_hand_slot(uint16_t card_choice) {
     switch (card_choice) {
-        case 1: return GET_GLOBAL_REF(PLAYER_PLAINS_HAND);
-        case 2: return GET_GLOBAL_REF(PLAYER_SWAMPS_HAND);
-        case 3: return GET_GLOBAL_REF(PLAYER_ISLANDS_HAND);
-        case 4: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_HAND);
-        case 5: return GET_GLOBAL_REF(PLAYER_FORESTS_HAND);
+        case T_WHITE: return GET_GLOBAL_REF(PLAYER_PLAINS_HAND);
+        case T_PURPLE: return GET_GLOBAL_REF(PLAYER_SWAMPS_HAND);
+        case T_BLUE: return GET_GLOBAL_REF(PLAYER_ISLANDS_HAND);
+        case T_RED: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_HAND);
+        case T_GREEN: return GET_GLOBAL_REF(PLAYER_FORESTS_HAND);
     }
     return 0;
 }
 
 uint16_t * get_player_gy_slot(uint16_t card_choice) {
     switch (card_choice) {
-        case 1: return GET_GLOBAL_REF(PLAYER_PLAINS_GRAVEYARD);
-        case 2: return GET_GLOBAL_REF(PLAYER_SWAMPS_GRAVEYARD);
-        case 3: return GET_GLOBAL_REF(PLAYER_ISLANDS_GRAVEYARD);
-        case 4: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_GRAVEYARD);
-        case 5: return GET_GLOBAL_REF(PLAYER_FORESTS_GRAVEYARD);
+        case T_WHITE: return GET_GLOBAL_REF(PLAYER_PLAINS_GRAVEYARD);
+        case T_PURPLE: return GET_GLOBAL_REF(PLAYER_SWAMPS_GRAVEYARD);
+        case T_BLUE: return GET_GLOBAL_REF(PLAYER_ISLANDS_GRAVEYARD);
+        case T_RED: return GET_GLOBAL_REF(PLAYER_MOUNTAINS_GRAVEYARD);
+        case T_GREEN: return GET_GLOBAL_REF(PLAYER_FORESTS_GRAVEYARD);
     }
     return 0;
 }
-
 
 void opp_discard_card(uint16_t card_choice) {
     uint16_t * hand_slot = get_opp_hand_slot(card_choice);
@@ -663,30 +715,70 @@ void doBlueEffect(void) {
     *random_hand_slot = *random_hand_slot + 1;
 }
 
+void player_wither_plot(uint16_t target_choice) {
+    uint16_t * target_play_slot = get_player_play_slot(target_choice);
+    uint16_t * target_gy_slot = get_player_gy_slot(target_choice);
+
+    *target_play_slot = *target_play_slot - 1;
+    *target_gy_slot = *target_gy_slot + 1;
+}
+
 void doRedEffect(void) {
     uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
-    if(target_choice > 0) {
-        uint16_t * target_play_slot = get_player_play_slot(target_choice);
-        uint16_t * target_gy_slot = get_player_gy_slot(target_choice);
+    if(target_choice == 0) return;
 
-        *target_play_slot = *target_play_slot - 1;
-        *target_gy_slot = *target_gy_slot + 1;
-    }
+    player_wither_plot(target_choice);
+}
+
+void player_discard_card(uint16_t target_choice) {
+    uint16_t * target_hand_slot = get_player_hand_slot(target_choice);
+    uint16_t * target_gy_slot = get_player_gy_slot(target_choice);
+
+    *target_hand_slot = *target_hand_slot - 1;
+    *target_gy_slot = *target_gy_slot + 1;
+}
+
+void player_green_barrier_effect(uint16_t card_choice, uint16_t target_choice) {
+    uint16_t * shield_triggered = GET_GLOBAL_REF(SHIELD_TRIGGERED);
+    uint16_t * target_play_slot = get_player_play_slot(target_choice);
+
+    *shield_triggered = target_choice;
+    *target_play_slot = *target_play_slot + 1;
+
+    opp_discard_card(card_choice);
 }
 
 void doPurpleEffect(void) {
     uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
-    if(target_choice > 0) {
-        uint16_t * target_hand_slot = get_player_hand_slot(target_choice);
-        uint16_t * target_gy_slot = get_player_gy_slot(target_choice);
+    if(target_choice == 0) return;
 
-        *target_hand_slot = *target_hand_slot - 1;
-        *target_gy_slot = *target_gy_slot + 1;
+    if (playerHasGreenBarrier()) {
+        player_green_barrier_effect(T_PURPLE, target_choice);
+        return;
     }
+
+    player_discard_card(target_choice);
+}
+
+void doGreenEffect(void) {
+    uint16_t * opponent_shields = GET_GLOBAL_REF(OPPONENT_SHIELDS);
+    uint16_t target_card = GET_GLOBAL_VAL(TARGETED_CARD);
+
+    target_card = 1 << (target_card - 1);
+    *opponent_shields = *opponent_shields | target_card;
+}
+
+void doWhiteEffect(void) {
+    uint16_t * opponent_shields = GET_GLOBAL_REF(OPPONENT_SHIELDS);
+    uint16_t target_card = GET_GLOBAL_VAL(TARGETED_CARD);
+
+    target_card = 1 << (4 + target_card);
+    *opponent_shields = *opponent_shields | target_card;
 }
 
 void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
+
     uint16_t card_choice = GET_GLOBAL_VAL(OPPONENT_LAST_CHOICE);
     if (playerHasWhiteBarrier()) {
         uint16_t * shield_triggered = GET_GLOBAL_REF(SHIELD_TRIGGERED);
@@ -697,48 +789,34 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
     if(card_choice == 2) {
-        chooseRandomPurpleTarget();
-        if (playerHasGreenBarrier()) {
-            uint16_t * shield_triggered = GET_GLOBAL_REF(SHIELD_TRIGGERED);
-
-            uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
-            uint16_t * target_play_slot = get_player_play_slot(target_choice);
-
-            *shield_triggered = target_choice;
-            *target_play_slot = *target_play_slot + 1;
-
-            opp_discard_card(card_choice);
-
-            return;
-        }
-        //handlePurpleAiChooseTarget();
-        doPurpleEffect();
+        doPurpleTurn();
     }
-    opp_play_card(card_choice);
-/*
     switch (card_choice) {
-        case 1:
-            // White
-            if(current_opponent == 1) handleWhiteAiChooseTarget();
+        case T_WHITE:
+            if(current_opponent == T_WHITE) handleWhiteAiChooseTarget();
             else chooseRandomWhiteTarget();
             doWhiteEffect();
-            break;
-        case 2:
-            // Purple
-            if(current_opponent == 2) handlePurpleAiChooseTarget();
+        break;
+        case T_PURPLE:
+            // Drafted
+            if(current_opponent == T_PURPLE) handlePurpleAiChooseTarget();
             else chooseRandomPurpleTarget();
             doPurpleEffect();
-        case 3:
+        break;
+        case T_BLUE:
+            // Drafted
             doBlueEffect();
-        case 4:
-            if(current_opponent == 4) handleRedAiChooseTarget();
+        case T_RED:
+            // Drafted
+            if(current_opponent == T_RED) handleRedAiChooseTarget();
             else chooseRandomRedTarget();
             doRedEffect();
-            break;
-        case 5:
-            if(current_opponent == 5) handleGreenAiChooseTarget();
+        break;
+        case T_GREEN:
+            if(current_opponent == T_GREEN) handleGreenAiChooseTarget();
             else chooseRandomGreenTarget();
             doGreenEffect();
-            break;
-    }*/
+        break;
+    }
+    opp_play_card(card_choice);
 }
