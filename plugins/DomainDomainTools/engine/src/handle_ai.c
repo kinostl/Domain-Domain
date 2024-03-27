@@ -563,6 +563,15 @@ void chooseRandomPurpleTarget(void) {
     }
 }
 
+void handleRainbowBadAiCardChoice(void) {
+    uint16_t cards_in_hand = get_cards_in_hand();
+
+    uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
+
+    *card_choice = get_random_choice(cards_in_hand);
+}
+
+
 /*
 ```
 Garden AI - Garden
@@ -580,6 +589,9 @@ Also played by Yuuka?
 void handleOpponentCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
+    if(current_opponent == 6) {
+        current_opponent = random(5) + 1;
+    }
 
     switch (current_opponent) {
         case T_WHITE:
@@ -598,6 +610,9 @@ void handleOpponentCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
             break;
         case T_GREEN:
             handleGreenAiCardChoice();
+            break;
+        default:
+            handleRainbowBadAiCardChoice();
             break;
     }
 }
@@ -715,7 +730,17 @@ void doBlueEffect(void) {
     *random_hand_slot = *random_hand_slot + 1;
 }
 
-void player_wither_plot(uint16_t target_choice) {
+void player_green_barrier_effect(uint16_t card_choice, uint16_t target_choice) {
+    uint16_t * shield_triggered = GET_GLOBAL_REF(SHIELD_TRIGGERED);
+    uint16_t * target_play_slot = get_player_play_slot(target_choice);
+
+    *shield_triggered = target_choice;
+    *target_play_slot = *target_play_slot + 1;
+
+    opp_discard_card(card_choice);
+}
+
+void wither_player_plot(uint16_t target_choice) {
     uint16_t * target_play_slot = get_player_play_slot(target_choice);
     uint16_t * target_gy_slot = get_player_gy_slot(target_choice);
 
@@ -727,7 +752,12 @@ void doRedEffect(void) {
     uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
     if(target_choice == 0) return;
 
-    player_wither_plot(target_choice);
+    if (playerHasGreenBarrier()) {
+        player_green_barrier_effect(T_RED, target_choice);
+        return;
+    }
+
+    wither_player_plot(target_choice);
 }
 
 void player_discard_card(uint16_t target_choice) {
@@ -738,15 +768,6 @@ void player_discard_card(uint16_t target_choice) {
     *target_gy_slot = *target_gy_slot + 1;
 }
 
-void player_green_barrier_effect(uint16_t card_choice, uint16_t target_choice) {
-    uint16_t * shield_triggered = GET_GLOBAL_REF(SHIELD_TRIGGERED);
-    uint16_t * target_play_slot = get_player_play_slot(target_choice);
-
-    *shield_triggered = target_choice;
-    *target_play_slot = *target_play_slot + 1;
-
-    opp_discard_card(card_choice);
-}
 
 void doPurpleEffect(void) {
     uint16_t target_choice = GET_GLOBAL_VAL(TARGETED_CARD);
@@ -788,9 +809,11 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
-    if(card_choice == 2) {
-        doPurpleTurn();
+
+    if(current_opponent == 6) {
+        current_opponent = card_choice;
     }
+
     switch (card_choice) {
         case T_WHITE:
             if(current_opponent == T_WHITE) handleWhiteAiChooseTarget();
@@ -798,14 +821,13 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
             doWhiteEffect();
         break;
         case T_PURPLE:
-            // Drafted
             if(current_opponent == T_PURPLE) handlePurpleAiChooseTarget();
             else chooseRandomPurpleTarget();
             doPurpleEffect();
         break;
         case T_BLUE:
-            // Drafted
             doBlueEffect();
+        break;
         case T_RED:
             // Drafted
             if(current_opponent == T_RED) handleRedAiChooseTarget();

@@ -11925,15 +11925,15 @@
                             "command": "EVENT_MENU",
                             "args": {
                                 "variable": "35",
-                                "items": 7,
+                                "items": 8,
                                 "option1": "White",
                                 "option2": "Purple",
                                 "option3": "Blue",
                                 "option4": "Red",
                                 "option5": "Green",
-                                "option6": "Random",
-                                "option7": "Cancel",
-                                "option8": "",
+                                "option6": "Random G",
+                                "option7": "Random B",
+                                "option8": "Cancel",
                                 "cancelOnB": true,
                                 "layout": "dialogue",
                                 "cancelOnLastOption": true
@@ -15263,6 +15263,359 @@
                                                     "id": "5fdea1ae-8175-4c6e-b339-201867521ab4"
                                                 },
                                                 {
+                                                    "command": "EVENT_SWITCH",
+                                                    "args": {
+                                                        "variable": "22",
+                                                        "choices": 5,
+                                                        "__collapseCase0": false,
+                                                        "value0": 1,
+                                                        "__collapseCase1": false,
+                                                        "value1": 2,
+                                                        "__collapseCase2": false,
+                                                        "value2": 3,
+                                                        "__collapseCase3": false,
+                                                        "value3": 4,
+                                                        "__collapseCase4": false,
+                                                        "value4": 5,
+                                                        "__collapseCase5": false,
+                                                        "value5": 6,
+                                                        "__collapseCase6": false,
+                                                        "value6": 7,
+                                                        "__collapseCase7": false,
+                                                        "value7": 8,
+                                                        "__collapseCase8": false,
+                                                        "value8": 9,
+                                                        "__collapseCase9": false,
+                                                        "value9": 10,
+                                                        "__collapseCase10": false,
+                                                        "value10": 11,
+                                                        "__collapseCase11": false,
+                                                        "value11": 12,
+                                                        "__collapseCase12": false,
+                                                        "value12": 13,
+                                                        "__collapseCase13": false,
+                                                        "value13": 14,
+                                                        "__collapseCase14": false,
+                                                        "value14": 15,
+                                                        "__collapseCase15": false,
+                                                        "value15": 16,
+                                                        "__collapseElse": false,
+                                                        "__disableElse": true,
+                                                        "__collapse": false
+                                                    },
+                                                    "children": {
+                                                        "true0": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays White"
+                                                                    ]
+                                                                },
+                                                                "id": "341ed4be-f38d-4420-a479-8c2ac28b6c35"
+                                                            }
+                                                        ],
+                                                        "true1": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Purple"
+                                                                    ]
+                                                                },
+                                                                "id": "af0a6042-daa5-4d17-9228-5e9bb53a420e"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_SWITCH",
+                                                                "args": {
+                                                                    "variable": "28",
+                                                                    "choices": 5,
+                                                                    "__collapseCase0": false,
+                                                                    "value0": 1,
+                                                                    "__collapseCase1": false,
+                                                                    "value1": 2,
+                                                                    "__collapseCase2": false,
+                                                                    "value2": 3,
+                                                                    "__collapseCase3": false,
+                                                                    "value3": 4,
+                                                                    "__collapseCase4": false,
+                                                                    "value4": 5,
+                                                                    "__collapseCase5": false,
+                                                                    "value5": 6,
+                                                                    "__collapseCase6": false,
+                                                                    "value6": 7,
+                                                                    "__collapseCase7": false,
+                                                                    "value7": 8,
+                                                                    "__collapseCase8": false,
+                                                                    "value8": 9,
+                                                                    "__collapseCase9": false,
+                                                                    "value9": 10,
+                                                                    "__collapseCase10": false,
+                                                                    "value10": 11,
+                                                                    "__collapseCase11": false,
+                                                                    "value11": 12,
+                                                                    "__collapseCase12": false,
+                                                                    "value12": 13,
+                                                                    "__collapseCase13": false,
+                                                                    "value13": 14,
+                                                                    "__collapseCase14": false,
+                                                                    "value14": 15,
+                                                                    "__collapseCase15": false,
+                                                                    "value15": 16,
+                                                                    "__collapseElse": false,
+                                                                    "__collapse": true,
+                                                                    "__disableElse": true,
+                                                                    "__label": "Announce Target"
+                                                                },
+                                                                "children": {
+                                                                    "true0": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Yellow"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "5e02706f-3702-4581-8cbd-94987a0bbd67"
+                                                                        }
+                                                                    ],
+                                                                    "true1": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Purple"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "bcd26178-51bd-4677-ac6a-b724c14d8a4e"
+                                                                        }
+                                                                    ],
+                                                                    "true2": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Blue"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "bb686bcf-2372-4e4b-8968-cd6c1fe6a61c"
+                                                                        }
+                                                                    ],
+                                                                    "true3": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Red"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "03e7eed9-c115-4ead-be10-e1498037398f"
+                                                                        }
+                                                                    ],
+                                                                    "true4": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Green"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "3ee396e6-d35b-4fae-90d4-60a7a25c75cb"
+                                                                        }
+                                                                    ],
+                                                                    "true5": [],
+                                                                    "true6": [],
+                                                                    "true7": [],
+                                                                    "true8": [],
+                                                                    "true9": [],
+                                                                    "true10": [],
+                                                                    "true11": [],
+                                                                    "true12": [],
+                                                                    "true13": [],
+                                                                    "true14": [],
+                                                                    "true15": [],
+                                                                    "false": []
+                                                                },
+                                                                "id": "e2d4112b-adae-46b6-9bb6-c4dfb40ef2e2"
+                                                            }
+                                                        ],
+                                                        "true2": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Blue"
+                                                                    ]
+                                                                },
+                                                                "id": "e92606ee-62ad-4352-8235-554d0043b03f"
+                                                            }
+                                                        ],
+                                                        "true3": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Red"
+                                                                    ]
+                                                                },
+                                                                "id": "e2d34be6-03ee-488a-b438-b3d470235bb6"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_SWITCH",
+                                                                "args": {
+                                                                    "variable": "28",
+                                                                    "choices": 5,
+                                                                    "__collapseCase0": false,
+                                                                    "value0": 1,
+                                                                    "__collapseCase1": false,
+                                                                    "value1": 2,
+                                                                    "__collapseCase2": false,
+                                                                    "value2": 3,
+                                                                    "__collapseCase3": false,
+                                                                    "value3": 4,
+                                                                    "__collapseCase4": false,
+                                                                    "value4": 5,
+                                                                    "__collapseCase5": false,
+                                                                    "value5": 6,
+                                                                    "__collapseCase6": false,
+                                                                    "value6": 7,
+                                                                    "__collapseCase7": false,
+                                                                    "value7": 8,
+                                                                    "__collapseCase8": false,
+                                                                    "value8": 9,
+                                                                    "__collapseCase9": false,
+                                                                    "value9": 10,
+                                                                    "__collapseCase10": false,
+                                                                    "value10": 11,
+                                                                    "__collapseCase11": false,
+                                                                    "value11": 12,
+                                                                    "__collapseCase12": false,
+                                                                    "value12": 13,
+                                                                    "__collapseCase13": false,
+                                                                    "value13": 14,
+                                                                    "__collapseCase14": false,
+                                                                    "value14": 15,
+                                                                    "__collapseCase15": false,
+                                                                    "value15": 16,
+                                                                    "__collapseElse": false,
+                                                                    "__collapse": false,
+                                                                    "__disableElse": true,
+                                                                    "__label": "Announce Target"
+                                                                },
+                                                                "children": {
+                                                                    "true0": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Yellow"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "72d026cf-02a3-4f90-b708-2f1d2d815b73"
+                                                                        }
+                                                                    ],
+                                                                    "true1": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Purple"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "5e2c7b55-cfd4-42cf-b9a1-99d13826f81d"
+                                                                        }
+                                                                    ],
+                                                                    "true2": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Blue"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "15115007-caa5-42da-90d4-7aef90e98441"
+                                                                        }
+                                                                    ],
+                                                                    "true3": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Red"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "379d05ab-344b-4327-9613-f62172cfa4fe"
+                                                                        }
+                                                                    ],
+                                                                    "true4": [
+                                                                        {
+                                                                            "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Opp Targets Green"
+                                                                                ],
+                                                                                "color": "006"
+                                                                            },
+                                                                            "id": "d89e3a2c-8172-4fc7-8528-5c7857668c85"
+                                                                        }
+                                                                    ],
+                                                                    "true5": [],
+                                                                    "true6": [],
+                                                                    "true7": [],
+                                                                    "true8": [],
+                                                                    "true9": [],
+                                                                    "true10": [],
+                                                                    "true11": [],
+                                                                    "true12": [],
+                                                                    "true13": [],
+                                                                    "true14": [],
+                                                                    "true15": [],
+                                                                    "false": []
+                                                                },
+                                                                "id": "221377c2-6ecb-41fa-99b2-138ec654688c"
+                                                            }
+                                                        ],
+                                                        "true4": [
+                                                            {
+                                                                "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                "args": {
+                                                                    "color": "006",
+                                                                    "text": [
+                                                                        "Opp Plays Green"
+                                                                    ]
+                                                                },
+                                                                "id": "62bbd65a-d3f3-4ec4-9e9e-02d565822dba"
+                                                            }
+                                                        ],
+                                                        "true5": [],
+                                                        "true6": [],
+                                                        "true7": [],
+                                                        "true8": [],
+                                                        "true9": [],
+                                                        "true10": [],
+                                                        "true11": [],
+                                                        "true12": [],
+                                                        "true13": [],
+                                                        "true14": [],
+                                                        "true15": [],
+                                                        "false": []
+                                                    },
+                                                    "id": "efaaa494-b6cd-4167-9326-fa91fafd3c38"
+                                                },
+                                                {
                                                     "command": "EVENT_IF_TRUE",
                                                     "args": {
                                                         "variable": "32",
@@ -15644,7 +15997,8 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Blooms White"
+                                                                                                "Opp Blooms White",
+                                                                                                "Opp Salts Something"
                                                                                             ]
                                                                                         },
                                                                                         "id": "b0fb2832-5e43-47f6-a151-c60c683933ab"
@@ -15786,7 +16140,8 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Blooms Blue"
+                                                                                                "Opp Blooms Blue",
+                                                                                                "Opp Waters Something"
                                                                                             ]
                                                                                         },
                                                                                         "id": "6335a4e6-9ce6-4981-aca7-e3455687ebc2"
@@ -15802,6 +16157,124 @@
                                                                                             ]
                                                                                         },
                                                                                         "id": "09760dab-10ab-42fe-9f5b-fba968c1ed0a"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_SWITCH",
+                                                                                        "args": {
+                                                                                            "variable": "28",
+                                                                                            "choices": 5,
+                                                                                            "__collapseCase0": false,
+                                                                                            "value0": 1,
+                                                                                            "__collapseCase1": false,
+                                                                                            "value1": 2,
+                                                                                            "__collapseCase2": false,
+                                                                                            "value2": 3,
+                                                                                            "__collapseCase3": false,
+                                                                                            "value3": 4,
+                                                                                            "__collapseCase4": false,
+                                                                                            "value4": 5,
+                                                                                            "__collapseCase5": false,
+                                                                                            "value5": 6,
+                                                                                            "__collapseCase6": false,
+                                                                                            "value6": 7,
+                                                                                            "__collapseCase7": false,
+                                                                                            "value7": 8,
+                                                                                            "__collapseCase8": false,
+                                                                                            "value8": 9,
+                                                                                            "__collapseCase9": false,
+                                                                                            "value9": 10,
+                                                                                            "__collapseCase10": false,
+                                                                                            "value10": 11,
+                                                                                            "__collapseCase11": false,
+                                                                                            "value11": 12,
+                                                                                            "__collapseCase12": false,
+                                                                                            "value12": 13,
+                                                                                            "__collapseCase13": false,
+                                                                                            "value13": 14,
+                                                                                            "__collapseCase14": false,
+                                                                                            "value14": 15,
+                                                                                            "__collapseCase15": false,
+                                                                                            "value15": 16,
+                                                                                            "__collapseElse": false,
+                                                                                            "__collapse": false,
+                                                                                            "__disableElse": true,
+                                                                                            "__label": "Announce Withered Card"
+                                                                                        },
+                                                                                        "children": {
+                                                                                            "true0": [
+                                                                                                {
+                                                                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                    "args": {
+                                                                                                        "text": [
+                                                                                                            "Opp Withers Yellow"
+                                                                                                        ],
+                                                                                                        "color": "006"
+                                                                                                    },
+                                                                                                    "id": "d5b72801-8855-43f7-a082-725641268563"
+                                                                                                }
+                                                                                            ],
+                                                                                            "true1": [
+                                                                                                {
+                                                                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                    "args": {
+                                                                                                        "text": [
+                                                                                                            "Opp Withers Purple"
+                                                                                                        ],
+                                                                                                        "color": "006"
+                                                                                                    },
+                                                                                                    "id": "877dc363-8072-4eb6-a5f3-67cab7dd8291"
+                                                                                                }
+                                                                                            ],
+                                                                                            "true2": [
+                                                                                                {
+                                                                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                    "args": {
+                                                                                                        "text": [
+                                                                                                            "Opp Withers Blue"
+                                                                                                        ],
+                                                                                                        "color": "006"
+                                                                                                    },
+                                                                                                    "id": "44fd8022-00c6-4479-b950-1f044c73bef5"
+                                                                                                }
+                                                                                            ],
+                                                                                            "true3": [
+                                                                                                {
+                                                                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                    "args": {
+                                                                                                        "text": [
+                                                                                                            "Opp Withers Red"
+                                                                                                        ],
+                                                                                                        "color": "006"
+                                                                                                    },
+                                                                                                    "id": "0469b806-2ed0-4edb-a712-6992a4af19cc"
+                                                                                                }
+                                                                                            ],
+                                                                                            "true4": [
+                                                                                                {
+                                                                                                    "command": "PT_EVENT_APPEND_VISUAL_LOG",
+                                                                                                    "args": {
+                                                                                                        "text": [
+                                                                                                            "Opp Withers Green"
+                                                                                                        ],
+                                                                                                        "color": "006"
+                                                                                                    },
+                                                                                                    "id": "c14df9a4-888c-4834-9fec-ae00a086174a"
+                                                                                                }
+                                                                                            ],
+                                                                                            "true5": [],
+                                                                                            "true6": [],
+                                                                                            "true7": [],
+                                                                                            "true8": [],
+                                                                                            "true9": [],
+                                                                                            "true10": [],
+                                                                                            "true11": [],
+                                                                                            "true12": [],
+                                                                                            "true13": [],
+                                                                                            "true14": [],
+                                                                                            "true15": [],
+                                                                                            "false": []
+                                                                                        },
+                                                                                        "id": "69889bbe-6f78-4f73-90f1-7db421d4d2ef"
                                                                                     }
                                                                                 ],
                                                                                 "true4": [
@@ -15810,7 +16283,8 @@
                                                                                         "args": {
                                                                                             "color": "006",
                                                                                             "text": [
-                                                                                                "Opp Blooms Green"
+                                                                                                "Opp Blooms Green",
+                                                                                                "Opp Braces Something"
                                                                                             ]
                                                                                         },
                                                                                         "id": "d11ee28f-d529-4363-a3af-7024bab6a559"
@@ -15835,7 +16309,7 @@
                                                                             "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                             "args": {
                                                                                 "customEventId": "aed02cfb-ffd6-48d5-a0c5-fd3c50ce9323",
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "id": "1819bc13-325b-493e-b601-cffab678e0a0"
                                                                         }
@@ -18545,7 +19019,8 @@
                                                     "args": {
                                                         "variable": "11",
                                                         "flag": 9,
-                                                        "__collapseElse": false
+                                                        "__collapseElse": false,
+                                                        "__collapse": false
                                                     },
                                                     "children": {
                                                         "true": [
@@ -39525,7 +40000,7 @@
         "showConnections": true,
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 2191,
+        "worldScrollX": 1700,
         "worldScrollY": 0,
         "zoom": 200,
         "customColorsEnabled": true,
