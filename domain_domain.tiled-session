@@ -3,12 +3,38 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "playfield_with_dialog.tmx",
+    "activeFile": "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/sample-overworld.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "exportAsImage.includeBackgroundColor": true,
     "fileStates": {
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/sample-overworld.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 346.5,
+                "y": 176
+            }
+        },
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/tilemap.tsx": {
+            "scaleInDock": 1
+        },
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/tilemap_dotmatrix.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/sample-overworld.tmx": {
+            "scale": 3.3924715909090906,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 350.33454758614914,
+                "y": 138.83682954402715
+            }
+        },
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/tilemap.tsx": {
+            "scaleInDock": 1
+        },
         "cheats_menu.tmx": {
             "scale": 1,
             "selectedLayer": 0,
@@ -29,16 +55,16 @@
             "scale": 3,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 310.1666666666667,
-                "y": 176.66666666666666
+                "x": 621.1666666666666,
+                "y": 267.66666666666663
             }
         },
         "playfield.tmx": {
             "scale": 5.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 211,
-                "y": 92.72727272727272
+                "x": 215.8181818181818,
+                "y": 91.0909090909091
             }
         },
         "playfield_with_dialog.tmx": {
@@ -61,7 +87,8 @@
             "scaleInDock": 1
         }
     },
-    "last.imagePath": "/home/deck/Documents/Domain Domain",
+    "last.externalTilesetPath": "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled",
+    "last.imagePath": "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Dot Matrix/Tilemap",
     "map.height": 18,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 8,
@@ -72,7 +99,8 @@
         "rpg.tsx",
         "dice.tmx",
         "random.tsx",
-        "playfield_with_dialog.tmx"
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/sample-overworld.tmx",
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/tilemap_dotmatrix.tsx"
     ],
     "project": "domain_domain.tiled-project",
     "recentFiles": [
@@ -80,10 +108,14 @@
         "rpg.tsx",
         "dice.tmx",
         "random.tsx",
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/tilemap_dotmatrix.tsx",
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/Pirates/Tiled/sample-overworld.tmx",
+        "/home/deck/Documents/Bank 1 GBC Plugin/assets/backgrounds/sample-overworld.tmx",
         "playfield_with_dialog.tmx",
         "cheats_menu_with_yukari.tmx",
         "cheats_menu.tmx"
     ],
+    "tileset.lastUsedFilter": "All Files (*)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 16,
