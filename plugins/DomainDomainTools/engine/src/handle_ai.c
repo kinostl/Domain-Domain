@@ -1,4 +1,5 @@
 #include "math.h"
+#include <stdint.h>
 #include <stdlib.h>
 #include <types.h>
 #pragma bank 255
@@ -315,7 +316,7 @@ void handleDebugCirno(void) {
 
     uint16_t cards_in_hand = get_cards_in_hand();
     uint16_t * card_choice = GET_GLOBAL_REF(OPPONENT_LAST_CHOICE);
-    uint16_t color_pref = GET_GLOBAL_VAL(CURRENT_OPPONENT);
+    uint16_t color_pref = GET_GLOBAL_VAL(MOST_POWERFUL_CARD);
     uint16_t has_color_pref = 0;
     switch(color_pref){
         case T_WHITE:
@@ -589,7 +590,7 @@ Also played by Yuuka?
 void handleOpponentCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
-    if(current_opponent == 6) {
+    if(current_opponent == 7) {
         current_opponent = random(5) + 1;
     }
 
@@ -603,7 +604,8 @@ void handleOpponentCardChoice(SCRIPT_CTX * THIS) OLDCALL BANKED {
             handlePurpleAiCardChoice();
         case T_BLUE:
             // Blue
-            handleBlueAiCardChoice();
+            //handleBlueAiCardChoice();
+            handleDebugCirno();
             break;
         case T_RED:
             handleRedAiCardChoice();
@@ -810,7 +812,7 @@ void handleOpponentTurn(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     uint16_t current_opponent = GET_GLOBAL_VAL(CURRENT_OPPONENT);
 
-    if(current_opponent == 6) {
+    if(current_opponent == 7) {
         current_opponent = card_choice;
     }
 
